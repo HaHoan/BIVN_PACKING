@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1209
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPI_SUPPORT_WIP", "SPI_SUPPORT_WIP.csproj", "{338A0254-32C9-4D59-ACB5-76DF12B5E0AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIVN_PACKING", "..\BIVN_PACKING\BIVN_PACKING.csproj", "{03E767FA-E173-45B3-9B73-68EF67617822}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{338A0254-32C9-4D59-ACB5-76DF12B5E0AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{338A0254-32C9-4D59-ACB5-76DF12B5E0AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{338A0254-32C9-4D59-ACB5-76DF12B5E0AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{338A0254-32C9-4D59-ACB5-76DF12B5E0AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03E767FA-E173-45B3-9B73-68EF67617822}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03E767FA-E173-45B3-9B73-68EF67617822}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03E767FA-E173-45B3-9B73-68EF67617822}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03E767FA-E173-45B3-9B73-68EF67617822}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9979ADC7-E01A-4AB3-A2F4-BB0FC9A3713A}
+	EndGlobalSection
+EndGlobal

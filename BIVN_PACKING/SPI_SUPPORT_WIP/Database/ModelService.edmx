@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="UMC_MESDB_TESTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="SCANNING_LOGS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="BASE_NO" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="BOARD_COUNT" Type="int" Nullable="false" />
+          <Property Name="BOARD_NO" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="BOARD_STATE" Type="int" Nullable="false" />
+          <Property Name="CASE_NO" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="CLIENT_NAME" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="CUSTOMER_ID" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="EDI_NO" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="HOST_NAME" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IS_REVERTED" Type="bit" Nullable="false" />
+          <Property Name="LINE_ID" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="LOT_NO" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="ORDER_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ORDER_NO" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="PACKING_NO" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="PACKING_ORDER_NO" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="PART_ID" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="PART_NO" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="PLANT" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="PROCEDURE_INDEX" Type="int" Nullable="false" />
+          <Property Name="PRODUCT_ID" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="SECTION" Type="int" Nullable="false" />
+          <Property Name="STATION_NAME" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="STATION_NO" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="STATION_TYPE" Type="int" Nullable="false" />
+          <Property Name="UPDATE_TIME" Type="datetime" Nullable="false" />
+          <Property Name="UPDATER_NAME" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="UPN_ID" Type="nvarchar" MaxLength="64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WORK_ORDER_ITEMS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="BASE_NO" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="BOARD_COUNT" Type="int" Nullable="false" />
+          <Property Name="BOARD_NO" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="BOARD_STATE" Type="int" Nullable="false" />
+          <Property Name="CASE_NO" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="CLIENT_NAME" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="DEFECT_COUNT" Type="int" Nullable="false" />
+          <Property Name="DISCARD_COUNT" Type="int" Nullable="false" />
+          <Property Name="FINISH_TIME" Type="datetime" Nullable="false" />
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="INITIATE_TIME" Type="datetime" Nullable="false" />
+          <Property Name="IS_CASED" Type="bit" Nullable="false" />
+          <Property Name="IS_DERIVATIVE" Type="bit" Nullable="false" />
+          <Property Name="IS_FINISHED" Type="bit" Nullable="false" />
+          <Property Name="IS_MATERIAL_LOG_IMPORTED" Type="bit" Nullable="false" />
+          <Property Name="IS_PACKED" Type="bit" Nullable="false" />
+          <Property Name="LINE_ID" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="ORDER_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ORDER_NO" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="PACK_NO" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="PLANT" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="PROCEDURE_INDEX" Type="int" Nullable="false" />
+          <Property Name="RETEST_COUNT" Type="int" Nullable="false" />
+          <Property Name="SECTION" Type="int" Nullable="false" />
+          <Property Name="STATION_NAME" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="STATION_NO" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="STATION_TYPE" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="UMC_MESDB_TESTModelStoreContainer">
+          <EntitySet Name="SCANNING_LOGS" EntityType="Self.SCANNING_LOGS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WORK_ORDER_ITEMS" EntityType="Self.WORK_ORDER_ITEMS" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UMC_MESDB_TESTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="SCANNING_LOGS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="BASE_NO" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BOARD_COUNT" Type="Int32" Nullable="false" />
+          <Property Name="BOARD_NO" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BOARD_STATE" Type="Int32" Nullable="false" />
+          <Property Name="CASE_NO" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CLIENT_NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CUSTOMER_ID" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EDI_NO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HOST_NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="IS_REVERTED" Type="Boolean" Nullable="false" />
+          <Property Name="LINE_ID" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LOT_NO" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ORDER_ID" Type="Guid" Nullable="false" />
+          <Property Name="ORDER_NO" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PACKING_NO" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PACKING_ORDER_NO" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PART_ID" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PART_NO" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PLANT" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PROCEDURE_INDEX" Type="Int32" Nullable="false" />
+          <Property Name="PRODUCT_ID" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SECTION" Type="Int32" Nullable="false" />
+          <Property Name="STATION_NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STATION_NO" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STATION_TYPE" Type="Int32" Nullable="false" />
+          <Property Name="UPDATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UPDATER_NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UPN_ID" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WORK_ORDER_ITEMS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="BASE_NO" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BOARD_COUNT" Type="Int32" Nullable="false" />
+          <Property Name="BOARD_NO" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BOARD_STATE" Type="Int32" Nullable="false" />
+          <Property Name="CASE_NO" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CLIENT_NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DEFECT_COUNT" Type="Int32" Nullable="false" />
+          <Property Name="DISCARD_COUNT" Type="Int32" Nullable="false" />
+          <Property Name="FINISH_TIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="INITIATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IS_CASED" Type="Boolean" Nullable="false" />
+          <Property Name="IS_DERIVATIVE" Type="Boolean" Nullable="false" />
+          <Property Name="IS_FINISHED" Type="Boolean" Nullable="false" />
+          <Property Name="IS_MATERIAL_LOG_IMPORTED" Type="Boolean" Nullable="false" />
+          <Property Name="IS_PACKED" Type="Boolean" Nullable="false" />
+          <Property Name="LINE_ID" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ORDER_ID" Type="Guid" Nullable="false" />
+          <Property Name="ORDER_NO" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PACK_NO" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PLANT" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PROCEDURE_INDEX" Type="Int32" Nullable="false" />
+          <Property Name="RETEST_COUNT" Type="Int32" Nullable="false" />
+          <Property Name="SECTION" Type="Int32" Nullable="false" />
+          <Property Name="STATION_NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STATION_NO" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STATION_TYPE" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="UMC_MESDB_TESTEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SCANNING_LOGS" EntityType="Self.SCANNING_LOGS" />
+          <EntitySet Name="WORK_ORDER_ITEMS" EntityType="Self.WORK_ORDER_ITEMS" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="UMC_MESDB_TESTModelStoreContainer" CdmEntityContainer="UMC_MESDB_TESTEntities">
+          <EntitySetMapping Name="SCANNING_LOGS">
+            <EntityTypeMapping TypeName="UMC_MESDB_TESTModel.SCANNING_LOGS">
+              <MappingFragment StoreEntitySet="SCANNING_LOGS">
+                <ScalarProperty Name="BASE_NO" ColumnName="BASE_NO" />
+                <ScalarProperty Name="BOARD_COUNT" ColumnName="BOARD_COUNT" />
+                <ScalarProperty Name="BOARD_NO" ColumnName="BOARD_NO" />
+                <ScalarProperty Name="BOARD_STATE" ColumnName="BOARD_STATE" />
+                <ScalarProperty Name="CASE_NO" ColumnName="CASE_NO" />
+                <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+                <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+                <ScalarProperty Name="EDI_NO" ColumnName="EDI_NO" />
+                <ScalarProperty Name="HOST_NAME" ColumnName="HOST_NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IS_REVERTED" ColumnName="IS_REVERTED" />
+                <ScalarProperty Name="LINE_ID" ColumnName="LINE_ID" />
+                <ScalarProperty Name="LOT_NO" ColumnName="LOT_NO" />
+                <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+                <ScalarProperty Name="ORDER_NO" ColumnName="ORDER_NO" />
+                <ScalarProperty Name="PACKING_NO" ColumnName="PACKING_NO" />
+                <ScalarProperty Name="PACKING_ORDER_NO" ColumnName="PACKING_ORDER_NO" />
+                <ScalarProperty Name="PART_ID" ColumnName="PART_ID" />
+                <ScalarProperty Name="PART_NO" ColumnName="PART_NO" />
+                <ScalarProperty Name="PLANT" ColumnName="PLANT" />
+                <ScalarProperty Name="PROCEDURE_INDEX" ColumnName="PROCEDURE_INDEX" />
+                <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+                <ScalarProperty Name="SECTION" ColumnName="SECTION" />
+                <ScalarProperty Name="STATION_NAME" ColumnName="STATION_NAME" />
+                <ScalarProperty Name="STATION_NO" ColumnName="STATION_NO" />
+                <ScalarProperty Name="STATION_TYPE" ColumnName="STATION_TYPE" />
+                <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+                <ScalarProperty Name="UPDATER_NAME" ColumnName="UPDATER_NAME" />
+                <ScalarProperty Name="UPN_ID" ColumnName="UPN_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WORK_ORDER_ITEMS">
+            <EntityTypeMapping TypeName="UMC_MESDB_TESTModel.WORK_ORDER_ITEMS">
+              <MappingFragment StoreEntitySet="WORK_ORDER_ITEMS">
+                <ScalarProperty Name="BASE_NO" ColumnName="BASE_NO" />
+                <ScalarProperty Name="BOARD_COUNT" ColumnName="BOARD_COUNT" />
+                <ScalarProperty Name="BOARD_NO" ColumnName="BOARD_NO" />
+                <ScalarProperty Name="BOARD_STATE" ColumnName="BOARD_STATE" />
+                <ScalarProperty Name="CASE_NO" ColumnName="CASE_NO" />
+                <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+                <ScalarProperty Name="DEFECT_COUNT" ColumnName="DEFECT_COUNT" />
+                <ScalarProperty Name="DISCARD_COUNT" ColumnName="DISCARD_COUNT" />
+                <ScalarProperty Name="FINISH_TIME" ColumnName="FINISH_TIME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="INITIATE_TIME" ColumnName="INITIATE_TIME" />
+                <ScalarProperty Name="IS_CASED" ColumnName="IS_CASED" />
+                <ScalarProperty Name="IS_DERIVATIVE" ColumnName="IS_DERIVATIVE" />
+                <ScalarProperty Name="IS_FINISHED" ColumnName="IS_FINISHED" />
+                <ScalarProperty Name="IS_MATERIAL_LOG_IMPORTED" ColumnName="IS_MATERIAL_LOG_IMPORTED" />
+                <ScalarProperty Name="IS_PACKED" ColumnName="IS_PACKED" />
+                <ScalarProperty Name="LINE_ID" ColumnName="LINE_ID" />
+                <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+                <ScalarProperty Name="ORDER_NO" ColumnName="ORDER_NO" />
+                <ScalarProperty Name="PACK_NO" ColumnName="PACK_NO" />
+                <ScalarProperty Name="PLANT" ColumnName="PLANT" />
+                <ScalarProperty Name="PROCEDURE_INDEX" ColumnName="PROCEDURE_INDEX" />
+                <ScalarProperty Name="RETEST_COUNT" ColumnName="RETEST_COUNT" />
+                <ScalarProperty Name="SECTION" ColumnName="SECTION" />
+                <ScalarProperty Name="STATION_NAME" ColumnName="STATION_NAME" />
+                <ScalarProperty Name="STATION_NO" ColumnName="STATION_NO" />
+                <ScalarProperty Name="STATION_TYPE" ColumnName="STATION_TYPE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

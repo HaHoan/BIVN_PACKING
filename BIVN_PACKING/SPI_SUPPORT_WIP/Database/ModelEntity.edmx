@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SOFTWAREModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ALL_SETTINGS_THE_CUSTOMERS">
+          <Key>
+            <PropertyRef Name="TABLE_ID" />
+          </Key>
+          <Property Name="MODEL" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PATH_LOG" Type="nvarchar" MaxLength="250" />
+          <Property Name="OUTPUT_LOG" Type="nvarchar" MaxLength="250" />
+          <Property Name="STATION" Type="nvarchar" MaxLength="50" />
+          <Property Name="TIME_SLEEP" Type="int" />
+          <Property Name="LOCATION" Type="int" />
+          <Property Name="LENGTH_SERIAL" Type="int" />
+          <Property Name="INDEX" Type="int" />
+          <Property Name="TO" Type="int" />
+          <Property Name="PROCESS" Type="nvarchar" MaxLength="250" />
+          <Property Name="PCP_SHEET" Type="int" />
+          <Property Name="PC_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TABLE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STATION_INDEX" Type="int" />
+          <Property Name="STATION_TO" Type="int" />
+          <Property Name="OLD_STATION" Type="nvarchar" MaxLength="150" />
+          <Property Name="NOTE" Type="nvarchar" MaxLength="150" />
+          <Property Name="IS_SPECIAL" Type="bit" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="USERNAME" />
+          </Key>
+          <Property Name="USERNAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
+          <Property Name="DATE_CREATED" Type="datetime" />
+          <Property Name="IS_ADMIN" Type="bit" />
+          <Property Name="NOTE" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityContainer Name="SOFTWAREModelStoreContainer">
+          <EntitySet Name="ALL_SETTINGS_THE_CUSTOMERS" EntityType="Self.ALL_SETTINGS_THE_CUSTOMERS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SOFTWAREModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SOFTWAREEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ALL_SETTINGS_THE_CUSTOMERS" EntityType="SOFTWAREModel.ALL_SETTINGS_THE_CUSTOMERS" />
+          <EntitySet Name="USERs" EntityType="SOFTWAREModel.USER" />
+        </EntityContainer>
+        <EntityType Name="ALL_SETTINGS_THE_CUSTOMERS">
+          <Key>
+            <PropertyRef Name="TABLE_ID" />
+          </Key>
+          <Property Name="MODEL" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PATH_LOG" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="OUTPUT_LOG" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="STATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TIME_SLEEP" Type="Int32" />
+          <Property Name="LOCATION" Type="Int32" />
+          <Property Name="LENGTH_SERIAL" Type="Int32" />
+          <Property Name="INDEX" Type="Int32" />
+          <Property Name="TO" Type="Int32" />
+          <Property Name="PROCESS" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PCP_SHEET" Type="Int32" />
+          <Property Name="PC_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TABLE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STATION_INDEX" Type="Int32" />
+          <Property Name="STATION_TO" Type="Int32" />
+          <Property Name="OLD_STATION" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="NOTE" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="IS_SPECIAL" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="USERNAME" />
+          </Key>
+          <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DATE_CREATED" Type="DateTime" Precision="3" />
+          <Property Name="IS_ADMIN" Type="Boolean" />
+          <Property Name="NOTE" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SOFTWAREModelStoreContainer" CdmEntityContainer="SOFTWAREEntities">
+          <EntitySetMapping Name="ALL_SETTINGS_THE_CUSTOMERS">
+            <EntityTypeMapping TypeName="SOFTWAREModel.ALL_SETTINGS_THE_CUSTOMERS">
+              <MappingFragment StoreEntitySet="ALL_SETTINGS_THE_CUSTOMERS">
+                <ScalarProperty Name="IS_SPECIAL" ColumnName="IS_SPECIAL" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="OLD_STATION" ColumnName="OLD_STATION" />
+                <ScalarProperty Name="STATION_TO" ColumnName="STATION_TO" />
+                <ScalarProperty Name="STATION_INDEX" ColumnName="STATION_INDEX" />
+                <ScalarProperty Name="TABLE_ID" ColumnName="TABLE_ID" />
+                <ScalarProperty Name="PC_NAME" ColumnName="PC_NAME" />
+                <ScalarProperty Name="PCP_SHEET" ColumnName="PCP_SHEET" />
+                <ScalarProperty Name="PROCESS" ColumnName="PROCESS" />
+                <ScalarProperty Name="TO" ColumnName="TO" />
+                <ScalarProperty Name="INDEX" ColumnName="INDEX" />
+                <ScalarProperty Name="LENGTH_SERIAL" ColumnName="LENGTH_SERIAL" />
+                <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+                <ScalarProperty Name="TIME_SLEEP" ColumnName="TIME_SLEEP" />
+                <ScalarProperty Name="STATION" ColumnName="STATION" />
+                <ScalarProperty Name="OUTPUT_LOG" ColumnName="OUTPUT_LOG" />
+                <ScalarProperty Name="PATH_LOG" ColumnName="PATH_LOG" />
+                <ScalarProperty Name="MODEL" ColumnName="MODEL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERs">
+            <EntityTypeMapping TypeName="SOFTWAREModel.USER">
+              <MappingFragment StoreEntitySet="USER">
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="IS_ADMIN" ColumnName="IS_ADMIN" />
+                <ScalarProperty Name="DATE_CREATED" ColumnName="DATE_CREATED" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

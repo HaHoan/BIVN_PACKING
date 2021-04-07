@@ -31,10 +31,7 @@ namespace BIVN_PACKING
         SearchView LinkData = new SearchView();
         List<string> listTask = new List<string>();
         private BIVN.BCLBFLMEntity _boxInfo = new BIVN.BCLBFLMEntity();
-        private List<string> _specialProduct = new List<string>()
-        {
-            "D0092S001","D00KHH004","D00KHJ001","D00KHL002"
-        };
+        
         private BackgroundWorker bgrwSoftInfo;
 
         private void ControlClick()
@@ -388,9 +385,9 @@ namespace BIVN_PACKING
                         bool isFocusBarcode = false;
                         frmSettingWork.updateAfterSetting = (qty, start, end) =>
                         {
-                            SettingWorkInfo(woUsap,0 , boxID, qty, start, end);
+                            SettingWorkInfo(woUsap, 0, boxID, qty, start, end);
                             isFocusBarcode = true;
-                           
+
                         };
                         frmSettingWork.ShowDialog();
                         if (isFocusBarcode)
@@ -607,15 +604,37 @@ namespace BIVN_PACKING
                 long decimaStart, decimaEnd, decimaSerial;
                 string boxID = txtBoxid.Text.Trim();
                 string wo = txtWoNo.Text.Trim();
-                if (_specialProduct.Contains(_boxInfo.PART_NO))
+                var modelInfo = _pvs_service.GetModelInfo(_boxInfo.PART_NO);
+                if (modelInfo != null)
                 {
-                    decimaStart = long.Parse(serialstart.Right(6));
-                    decimaEnd = long.Parse(serialend.Right(6));
-                    decimaSerial = long.Parse(serial.Right(6));
+                    if (modelInfo.Content_Length is int contentLength)
+                    {
+                        if (!long.TryParse(serialstart.Right(serialstart.Length - contentLength), System.Globalization.NumberStyles.HexNumber, null, out decimaStart))
+                        {
+                            ShowMessage("FAIL", @"FAIL", $"Serial Start không hợp lệ!");
+                            return;
+                        }
+                        if (!long.TryParse(serialend.Right(serialend.Length - contentLength), System.Globalization.NumberStyles.HexNumber, null, out decimaEnd))
+                        {
+                            ShowMessage("FAIL", @"FAIL", $"Serial End không hợp lệ!");
+                            return;
+                        }
+                        if (!long.TryParse(serial.Right(serial.Length - contentLength), System.Globalization.NumberStyles.HexNumber, null, out decimaSerial))
+                        {
+                            ShowMessage("FAIL", @"FAIL", $"Serial End không hợp lệ!");
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        ShowMessage("FAIL", @"FAIL", $"Xem lại thông tin Model");
+                        return;
+                    }
+
                 }
+
                 else
                 {
-
                     if (!long.TryParse(serialstart, System.Globalization.NumberStyles.HexNumber, null, out decimaStart))
                     {
                         ShowMessage("FAIL", @"FAIL", $"Serial Start không hợp lệ!");
@@ -710,6 +729,42 @@ namespace BIVN_PACKING
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void btnTestSerial_Click(object sender, EventArgs e)
+        {
+            long decimaStart, decimaEnd, decimaSerial;
+            var serialstart = "44E002267446";
+            var serialend = "44E2002269745";
+
+            if (!long.TryParse(serialstart, System.Globalization.NumberStyles.HexNumber, null, out decimaStart))
+            {
+                ShowMessage("FAIL", @"FAIL", $"Serial Start không hợp lệ!");
+                return;
+            }
+            if (!long.TryParse(serialend, System.Globalization.NumberStyles.HexNumber, null, out decimaEnd))
+            {
+                ShowMessage("FAIL", @"FAIL", $"Serial End không hợp lệ!");
+                return;
+            }
+
+            var list = _db.Produce.Where(m => m.NAME_WO == "2000722912").ToList();
+            foreach (var serial in list)
+            {
+                if (!long.TryParse(serial.SERIAL, System.Globalization.NumberStyles.HexNumber, null, out decimaSerial))
+                {
+                    Console.WriteLine("Serial End không hợp lệ!");
+                    Console.Write(serial.SERIAL);
+                    return;
+                }
+                if (decimaSerial > decimaEnd || decimaSerial < decimaStart)
+                {
+                    Console.WriteLine("Serial không nằm trong dải cho phép!");
+                    Console.Write(serial.SERIAL);
+                    return;
+                }
+            }
+            MessageBox.Show("OK");
         }
 
         private void ClearAll()

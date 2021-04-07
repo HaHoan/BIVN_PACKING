@@ -15,16 +15,16 @@ namespace BIVN_PACKING
     public partial class frmSettingWork : Form
     {
         public Action<string, string, string> updateAfterSetting;
-        private List<string> _specialProduct = new List<string>()
-        {
-            "D0092S001","D00KHH004","D00KHJ001","D00KHL002"
-        };
+        private PVSService.PVSWebServiceSoapClient _pvs_service = new PVSService.PVSWebServiceSoapClient();
+        private string Model;
+      
         private BIVN.BCLBFLMEntity boxInfo;
         public frmSettingWork(string WoNo, string Model, BIVN.BCLBFLMEntity boxInfo)
         {
             InitializeComponent();
             lblWoNo.Text = WoNo;
             lblModel.Text = Model;
+            this.Model = Model;
             this.boxInfo = boxInfo;
             tbWoQty.SelectAll();
             tbWoQty.Focus();
@@ -71,28 +71,46 @@ namespace BIVN_PACKING
             long decimaStart, decimaEnd;
             string boxID = boxInfo.BC_NO;
             string wo = lblWoNo.Text.Trim();
-            if (_specialProduct.Contains(boxInfo.PART_NO))
+
+            var modelInfo = _pvs_service.GetModelInfo(this.Model);
+            if (modelInfo != null)
             {
-                decimaStart = long.Parse(serialStart.Right(6));
-                decimaEnd = long.Parse(serialEnd.Right(6));
+                if (modelInfo.Content_Length is int contentLength)
+                {
+                    if (!long.TryParse(serialStart.Right(serialStart.Length - contentLength), System.Globalization.NumberStyles.HexNumber, null, out decimaStart))
+                    {
+                        ShowMessage("FAIL", @"FAIL", $"Serial Start không hợp lệ!");
+                        return;
+                    }
+                    if (!long.TryParse(serialEnd.Right(serialEnd.Length - contentLength), System.Globalization.NumberStyles.HexNumber, null, out decimaEnd))
+                    {
+                        ShowMessage("FAIL", @"FAIL", $"Serial End không hợp lệ!");
+                        return;
+                    }
+                   
+                }
+                else
+                {
+                    ShowMessage("FAIL", @"FAIL", $"Xem lại thông tin Model");
+                    return;
+                }
+
             }
+
             else
             {
-
-                if (!long.TryParse(serialStart, System.Globalization.NumberStyles.HexNumber, null, out decimaStart))
-                {
-                    ShowMessage("FAIL", @"FAIL", $"Serial Start không hợp lệ!");
-                    return;
-                }
-                if (!long.TryParse(serialEnd, System.Globalization.NumberStyles.HexNumber, null, out decimaEnd))
-                {
-                    ShowMessage("FAIL", @"FAIL", $"Serial End không hợp lệ!");
-                    return;
-                }
+                ShowMessage("FAIL", @"FAIL", $"Chưa có thông tin Model!");
+                return;
             }
             if (decimaEnd <= decimaStart)
             {
                 ShowMessage("FAIL", @"FAIL", $"Dải serial không hợp lệ!");
+                return;
+            }
+            long numberWork = decimaEnd - decimaStart + 1;
+            if (numberWork != int.Parse(qty))
+            {
+                ShowMessage("FAIL", @"FAIL", $"Kiểm tra lại số lượng work hoặc dải serial!");
                 return;
             }
            

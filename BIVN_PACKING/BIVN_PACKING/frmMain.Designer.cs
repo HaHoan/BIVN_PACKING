@@ -88,6 +88,8 @@
             this.BOXID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.btnTestSerial = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.panelBOXID.SuspendLayout();
             this.panelBarcode.SuspendLayout();
@@ -103,6 +105,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnTestSerial);
             this.groupBox3.Controls.Add(this.lblsetting);
             this.groupBox3.Controls.Add(this.panelBOXID);
             this.groupBox3.Controls.Add(this.panelBarcode);
@@ -717,6 +720,17 @@
             this.date.Name = "date";
             this.date.ReadOnly = true;
             // 
+            // btnTestSerial
+            // 
+            this.btnTestSerial.Location = new System.Drawing.Point(341, 261);
+            this.btnTestSerial.Name = "btnTestSerial";
+            this.btnTestSerial.Size = new System.Drawing.Size(75, 23);
+            this.btnTestSerial.TabIndex = 67;
+            this.btnTestSerial.Text = "Test";
+            this.btnTestSerial.UseVisualStyleBackColor = true;
+            this.btnTestSerial.Visible = false;
+            this.btnTestSerial.Click += new System.EventHandler(this.btnTestSerial_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -815,5 +829,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel lblVersion;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button btnTestSerial;
     }
 }

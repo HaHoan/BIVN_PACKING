@@ -15,8 +15,174 @@ namespace BIVN_PACKING.PVSService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="NichiconEntity", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class NichiconEntity : BIVN_PACKING.PVSService.BaseEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductionIDField;
+        
+        private int LineIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BoxIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModelIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModelNameField;
+        
+        private System.DateTime DateCheckField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TimeCheckField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OperatorCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string JudgeResultField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OperatorNameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string ProductionID {
+            get {
+                return this.ProductionIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductionIDField, value) != true)) {
+                    this.ProductionIDField = value;
+                    this.RaisePropertyChanged("ProductionID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public int LineID {
+            get {
+                return this.LineIDField;
+            }
+            set {
+                if ((this.LineIDField.Equals(value) != true)) {
+                    this.LineIDField = value;
+                    this.RaisePropertyChanged("LineID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string BoxID {
+            get {
+                return this.BoxIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BoxIDField, value) != true)) {
+                    this.BoxIDField = value;
+                    this.RaisePropertyChanged("BoxID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string ModelID {
+            get {
+                return this.ModelIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModelIDField, value) != true)) {
+                    this.ModelIDField = value;
+                    this.RaisePropertyChanged("ModelID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string ModelName {
+            get {
+                return this.ModelNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModelNameField, value) != true)) {
+                    this.ModelNameField = value;
+                    this.RaisePropertyChanged("ModelName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public System.DateTime DateCheck {
+            get {
+                return this.DateCheckField;
+            }
+            set {
+                if ((this.DateCheckField.Equals(value) != true)) {
+                    this.DateCheckField = value;
+                    this.RaisePropertyChanged("DateCheck");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string TimeCheck {
+            get {
+                return this.TimeCheckField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TimeCheckField, value) != true)) {
+                    this.TimeCheckField = value;
+                    this.RaisePropertyChanged("TimeCheck");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string OperatorCode {
+            get {
+                return this.OperatorCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OperatorCodeField, value) != true)) {
+                    this.OperatorCodeField = value;
+                    this.RaisePropertyChanged("OperatorCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string JudgeResult {
+            get {
+                return this.JudgeResultField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.JudgeResultField, value) != true)) {
+                    this.JudgeResultField = value;
+                    this.RaisePropertyChanged("JudgeResult");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string OperatorName {
+            get {
+                return this.OperatorNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OperatorNameField, value) != true)) {
+                    this.OperatorNameField = value;
+                    this.RaisePropertyChanged("OperatorName");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="BaseEntity", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.MuratasEntity))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.MasterEntity))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.Base_Soft_InfoEntity))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.Base_ModelsEntity))]
@@ -39,7 +205,7 @@ namespace BIVN_PACKING.PVSService {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.WORK_ORDER_PROCEDURESEntity))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.MACHINESEntity))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.ROLE_MEMBERSEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.MuratasEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.NichiconEntity))]
     public partial class BaseEntity : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -61,6 +227,200 @@ namespace BIVN_PACKING.PVSService {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MuratasEntity", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class MuratasEntity : BIVN_PACKING.PVSService.BaseEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductionIDField;
+        
+        private System.Nullable<int> LineIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BoxIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModelIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModelNameField;
+        
+        private System.Nullable<System.DateTime> DateCheckField;
+        
+        private BIVN_PACKING.PVSService.TimeSpan TimeCheckField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OperatorCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModelCustomerField;
+        
+        private System.Nullable<bool> JudgeResultField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerNameField;
+        
+        private System.Nullable<bool> RetailBarrelField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string ProductionID {
+            get {
+                return this.ProductionIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductionIDField, value) != true)) {
+                    this.ProductionIDField = value;
+                    this.RaisePropertyChanged("ProductionID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public System.Nullable<int> LineID {
+            get {
+                return this.LineIDField;
+            }
+            set {
+                if ((this.LineIDField.Equals(value) != true)) {
+                    this.LineIDField = value;
+                    this.RaisePropertyChanged("LineID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string BoxID {
+            get {
+                return this.BoxIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BoxIDField, value) != true)) {
+                    this.BoxIDField = value;
+                    this.RaisePropertyChanged("BoxID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string ModelID {
+            get {
+                return this.ModelIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModelIDField, value) != true)) {
+                    this.ModelIDField = value;
+                    this.RaisePropertyChanged("ModelID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string ModelName {
+            get {
+                return this.ModelNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModelNameField, value) != true)) {
+                    this.ModelNameField = value;
+                    this.RaisePropertyChanged("ModelName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public System.Nullable<System.DateTime> DateCheck {
+            get {
+                return this.DateCheckField;
+            }
+            set {
+                if ((this.DateCheckField.Equals(value) != true)) {
+                    this.DateCheckField = value;
+                    this.RaisePropertyChanged("DateCheck");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=6)]
+        public BIVN_PACKING.PVSService.TimeSpan TimeCheck {
+            get {
+                return this.TimeCheckField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TimeCheckField, value) != true)) {
+                    this.TimeCheckField = value;
+                    this.RaisePropertyChanged("TimeCheck");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string OperatorCode {
+            get {
+                return this.OperatorCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OperatorCodeField, value) != true)) {
+                    this.OperatorCodeField = value;
+                    this.RaisePropertyChanged("OperatorCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string ModelCustomer {
+            get {
+                return this.ModelCustomerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModelCustomerField, value) != true)) {
+                    this.ModelCustomerField = value;
+                    this.RaisePropertyChanged("ModelCustomer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public System.Nullable<bool> JudgeResult {
+            get {
+                return this.JudgeResultField;
+            }
+            set {
+                if ((this.JudgeResultField.Equals(value) != true)) {
+                    this.JudgeResultField = value;
+                    this.RaisePropertyChanged("JudgeResult");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        public string CustomerName {
+            get {
+                return this.CustomerNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerNameField, value) != true)) {
+                    this.CustomerNameField = value;
+                    this.RaisePropertyChanged("CustomerName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        public System.Nullable<bool> RetailBarrel {
+            get {
+                return this.RetailBarrelField;
+            }
+            set {
+                if ((this.RetailBarrelField.Equals(value) != true)) {
+                    this.RetailBarrelField = value;
+                    this.RaisePropertyChanged("RetailBarrel");
+                }
             }
         }
     }
@@ -5835,200 +6195,6 @@ namespace BIVN_PACKING.PVSService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MuratasEntity", Namespace="http://tempuri.org/")]
-    [System.SerializableAttribute()]
-    public partial class MuratasEntity : BIVN_PACKING.PVSService.BaseEntity {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProductionIDField;
-        
-        private System.Nullable<int> LineIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BoxIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ModelIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ModelNameField;
-        
-        private System.Nullable<System.DateTime> DateCheckField;
-        
-        private BIVN_PACKING.PVSService.TimeSpan TimeCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OperatorCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ModelCustomerField;
-        
-        private System.Nullable<bool> JudgeResultField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CustomerNameField;
-        
-        private System.Nullable<bool> RetailBarrelField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string ProductionID {
-            get {
-                return this.ProductionIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductionIDField, value) != true)) {
-                    this.ProductionIDField = value;
-                    this.RaisePropertyChanged("ProductionID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public System.Nullable<int> LineID {
-            get {
-                return this.LineIDField;
-            }
-            set {
-                if ((this.LineIDField.Equals(value) != true)) {
-                    this.LineIDField = value;
-                    this.RaisePropertyChanged("LineID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string BoxID {
-            get {
-                return this.BoxIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BoxIDField, value) != true)) {
-                    this.BoxIDField = value;
-                    this.RaisePropertyChanged("BoxID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string ModelID {
-            get {
-                return this.ModelIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ModelIDField, value) != true)) {
-                    this.ModelIDField = value;
-                    this.RaisePropertyChanged("ModelID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string ModelName {
-            get {
-                return this.ModelNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ModelNameField, value) != true)) {
-                    this.ModelNameField = value;
-                    this.RaisePropertyChanged("ModelName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.Nullable<System.DateTime> DateCheck {
-            get {
-                return this.DateCheckField;
-            }
-            set {
-                if ((this.DateCheckField.Equals(value) != true)) {
-                    this.DateCheckField = value;
-                    this.RaisePropertyChanged("DateCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=6)]
-        public BIVN_PACKING.PVSService.TimeSpan TimeCheck {
-            get {
-                return this.TimeCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TimeCheckField, value) != true)) {
-                    this.TimeCheckField = value;
-                    this.RaisePropertyChanged("TimeCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string OperatorCode {
-            get {
-                return this.OperatorCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OperatorCodeField, value) != true)) {
-                    this.OperatorCodeField = value;
-                    this.RaisePropertyChanged("OperatorCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public string ModelCustomer {
-            get {
-                return this.ModelCustomerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ModelCustomerField, value) != true)) {
-                    this.ModelCustomerField = value;
-                    this.RaisePropertyChanged("ModelCustomer");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public System.Nullable<bool> JudgeResult {
-            get {
-                return this.JudgeResultField;
-            }
-            set {
-                if ((this.JudgeResultField.Equals(value) != true)) {
-                    this.JudgeResultField = value;
-                    this.RaisePropertyChanged("JudgeResult");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
-        public string CustomerName {
-            get {
-                return this.CustomerNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerNameField, value) != true)) {
-                    this.CustomerNameField = value;
-                    this.RaisePropertyChanged("CustomerName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public System.Nullable<bool> RetailBarrel {
-            get {
-                return this.RetailBarrelField;
-            }
-            set {
-                if ((this.RetailBarrelField.Equals(value) != true)) {
-                    this.RetailBarrelField = value;
-                    this.RaisePropertyChanged("RetailBarrel");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="TimeSpan", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
     public partial class TimeSpan : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -6066,6 +6232,27 @@ namespace BIVN_PACKING.PVSService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PVSService.PVSWebServiceSoap")]
     public interface PVSWebServiceSoap {
+        
+        // CODEGEN: Generating message contract since element name boardNo from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/NichiconBarcodeExist", ReplyAction="*")]
+        BIVN_PACKING.PVSService.NichiconBarcodeExistResponse NichiconBarcodeExist(BIVN_PACKING.PVSService.NichiconBarcodeExistRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/NichiconBarcodeExist", ReplyAction="*")]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.NichiconBarcodeExistResponse> NichiconBarcodeExistAsync(BIVN_PACKING.PVSService.NichiconBarcodeExistRequest request);
+        
+        // CODEGEN: Generating message contract since element name boxID from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/NichiconGetPack", ReplyAction="*")]
+        BIVN_PACKING.PVSService.NichiconGetPackResponse NichiconGetPack(BIVN_PACKING.PVSService.NichiconGetPackRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/NichiconGetPack", ReplyAction="*")]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.NichiconGetPackResponse> NichiconGetPackAsync(BIVN_PACKING.PVSService.NichiconGetPackRequest request);
+        
+        // CODEGEN: Generating message contract since element name entity from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/NichiconSavePack", ReplyAction="*")]
+        BIVN_PACKING.PVSService.NichiconSavePackResponse NichiconSavePack(BIVN_PACKING.PVSService.NichiconSavePackRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/NichiconSavePack", ReplyAction="*")]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.NichiconSavePackResponse> NichiconSavePackAsync(BIVN_PACKING.PVSService.NichiconSavePackRequest request);
         
         // CODEGEN: Generating message contract since element name entity from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MurataSavePack", ReplyAction="*")]
@@ -6505,6 +6692,203 @@ namespace BIVN_PACKING.PVSService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetRoleMember", ReplyAction="*")]
         System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetRoleMemberResponse> GetRoleMemberAsync(BIVN_PACKING.PVSService.GetRoleMemberRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class NichiconBarcodeExistRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="NichiconBarcodeExist", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.NichiconBarcodeExistRequestBody Body;
+        
+        public NichiconBarcodeExistRequest() {
+        }
+        
+        public NichiconBarcodeExistRequest(BIVN_PACKING.PVSService.NichiconBarcodeExistRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class NichiconBarcodeExistRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string boardNo;
+        
+        public NichiconBarcodeExistRequestBody() {
+        }
+        
+        public NichiconBarcodeExistRequestBody(string boardNo) {
+            this.boardNo = boardNo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class NichiconBarcodeExistResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="NichiconBarcodeExistResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.NichiconBarcodeExistResponseBody Body;
+        
+        public NichiconBarcodeExistResponse() {
+        }
+        
+        public NichiconBarcodeExistResponse(BIVN_PACKING.PVSService.NichiconBarcodeExistResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class NichiconBarcodeExistResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool NichiconBarcodeExistResult;
+        
+        public NichiconBarcodeExistResponseBody() {
+        }
+        
+        public NichiconBarcodeExistResponseBody(bool NichiconBarcodeExistResult) {
+            this.NichiconBarcodeExistResult = NichiconBarcodeExistResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class NichiconGetPackRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="NichiconGetPack", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.NichiconGetPackRequestBody Body;
+        
+        public NichiconGetPackRequest() {
+        }
+        
+        public NichiconGetPackRequest(BIVN_PACKING.PVSService.NichiconGetPackRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class NichiconGetPackRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string boxID;
+        
+        public NichiconGetPackRequestBody() {
+        }
+        
+        public NichiconGetPackRequestBody(string boxID) {
+            this.boxID = boxID;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class NichiconGetPackResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="NichiconGetPackResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.NichiconGetPackResponseBody Body;
+        
+        public NichiconGetPackResponse() {
+        }
+        
+        public NichiconGetPackResponse(BIVN_PACKING.PVSService.NichiconGetPackResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class NichiconGetPackResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BIVN_PACKING.PVSService.NichiconEntity[] NichiconGetPackResult;
+        
+        public NichiconGetPackResponseBody() {
+        }
+        
+        public NichiconGetPackResponseBody(BIVN_PACKING.PVSService.NichiconEntity[] NichiconGetPackResult) {
+            this.NichiconGetPackResult = NichiconGetPackResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class NichiconSavePackRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="NichiconSavePack", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.NichiconSavePackRequestBody Body;
+        
+        public NichiconSavePackRequest() {
+        }
+        
+        public NichiconSavePackRequest(BIVN_PACKING.PVSService.NichiconSavePackRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class NichiconSavePackRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BIVN_PACKING.PVSService.NichiconEntity entity;
+        
+        public NichiconSavePackRequestBody() {
+        }
+        
+        public NichiconSavePackRequestBody(BIVN_PACKING.PVSService.NichiconEntity entity) {
+            this.entity = entity;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class NichiconSavePackResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="NichiconSavePackResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.NichiconSavePackResponseBody Body;
+        
+        public NichiconSavePackResponse() {
+        }
+        
+        public NichiconSavePackResponse(BIVN_PACKING.PVSService.NichiconSavePackResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class NichiconSavePackResponseBody {
+        
+        public NichiconSavePackResponseBody() {
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -10701,6 +11085,80 @@ namespace BIVN_PACKING.PVSService {
         
         public PVSWebServiceSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BIVN_PACKING.PVSService.NichiconBarcodeExistResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.NichiconBarcodeExist(BIVN_PACKING.PVSService.NichiconBarcodeExistRequest request) {
+            return base.Channel.NichiconBarcodeExist(request);
+        }
+        
+        public bool NichiconBarcodeExist(string boardNo) {
+            BIVN_PACKING.PVSService.NichiconBarcodeExistRequest inValue = new BIVN_PACKING.PVSService.NichiconBarcodeExistRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.NichiconBarcodeExistRequestBody();
+            inValue.Body.boardNo = boardNo;
+            BIVN_PACKING.PVSService.NichiconBarcodeExistResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).NichiconBarcodeExist(inValue);
+            return retVal.Body.NichiconBarcodeExistResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.NichiconBarcodeExistResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.NichiconBarcodeExistAsync(BIVN_PACKING.PVSService.NichiconBarcodeExistRequest request) {
+            return base.Channel.NichiconBarcodeExistAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.NichiconBarcodeExistResponse> NichiconBarcodeExistAsync(string boardNo) {
+            BIVN_PACKING.PVSService.NichiconBarcodeExistRequest inValue = new BIVN_PACKING.PVSService.NichiconBarcodeExistRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.NichiconBarcodeExistRequestBody();
+            inValue.Body.boardNo = boardNo;
+            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).NichiconBarcodeExistAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BIVN_PACKING.PVSService.NichiconGetPackResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.NichiconGetPack(BIVN_PACKING.PVSService.NichiconGetPackRequest request) {
+            return base.Channel.NichiconGetPack(request);
+        }
+        
+        public BIVN_PACKING.PVSService.NichiconEntity[] NichiconGetPack(string boxID) {
+            BIVN_PACKING.PVSService.NichiconGetPackRequest inValue = new BIVN_PACKING.PVSService.NichiconGetPackRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.NichiconGetPackRequestBody();
+            inValue.Body.boxID = boxID;
+            BIVN_PACKING.PVSService.NichiconGetPackResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).NichiconGetPack(inValue);
+            return retVal.Body.NichiconGetPackResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.NichiconGetPackResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.NichiconGetPackAsync(BIVN_PACKING.PVSService.NichiconGetPackRequest request) {
+            return base.Channel.NichiconGetPackAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.NichiconGetPackResponse> NichiconGetPackAsync(string boxID) {
+            BIVN_PACKING.PVSService.NichiconGetPackRequest inValue = new BIVN_PACKING.PVSService.NichiconGetPackRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.NichiconGetPackRequestBody();
+            inValue.Body.boxID = boxID;
+            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).NichiconGetPackAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BIVN_PACKING.PVSService.NichiconSavePackResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.NichiconSavePack(BIVN_PACKING.PVSService.NichiconSavePackRequest request) {
+            return base.Channel.NichiconSavePack(request);
+        }
+        
+        public void NichiconSavePack(BIVN_PACKING.PVSService.NichiconEntity entity) {
+            BIVN_PACKING.PVSService.NichiconSavePackRequest inValue = new BIVN_PACKING.PVSService.NichiconSavePackRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.NichiconSavePackRequestBody();
+            inValue.Body.entity = entity;
+            BIVN_PACKING.PVSService.NichiconSavePackResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).NichiconSavePack(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.NichiconSavePackResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.NichiconSavePackAsync(BIVN_PACKING.PVSService.NichiconSavePackRequest request) {
+            return base.Channel.NichiconSavePackAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.NichiconSavePackResponse> NichiconSavePackAsync(BIVN_PACKING.PVSService.NichiconEntity entity) {
+            BIVN_PACKING.PVSService.NichiconSavePackRequest inValue = new BIVN_PACKING.PVSService.NichiconSavePackRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.NichiconSavePackRequestBody();
+            inValue.Body.entity = entity;
+            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).NichiconSavePackAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

@@ -1,5 +1,9 @@
-﻿using System;
+﻿using ExcelDataReader;
+using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Deployment.Application;
+using System.IO;
 using System.Linq;
 using System.Management;
 using System.Net;
@@ -95,6 +99,51 @@ namespace BIVN_PACKING
             catch
             {
                 return Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            }
+
+        }
+
+        public static void ImportModel(string path)
+        {
+            IExcelDataReader excelReader2007 = null;
+            PVSService.PVSWebServiceSoapClient _pvs_service = new PVSService.PVSWebServiceSoapClient();
+            try
+            {
+                FileStream stream = new FileStream(path, FileMode.Open);
+                excelReader2007 = ExcelReaderFactory.CreateOpenXmlReader(stream);
+                DataSet result = excelReader2007.AsDataSet();
+
+                foreach (DataTable table in result.Tables)
+                {
+                    for (int i = 1; i < table.Rows.Count; i++)
+                    {
+                        string model = table.Rows[i].ItemArray[3].ToString();
+                        string serial = table.Rows[i].ItemArray[4].ToString();
+                        if(_pvs_service.GetModelInfo(model) == null)
+                        {
+                            _pvs_service.SaveModelInfo(new PVSService.Base_ModelsEntity()
+                            {
+                                Product_Id = model,
+                                Pcb = 1,
+                                Customer = "CS000",
+                                Content_Index = 0,
+                                Content_Length = serial.Length,
+                                Location = 1,
+                                Des = "Brother"
+                            }, "");
+                        }
+                       
+                    }
+                }
+
+                excelReader2007.Close();
+                Console.Read();
+
+            }
+            catch (Exception e)
+            {
+                if (excelReader2007 != null)
+                    excelReader2007.Close();
             }
 
         }

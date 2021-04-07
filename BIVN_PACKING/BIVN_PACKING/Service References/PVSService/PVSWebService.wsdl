@@ -3,6 +3,68 @@
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
       <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="NichiconBarcodeExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="boardNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NichiconBarcodeExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NichiconBarcodeExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NichiconGetPack">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="boxID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NichiconGetPackResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NichiconGetPackResult" type="tns:ArrayOfNichiconEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfNichiconEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NichiconEntity" nillable="true" type="tns:NichiconEntity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NichiconEntity">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseEntity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ProductionID" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="LineID" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="BoxID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModelID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModelName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DateCheck" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="TimeCheck" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="JudgeResult" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorName" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BaseEntity" />
+      <s:element name="NichiconSavePack">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entity" type="tns:NichiconEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NichiconSavePackResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="MurataSavePack">
         <s:complexType>
           <s:sequence>
@@ -30,7 +92,6 @@
           </s:extension>
         </s:complexContent>
       </s:complexType>
-      <s:complexType name="BaseEntity" />
       <s:complexType name="TimeSpan" />
       <s:element name="MurataSavePackResponse">
         <s:complexType />
@@ -1526,6 +1587,24 @@
       </s:simpleType>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="NichiconBarcodeExistSoapIn">
+    <wsdl:part name="parameters" element="tns:NichiconBarcodeExist" />
+  </wsdl:message>
+  <wsdl:message name="NichiconBarcodeExistSoapOut">
+    <wsdl:part name="parameters" element="tns:NichiconBarcodeExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="NichiconGetPackSoapIn">
+    <wsdl:part name="parameters" element="tns:NichiconGetPack" />
+  </wsdl:message>
+  <wsdl:message name="NichiconGetPackSoapOut">
+    <wsdl:part name="parameters" element="tns:NichiconGetPackResponse" />
+  </wsdl:message>
+  <wsdl:message name="NichiconSavePackSoapIn">
+    <wsdl:part name="parameters" element="tns:NichiconSavePack" />
+  </wsdl:message>
+  <wsdl:message name="NichiconSavePackSoapOut">
+    <wsdl:part name="parameters" element="tns:NichiconSavePackResponse" />
+  </wsdl:message>
   <wsdl:message name="MurataSavePackSoapIn">
     <wsdl:part name="parameters" element="tns:MurataSavePack" />
   </wsdl:message>
@@ -1905,6 +1984,18 @@
     <wsdl:part name="parameters" element="tns:GetRoleMemberResponse" />
   </wsdl:message>
   <wsdl:portType name="PVSWebServiceSoap">
+    <wsdl:operation name="NichiconBarcodeExist">
+      <wsdl:input message="tns:NichiconBarcodeExistSoapIn" />
+      <wsdl:output message="tns:NichiconBarcodeExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NichiconGetPack">
+      <wsdl:input message="tns:NichiconGetPackSoapIn" />
+      <wsdl:output message="tns:NichiconGetPackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NichiconSavePack">
+      <wsdl:input message="tns:NichiconSavePackSoapIn" />
+      <wsdl:output message="tns:NichiconSavePackSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="MurataSavePack">
       <wsdl:input message="tns:MurataSavePackSoapIn" />
       <wsdl:output message="tns:MurataSavePackSoapOut" />
@@ -2160,6 +2251,33 @@
   </wsdl:portType>
   <wsdl:binding name="PVSWebServiceSoap" type="tns:PVSWebServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NichiconBarcodeExist">
+      <soap:operation soapAction="http://tempuri.org/NichiconBarcodeExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NichiconGetPack">
+      <soap:operation soapAction="http://tempuri.org/NichiconGetPack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NichiconSavePack">
+      <soap:operation soapAction="http://tempuri.org/NichiconSavePack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="MurataSavePack">
       <soap:operation soapAction="http://tempuri.org/MurataSavePack" style="document" />
       <wsdl:input>
@@ -2730,6 +2848,33 @@
   </wsdl:binding>
   <wsdl:binding name="PVSWebServiceSoap12" type="tns:PVSWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NichiconBarcodeExist">
+      <soap12:operation soapAction="http://tempuri.org/NichiconBarcodeExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NichiconGetPack">
+      <soap12:operation soapAction="http://tempuri.org/NichiconGetPack" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NichiconSavePack">
+      <soap12:operation soapAction="http://tempuri.org/NichiconSavePack" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="MurataSavePack">
       <soap12:operation soapAction="http://tempuri.org/MurataSavePack" style="document" />
       <wsdl:input>

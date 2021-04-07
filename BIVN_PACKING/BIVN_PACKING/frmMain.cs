@@ -733,6 +733,7 @@ namespace BIVN_PACKING
 
         private void btnTestSerial_Click(object sender, EventArgs e)
         {
+            /*
             long decimaStart, decimaEnd, decimaSerial;
             var serialstart = "44E002267446";
             var serialend = "44E2002269745";
@@ -764,7 +765,17 @@ namespace BIVN_PACKING
                     return;
                 }
             }
-            MessageBox.Show("OK");
+            MessageBox.Show("OK");*/
+
+            OpenFileDialog choofdlog = new OpenFileDialog();
+            choofdlog.FilterIndex = 1;
+
+            if (choofdlog.ShowDialog() == DialogResult.OK)
+            {
+                string sFileName = choofdlog.FileName;
+                Common.ImportModel(sFileName);
+            }
+
         }
 
         private void ClearAll()

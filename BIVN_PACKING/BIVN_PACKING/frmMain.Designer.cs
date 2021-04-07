@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnTestSerial = new System.Windows.Forms.Button();
             this.lblsetting = new System.Windows.Forms.LinkLabel();
             this.panelBOXID = new System.Windows.Forms.Panel();
             this.llreset = new System.Windows.Forms.LinkLabel();
@@ -89,7 +90,6 @@
             this.serial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.btnTestSerial = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.panelBOXID.SuspendLayout();
             this.panelBarcode.SuspendLayout();
@@ -122,6 +122,17 @@
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = " ";
+            // 
+            // btnTestSerial
+            // 
+            this.btnTestSerial.Location = new System.Drawing.Point(341, 261);
+            this.btnTestSerial.Name = "btnTestSerial";
+            this.btnTestSerial.Size = new System.Drawing.Size(75, 23);
+            this.btnTestSerial.TabIndex = 67;
+            this.btnTestSerial.Text = "Test";
+            this.btnTestSerial.UseVisualStyleBackColor = true;
+            this.btnTestSerial.Visible = false;
+            this.btnTestSerial.Click += new System.EventHandler(this.btnTestSerial_Click);
             // 
             // lblsetting
             // 
@@ -719,17 +730,6 @@
             this.date.HeaderText = "DATE UPDATE";
             this.date.Name = "date";
             this.date.ReadOnly = true;
-            // 
-            // btnTestSerial
-            // 
-            this.btnTestSerial.Location = new System.Drawing.Point(341, 261);
-            this.btnTestSerial.Name = "btnTestSerial";
-            this.btnTestSerial.Size = new System.Drawing.Size(75, 23);
-            this.btnTestSerial.TabIndex = 67;
-            this.btnTestSerial.Text = "Test";
-            this.btnTestSerial.UseVisualStyleBackColor = true;
-            this.btnTestSerial.Visible = false;
-            this.btnTestSerial.Click += new System.EventHandler(this.btnTestSerial_Click);
             // 
             // frmMain
             // 

@@ -55,6 +55,7 @@ namespace BIVN_PACKING
             bgrwSoftInfo.DoWork += BgrwSoftInfo_DoWork;
             bgrwSoftInfo.RunWorkerCompleted += BgrwSoftInfo_RunWorkerCompleted;
             bgrwSoftInfo.RunWorkerAsync();
+            FileShare.Connect(FileShare.PATH, new System.Net.NetworkCredential(FileShare.USER, FileShare.PASSWORD));
         }
 
         private void BgrwSoftInfo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)

@@ -744,7 +744,7 @@
             this.Name = "frmMain";
             this.Padding = new System.Windows.Forms.Padding(5, 0, 5, 5);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "  BIVN_PACKING";
+            this.Text = "BIVN_PACKING";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

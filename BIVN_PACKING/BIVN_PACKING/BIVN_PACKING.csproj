@@ -578,6 +578,9 @@
     <None Include="Service References\PVSService\BIVN_PACKING.PVSService.MurataBarcodeExistResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.MurataGetPackByBoardNoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\PVSService\BIVN_PACKING.PVSService.MurataGetPackResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

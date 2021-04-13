@@ -82,12 +82,13 @@
               <s:element minOccurs="0" maxOccurs="1" name="ModelID" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="ModelName" type="s:string" />
               <s:element minOccurs="1" maxOccurs="1" name="DateCheck" nillable="true" type="s:dateTime" />
-              <s:element minOccurs="1" maxOccurs="1" name="TimeCheck" type="tns:TimeSpan" />
+              <s:element minOccurs="1" maxOccurs="1" name="TimeCheck" nillable="true" type="tns:TimeSpan" />
               <s:element minOccurs="0" maxOccurs="1" name="OperatorCode" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="ModelCustomer" type="s:string" />
               <s:element minOccurs="1" maxOccurs="1" name="JudgeResult" nillable="true" type="s:boolean" />
               <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
               <s:element minOccurs="1" maxOccurs="1" name="RetailBarrel" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="UpdateDate" nillable="true" type="s:dateTime" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -115,6 +116,20 @@
           <s:element minOccurs="0" maxOccurs="unbounded" name="MuratasEntity" nillable="true" type="tns:MuratasEntity" />
         </s:sequence>
       </s:complexType>
+      <s:element name="MurataGetPackByBoardNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="boardNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MurataGetPackByBoardNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MurataGetPackByBoardNoResult" type="tns:MuratasEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="MurataModelCusExist">
         <s:complexType>
           <s:sequence>
@@ -264,6 +279,7 @@
               <s:element minOccurs="1" maxOccurs="1" name="Content_Index" nillable="true" type="s:int" />
               <s:element minOccurs="1" maxOccurs="1" name="Content_Length" nillable="true" type="s:int" />
               <s:element minOccurs="1" maxOccurs="1" name="Location" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Is_Hexa" nillable="true" type="s:boolean" />
               <s:element minOccurs="0" maxOccurs="1" name="Des" type="s:string" />
             </s:sequence>
           </s:extension>
@@ -1617,6 +1633,12 @@
   <wsdl:message name="MurataGetPackSoapOut">
     <wsdl:part name="parameters" element="tns:MurataGetPackResponse" />
   </wsdl:message>
+  <wsdl:message name="MurataGetPackByBoardNoSoapIn">
+    <wsdl:part name="parameters" element="tns:MurataGetPackByBoardNo" />
+  </wsdl:message>
+  <wsdl:message name="MurataGetPackByBoardNoSoapOut">
+    <wsdl:part name="parameters" element="tns:MurataGetPackByBoardNoResponse" />
+  </wsdl:message>
   <wsdl:message name="MurataModelCusExistSoapIn">
     <wsdl:part name="parameters" element="tns:MurataModelCusExist" />
   </wsdl:message>
@@ -2004,6 +2026,10 @@
       <wsdl:input message="tns:MurataGetPackSoapIn" />
       <wsdl:output message="tns:MurataGetPackSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="MurataGetPackByBoardNo">
+      <wsdl:input message="tns:MurataGetPackByBoardNoSoapIn" />
+      <wsdl:output message="tns:MurataGetPackByBoardNoSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="MurataModelCusExist">
       <wsdl:input message="tns:MurataModelCusExistSoapIn" />
       <wsdl:output message="tns:MurataModelCusExistSoapOut" />
@@ -2289,6 +2315,15 @@
     </wsdl:operation>
     <wsdl:operation name="MurataGetPack">
       <soap:operation soapAction="http://tempuri.org/MurataGetPack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MurataGetPackByBoardNo">
+      <soap:operation soapAction="http://tempuri.org/MurataGetPackByBoardNo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2886,6 +2921,15 @@
     </wsdl:operation>
     <wsdl:operation name="MurataGetPack">
       <soap12:operation soapAction="http://tempuri.org/MurataGetPack" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MurataGetPackByBoardNo">
+      <soap12:operation soapAction="http://tempuri.org/MurataGetPackByBoardNo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

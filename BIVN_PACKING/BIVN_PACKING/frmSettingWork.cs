@@ -26,6 +26,7 @@ namespace BIVN_PACKING
             lblModel.Text = Model;
             this.Model = Model;
             this.boxInfo = boxInfo;
+            
             tbWoQty.SelectAll();
             tbWoQty.Focus();
         }
@@ -73,19 +74,36 @@ namespace BIVN_PACKING
             string wo = lblWoNo.Text.Trim();
 
             var modelInfo = _pvs_service.GetModelInfo(this.Model);
+            
             if (modelInfo != null)
             {
                 if (modelInfo.Content_Length is int contentLength)
                 {
-                    if (!long.TryParse(serialStart.Right(serialStart.Length - contentLength), System.Globalization.NumberStyles.HexNumber, null, out decimaStart))
+                    if (modelInfo.Is_Hexa == true)
                     {
-                        ShowMessage("FAIL", @"FAIL", $"Serial Start không hợp lệ!");
-                        return;
+                        if (!long.TryParse(serialStart.Right(serialStart.Length - contentLength), System.Globalization.NumberStyles.HexNumber, null, out decimaStart))
+                        {
+                            ShowMessage("FAIL", @"FAIL", $"Serial Start không hợp lệ!");
+                            return;
+                        }
+                        if (!long.TryParse(serialEnd.Right(serialEnd.Length - contentLength), System.Globalization.NumberStyles.HexNumber, null, out decimaEnd))
+                        {
+                            ShowMessage("FAIL", @"FAIL", $"Serial End không hợp lệ!");
+                            return;
+                        }
                     }
-                    if (!long.TryParse(serialEnd.Right(serialEnd.Length - contentLength), System.Globalization.NumberStyles.HexNumber, null, out decimaEnd))
+                    else
                     {
-                        ShowMessage("FAIL", @"FAIL", $"Serial End không hợp lệ!");
-                        return;
+                        if (!long.TryParse(serialStart.Right(serialStart.Length - contentLength), System.Globalization.NumberStyles.Number, null, out decimaStart))
+                        {
+                            ShowMessage("FAIL", @"FAIL", $"Serial Start không hợp lệ!");
+                            return;
+                        }
+                        if (!long.TryParse(serialEnd.Right(serialEnd.Length - contentLength), System.Globalization.NumberStyles.Number, null, out decimaEnd))
+                        {
+                            ShowMessage("FAIL", @"FAIL", $"Serial End không hợp lệ!");
+                            return;
+                        }
                     }
                    
                 }

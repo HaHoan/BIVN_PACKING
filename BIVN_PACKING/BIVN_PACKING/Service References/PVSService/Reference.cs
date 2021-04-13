@@ -268,6 +268,8 @@ namespace BIVN_PACKING.PVSService {
         
         private System.Nullable<bool> RetailBarrelField;
         
+        private System.Nullable<System.DateTime> UpdateDateField;
+        
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
         public string ProductionID {
             get {
@@ -346,7 +348,7 @@ namespace BIVN_PACKING.PVSService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
         public BIVN_PACKING.PVSService.TimeSpan TimeCheck {
             get {
                 return this.TimeCheckField;
@@ -420,6 +422,19 @@ namespace BIVN_PACKING.PVSService {
                 if ((this.RetailBarrelField.Equals(value) != true)) {
                     this.RetailBarrelField = value;
                     this.RaisePropertyChanged("RetailBarrel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        public System.Nullable<System.DateTime> UpdateDate {
+            get {
+                return this.UpdateDateField;
+            }
+            set {
+                if ((this.UpdateDateField.Equals(value) != true)) {
+                    this.UpdateDateField = value;
+                    this.RaisePropertyChanged("UpdateDate");
                 }
             }
         }
@@ -838,6 +853,8 @@ namespace BIVN_PACKING.PVSService {
         
         private System.Nullable<int> LocationField;
         
+        private System.Nullable<bool> Is_HexaField;
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DesField;
         
@@ -919,7 +936,20 @@ namespace BIVN_PACKING.PVSService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.Nullable<bool> Is_Hexa {
+            get {
+                return this.Is_HexaField;
+            }
+            set {
+                if ((this.Is_HexaField.Equals(value) != true)) {
+                    this.Is_HexaField = value;
+                    this.RaisePropertyChanged("Is_Hexa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
         public string Des {
             get {
                 return this.DesField;
@@ -6268,6 +6298,13 @@ namespace BIVN_PACKING.PVSService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MurataGetPack", ReplyAction="*")]
         System.Threading.Tasks.Task<BIVN_PACKING.PVSService.MurataGetPackResponse> MurataGetPackAsync(BIVN_PACKING.PVSService.MurataGetPackRequest request);
         
+        // CODEGEN: Generating message contract since element name boardNo from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MurataGetPackByBoardNo", ReplyAction="*")]
+        BIVN_PACKING.PVSService.MurataGetPackByBoardNoResponse MurataGetPackByBoardNo(BIVN_PACKING.PVSService.MurataGetPackByBoardNoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MurataGetPackByBoardNo", ReplyAction="*")]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.MurataGetPackByBoardNoResponse> MurataGetPackByBoardNoAsync(BIVN_PACKING.PVSService.MurataGetPackByBoardNoRequest request);
+        
         // CODEGEN: Generating message contract since element name modelCus from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MurataModelCusExist", ReplyAction="*")]
         BIVN_PACKING.PVSService.MurataModelCusExistResponse MurataModelCusExist(BIVN_PACKING.PVSService.MurataModelCusExistRequest request);
@@ -7017,6 +7054,74 @@ namespace BIVN_PACKING.PVSService {
         
         public MurataGetPackResponseBody(BIVN_PACKING.PVSService.MuratasEntity[] MurataGetPackResult) {
             this.MurataGetPackResult = MurataGetPackResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class MurataGetPackByBoardNoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="MurataGetPackByBoardNo", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.MurataGetPackByBoardNoRequestBody Body;
+        
+        public MurataGetPackByBoardNoRequest() {
+        }
+        
+        public MurataGetPackByBoardNoRequest(BIVN_PACKING.PVSService.MurataGetPackByBoardNoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class MurataGetPackByBoardNoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string boardNo;
+        
+        public MurataGetPackByBoardNoRequestBody() {
+        }
+        
+        public MurataGetPackByBoardNoRequestBody(string boardNo) {
+            this.boardNo = boardNo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class MurataGetPackByBoardNoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="MurataGetPackByBoardNoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.MurataGetPackByBoardNoResponseBody Body;
+        
+        public MurataGetPackByBoardNoResponse() {
+        }
+        
+        public MurataGetPackByBoardNoResponse(BIVN_PACKING.PVSService.MurataGetPackByBoardNoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class MurataGetPackByBoardNoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BIVN_PACKING.PVSService.MuratasEntity MurataGetPackByBoardNoResult;
+        
+        public MurataGetPackByBoardNoResponseBody() {
+        }
+        
+        public MurataGetPackByBoardNoResponseBody(BIVN_PACKING.PVSService.MuratasEntity MurataGetPackByBoardNoResult) {
+            this.MurataGetPackByBoardNoResult = MurataGetPackByBoardNoResult;
         }
     }
     
@@ -11208,6 +11313,31 @@ namespace BIVN_PACKING.PVSService {
             inValue.Body = new BIVN_PACKING.PVSService.MurataGetPackRequestBody();
             inValue.Body.boxID = boxID;
             return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).MurataGetPackAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BIVN_PACKING.PVSService.MurataGetPackByBoardNoResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.MurataGetPackByBoardNo(BIVN_PACKING.PVSService.MurataGetPackByBoardNoRequest request) {
+            return base.Channel.MurataGetPackByBoardNo(request);
+        }
+        
+        public BIVN_PACKING.PVSService.MuratasEntity MurataGetPackByBoardNo(string boardNo) {
+            BIVN_PACKING.PVSService.MurataGetPackByBoardNoRequest inValue = new BIVN_PACKING.PVSService.MurataGetPackByBoardNoRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.MurataGetPackByBoardNoRequestBody();
+            inValue.Body.boardNo = boardNo;
+            BIVN_PACKING.PVSService.MurataGetPackByBoardNoResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).MurataGetPackByBoardNo(inValue);
+            return retVal.Body.MurataGetPackByBoardNoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.MurataGetPackByBoardNoResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.MurataGetPackByBoardNoAsync(BIVN_PACKING.PVSService.MurataGetPackByBoardNoRequest request) {
+            return base.Channel.MurataGetPackByBoardNoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.MurataGetPackByBoardNoResponse> MurataGetPackByBoardNoAsync(string boardNo) {
+            BIVN_PACKING.PVSService.MurataGetPackByBoardNoRequest inValue = new BIVN_PACKING.PVSService.MurataGetPackByBoardNoRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.MurataGetPackByBoardNoRequestBody();
+            inValue.Body.boardNo = boardNo;
+            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).MurataGetPackByBoardNoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

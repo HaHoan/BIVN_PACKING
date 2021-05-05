@@ -128,7 +128,7 @@ namespace BIVN_PACKING
             long numberWork = decimaEnd - decimaStart + 1;
             if (numberWork != int.Parse(qty))
             {
-                ShowMessage("FAIL", @"FAIL", $"Kiểm tra lại số lượng work hoặc dải serial!");
+                ShowMessage("FAIL", @"FAIL", $"Dải serial có "+numberWork + " bản mạch. Khác với số lượng work đã nhập");
                 return;
             }
            

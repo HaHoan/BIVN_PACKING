@@ -340,7 +340,7 @@ namespace BIVN_PACKING
         }
 
 
-
+        private List<Produce> _listSerialInBox;
         private void txtBoxid_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             try
@@ -363,7 +363,8 @@ namespace BIVN_PACKING
                         txtBoxid.Focus();
                         return;
                     }
-                    _boxQty = _db.Produce.Where(x => x.BOXID == boxID).Count();
+                    _listSerialInBox = _db.Produce.Where(x => x.BOXID == boxID).ToList();
+                    _boxQty = _listSerialInBox.Count();
 
                     var woUsap = Convert.ToInt32(_boxInfo.TN_NO).ToString();
                     txtWoNo.Text = woUsap;
@@ -371,12 +372,11 @@ namespace BIVN_PACKING
                     lblQtyBoxUsap.Text = Convert.ToInt32(_boxInfo.OS_QTY).ToString();
                     lblQtyBox.Text = _boxQty.ToString();
                     txtWoQty.ResetText();
-                    var woExist = _db.Produce.Where(r => r.NAME_WO == woUsap).FirstOrDefault();
-
-                    if (woExist != null)
+                    var woQtyActual = _db.Produce.Where(r => r.NAME_WO == woUsap);
+                    if (woQtyActual.Count() != 0)
                     {
-                        var woQtyActual = _db.Produce.Where(r => r.NAME_WO == woUsap).Count();
-                        SettingWorkInfo(woUsap, woQtyActual, boxID, woExist.WO, woExist.SERIAL_START, woExist.SERIAL_END);
+                        var woInfo = woQtyActual.FirstOrDefault();
+                        SettingWorkInfo(woUsap, woQtyActual.Count(), boxID, woInfo.WO, woInfo.SERIAL_START, woInfo.SERIAL_END);
                     }
                     else
                     {
@@ -409,10 +409,9 @@ namespace BIVN_PACKING
         }
         private void ListAllSerialInBox()
         {
-            var listSerialInBox = _db.Produce.Where(m => m.BOXID == _boxInfo.BC_NO).OrderByDescending(m => m.DATECREATE).ToList();
             int i = 1;
             var catagorydata = new List<Dataview>();
-            foreach (var s in listSerialInBox)
+            foreach (var s in _listSerialInBox)
             {
                 if (s.DATECREATE is DateTime date)
                 {
@@ -689,8 +688,10 @@ namespace BIVN_PACKING
                     return;
                 }
                 ControlClick();
-                ListAllSerialInBox();
-                _boxQty = _db.Produce.Where(r => r.BOXID == boxID).Count();
+                
+                _listSerialInBox = _db.Produce.Where(r => r.BOXID == boxID).ToList();
+                _boxQty = _listSerialInBox.Count();
+                 ListAllSerialInBox();
                 _woQty = _db.Produce.Where(r => r.NAME_WO == wo).Count();
                 lblQtyBox.Text = _boxQty.ToString();
                 lblQty.Text = _woQty.ToString();

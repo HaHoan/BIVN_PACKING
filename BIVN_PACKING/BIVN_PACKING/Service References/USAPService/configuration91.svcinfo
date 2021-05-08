@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="/c4kI8d0EjSqpZKqbAEPCB7XEP0=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="VQlGw286uUNGbcl5Lc+az+6OBf0=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="USAPWebServiceSoap1">
       <properties>
@@ -112,7 +112,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="USAPWebServiceSoap1" contract="BIVN.USAPWebServiceSoap" bindingType="basicHttpBinding" address="http://172.28.10.17:99/Service/USAPWebService.asmx" bindingConfiguration="USAPWebServiceSoap1">
+    <endpoint name="USAPWebServiceSoap1" contract="USAPService.USAPWebServiceSoap" bindingType="basicHttpBinding" address="http://172.28.10.17:99/Service/USAPWebService.asmx" bindingConfiguration="USAPWebServiceSoap1">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://172.28.10.17:99/Service/USAPWebService.asmx</serializedValue>
@@ -127,7 +127,7 @@
           <serializedValue>USAPWebServiceSoap1</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BIVN.USAPWebServiceSoap</serializedValue>
+          <serializedValue>USAPService.USAPWebServiceSoap</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>

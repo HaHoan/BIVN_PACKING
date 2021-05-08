@@ -6319,7 +6319,7 @@ namespace BIVN_PACKING.PVSService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MurataBarcodeExist", ReplyAction="*")]
         System.Threading.Tasks.Task<BIVN_PACKING.PVSService.MurataBarcodeExistResponse> MurataBarcodeExistAsync(BIVN_PACKING.PVSService.MurataBarcodeExistRequest request);
         
-        // CODEGEN: Generating message contract since element name stationNo from namespace http://tempuri.org/ is not marked nillable
+        // CODEGEN: Generating message contract since element name producId from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MasterInfos", ReplyAction="*")]
         BIVN_PACKING.PVSService.MasterInfosResponse MasterInfos(BIVN_PACKING.PVSService.MasterInfosRequest request);
         
@@ -6485,13 +6485,6 @@ namespace BIVN_PACKING.PVSService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetWorkOrderItem", ReplyAction="*")]
         System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetWorkOrderItemResponse> GetWorkOrderItemAsync(BIVN_PACKING.PVSService.GetWorkOrderItemRequest request);
-        
-        // CODEGEN: Generating message contract since element name boardNo from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetScanningLogsByBoardNo", ReplyAction="*")]
-        BIVN_PACKING.PVSService.GetScanningLogsByBoardNoResponse GetScanningLogsByBoardNo(BIVN_PACKING.PVSService.GetScanningLogsByBoardNoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetScanningLogsByBoardNo", ReplyAction="*")]
-        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetScanningLogsByBoardNoResponse> GetScanningLogsByBoardNoAsync(BIVN_PACKING.PVSService.GetScanningLogsByBoardNoRequest request);
         
         // CODEGEN: Generating message contract since element name boardNo from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetScanningLogsWithParam", ReplyAction="*")]
@@ -7285,12 +7278,16 @@ namespace BIVN_PACKING.PVSService {
     public partial class MasterInfosRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string producId;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
         public string stationNo;
         
         public MasterInfosRequestBody() {
         }
         
-        public MasterInfosRequestBody(string stationNo) {
+        public MasterInfosRequestBody(string producId, string stationNo) {
+            this.producId = producId;
             this.stationNo = stationNo;
         }
     }
@@ -8807,74 +8804,6 @@ namespace BIVN_PACKING.PVSService {
         
         public GetWorkOrderItemResponseBody(BIVN_PACKING.PVSService.WORK_ORDER_ITEMSEntity GetWorkOrderItemResult) {
             this.GetWorkOrderItemResult = GetWorkOrderItemResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetScanningLogsByBoardNoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetScanningLogsByBoardNo", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.PVSService.GetScanningLogsByBoardNoRequestBody Body;
-        
-        public GetScanningLogsByBoardNoRequest() {
-        }
-        
-        public GetScanningLogsByBoardNoRequest(BIVN_PACKING.PVSService.GetScanningLogsByBoardNoRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetScanningLogsByBoardNoRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string boardNo;
-        
-        public GetScanningLogsByBoardNoRequestBody() {
-        }
-        
-        public GetScanningLogsByBoardNoRequestBody(string boardNo) {
-            this.boardNo = boardNo;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetScanningLogsByBoardNoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetScanningLogsByBoardNoResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.PVSService.GetScanningLogsByBoardNoResponseBody Body;
-        
-        public GetScanningLogsByBoardNoResponse() {
-        }
-        
-        public GetScanningLogsByBoardNoResponse(BIVN_PACKING.PVSService.GetScanningLogsByBoardNoResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetScanningLogsByBoardNoResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public BIVN_PACKING.PVSService.SCANNING_LOGSEntity[] GetScanningLogsByBoardNoResult;
-        
-        public GetScanningLogsByBoardNoResponseBody() {
-        }
-        
-        public GetScanningLogsByBoardNoResponseBody(BIVN_PACKING.PVSService.SCANNING_LOGSEntity[] GetScanningLogsByBoardNoResult) {
-            this.GetScanningLogsByBoardNoResult = GetScanningLogsByBoardNoResult;
         }
     }
     
@@ -11395,9 +11324,10 @@ namespace BIVN_PACKING.PVSService {
             return base.Channel.MasterInfos(request);
         }
         
-        public BIVN_PACKING.PVSService.MasterEntity[] MasterInfos(string stationNo) {
+        public BIVN_PACKING.PVSService.MasterEntity[] MasterInfos(string producId, string stationNo) {
             BIVN_PACKING.PVSService.MasterInfosRequest inValue = new BIVN_PACKING.PVSService.MasterInfosRequest();
             inValue.Body = new BIVN_PACKING.PVSService.MasterInfosRequestBody();
+            inValue.Body.producId = producId;
             inValue.Body.stationNo = stationNo;
             BIVN_PACKING.PVSService.MasterInfosResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).MasterInfos(inValue);
             return retVal.Body.MasterInfosResult;
@@ -11408,9 +11338,10 @@ namespace BIVN_PACKING.PVSService {
             return base.Channel.MasterInfosAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.MasterInfosResponse> MasterInfosAsync(string stationNo) {
+        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.MasterInfosResponse> MasterInfosAsync(string producId, string stationNo) {
             BIVN_PACKING.PVSService.MasterInfosRequest inValue = new BIVN_PACKING.PVSService.MasterInfosRequest();
             inValue.Body = new BIVN_PACKING.PVSService.MasterInfosRequestBody();
+            inValue.Body.producId = producId;
             inValue.Body.stationNo = stationNo;
             return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).MasterInfosAsync(inValue);
         }
@@ -11976,31 +11907,6 @@ namespace BIVN_PACKING.PVSService {
             inValue.Body.boardNo = boardNo;
             inValue.Body.stationNo = stationNo;
             return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetWorkOrderItemAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BIVN_PACKING.PVSService.GetScanningLogsByBoardNoResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.GetScanningLogsByBoardNo(BIVN_PACKING.PVSService.GetScanningLogsByBoardNoRequest request) {
-            return base.Channel.GetScanningLogsByBoardNo(request);
-        }
-        
-        public BIVN_PACKING.PVSService.SCANNING_LOGSEntity[] GetScanningLogsByBoardNo(string boardNo) {
-            BIVN_PACKING.PVSService.GetScanningLogsByBoardNoRequest inValue = new BIVN_PACKING.PVSService.GetScanningLogsByBoardNoRequest();
-            inValue.Body = new BIVN_PACKING.PVSService.GetScanningLogsByBoardNoRequestBody();
-            inValue.Body.boardNo = boardNo;
-            BIVN_PACKING.PVSService.GetScanningLogsByBoardNoResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetScanningLogsByBoardNo(inValue);
-            return retVal.Body.GetScanningLogsByBoardNoResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetScanningLogsByBoardNoResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.GetScanningLogsByBoardNoAsync(BIVN_PACKING.PVSService.GetScanningLogsByBoardNoRequest request) {
-            return base.Channel.GetScanningLogsByBoardNoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetScanningLogsByBoardNoResponse> GetScanningLogsByBoardNoAsync(string boardNo) {
-            BIVN_PACKING.PVSService.GetScanningLogsByBoardNoRequest inValue = new BIVN_PACKING.PVSService.GetScanningLogsByBoardNoRequest();
-            inValue.Body = new BIVN_PACKING.PVSService.GetScanningLogsByBoardNoRequestBody();
-            inValue.Body.boardNo = boardNo;
-            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetScanningLogsByBoardNoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

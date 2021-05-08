@@ -1,5 +1,4 @@
 ﻿using BIVN_PACKING.Business;
-using BIVN_PACKING.Entitis;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +15,7 @@ namespace BIVN_PACKING
 {
     public partial class frmSearch : Form
     {
-        BIVNEntities _db = new BIVNEntities();
+        BIVNService.BIVNWebServiceSoapClient _bivnService = new BIVNService.BIVNWebServiceSoapClient();
         User Data = new User();
         string result = "";
 
@@ -62,13 +61,10 @@ namespace BIVN_PACKING
         private void ressearch_Click(object sender, EventArgs e)
         {
             ShowMessage("Default", @"[N\A]", "no result");
-           // var list = _db.Produce.ToList();
-           // list.Reverse();
             dataGridView1.DataSource = null;
-           // DgvPerformance(this.dataGridView1);
             txtSearch.ResetText();
             txtSearch.Focus();
-           
+
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -80,7 +76,7 @@ namespace BIVN_PACKING
                 txtSearch.Focus();
                 return;
             }
-            var info = _db.Produce.Where(x => x.SERIAL == result || x.NAME_WO == result).ToList();
+            var info = _bivnService.GetListPack("", "", "", result).ToList();
             DialogResult dialogResult = MessageBox.Show($"Do you really want to delete?", "Delete Serial", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
@@ -88,8 +84,8 @@ namespace BIVN_PACKING
                 {
                     foreach (var item in info)
                     {
-                        _db.Produce.Remove(item);
-                        _db.SaveChanges();
+                        //  _db.Produce.Remove(item);
+                        // _db.SaveChanges();
                         lblMessage.Text = $"Xóa thành công!";
                     }
                 }
@@ -111,23 +107,10 @@ namespace BIVN_PACKING
             {
                 if (txtSearch.Text != "")
                 {
-                    var data = _db.Produce.Where(x => x.BOXID.Contains(txtSearch.Text) || x.MODEL.Contains(txtSearch.Text) || x.SERIAL.Contains(txtSearch.Text) || x.NAME_WO.Contains(txtSearch.Text)).ToList();
+                    var data = _bivnService.GetListPack("", "", "", txtSearch.Text.Trim()).ToList();
                     data.Reverse();
                     dataGridView1.DataSource = data;
                     DgvPerformance(this.dataGridView1);
-                    //if (dataGridView1.DataSource != null)
-                    //{
-                    //    dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    //    dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    //    dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    //    dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    //    dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    //    dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    //    dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    //    dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    //    dataGridView1.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    //    dataGridView1.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    //}
                     if (data.Count != 0)
                     {
                         result = txtSearch.Text;
@@ -141,26 +124,11 @@ namespace BIVN_PACKING
                         lblMessage.Text = "no results";
                         txtSearch.Focus();
                     }
-                    var user = _db.Users.Where(x => x.USER_NAME == Properties.Settings.Default.user).FirstOrDefault();
-                    if (user.IS_ADMIN == true)
-                    {
-                        var serial = _db.Produce.Where(x => x.SERIAL == result || x.NAME_WO == result || x.BOXID == result || x.MODEL == result).FirstOrDefault();
-                        if (serial != null)
-                        {
-                            btnXoa.Visible = true;
-
-                        }
-                    }
 
                 }
-                //else
-                //{
-                //    var da = _db.Produce.ToList();
-                //    da.Reverse();
-                //    dataGridView1.DataSource = da;
-                //}
+
             }
-          
+
         }
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
@@ -233,18 +201,30 @@ namespace BIVN_PACKING
 
         private void dtptimestart_ValueChanged(object sender, EventArgs e)
         {
-            List<Produce> listdata = new List<Produce>();
+            List<BIVNService.BIVNPackEntity> listdata = new List<BIVNService.BIVNPackEntity>();
             string datestart = dtptimestart.Value.Date.ToString();
             string dateend = dtptimeend.Value.Date.ToString();
             DateTime dt1 = DateTime.Parse($"{datestart}").Date;
             DateTime dt2 = DateTime.Parse($"{dateend}").Date;
-            var getdatabytime = _db.Produce.ToList();
+            var getdatabytime = _bivnService.GetListPack("", "", "", "").ToList();
             foreach (var item in getdatabytime)
             {
-                DateTime? getdata = item.DATECREATE.Value.Date;
+                DateTime? getdata = item.DATECREATE.Date;
                 if (dt1 <= getdata && getdata <= dt2)
                 {
-                    var viewdata = new Produce() { BOXID = item.BOXID, WO = item.WO, MODEL = item.MODEL, SERIAL_START = item.SERIAL_START, SERIAL_END = item.SERIAL_END, AMOUNT = item.AMOUNT, SERIAL = item.SERIAL, DATECREATE = item.DATECREATE, USER_NAME = item.USER_NAME, NAME_WO = item.NAME_WO };
+                    var viewdata = new BIVNService.BIVNPackEntity()
+                    {
+                        BOXID = item.BOXID,
+                        WO = item.WO,
+                        MODEL = item.MODEL,
+                        SERIAL_START = item.SERIAL_START,
+                        SERIAL_END = item.SERIAL_END,
+                        AMOUNT = item.AMOUNT,
+                        SERIAL = item.SERIAL,
+                        DATECREATE = item.DATECREATE,
+                        USER_NAME = item.USER_NAME,
+                        NAME_WO = item.NAME_WO
+                    };
                     listdata.Add(viewdata);
                 }
             }
@@ -269,18 +249,30 @@ namespace BIVN_PACKING
 
         private void dtptimeend_ValueChanged(object sender, EventArgs e)
         {
-            List<Produce> listdata = new List<Produce>();
+            var listdata = new List<BIVNService.BIVNPackEntity>();
             string datestart = dtptimestart.Value.Date.ToString();
             string dateend = dtptimeend.Value.Date.ToString();
             DateTime dt1 = DateTime.Parse($"{datestart}").Date;
             DateTime dt2 = DateTime.Parse($"{dateend}").Date;
-            var getdatabytime = _db.Produce.ToList();
+            var getdatabytime = _bivnService.GetListPack("", "", "", "").ToList();
             foreach (var item in getdatabytime)
             {
-                DateTime? getdata = item.DATECREATE.Value.Date;
+                DateTime? getdata = item.DATECREATE.Date;
                 if (dt1 <= getdata && getdata <= dt2)
                 {
-                    var viewdata = new Produce() { BOXID = item.BOXID, WO = item.WO, MODEL = item.MODEL, SERIAL_START = item.SERIAL_START, SERIAL_END = item.SERIAL_END, AMOUNT = item.AMOUNT, SERIAL = item.SERIAL, DATECREATE = item.DATECREATE, USER_NAME = item.USER_NAME, NAME_WO = item.NAME_WO };
+                    var viewdata = new BIVNService.BIVNPackEntity()
+                    {
+                        BOXID = item.BOXID,
+                        WO = item.WO,
+                        MODEL = item.MODEL,
+                        SERIAL_START = item.SERIAL_START,
+                        SERIAL_END = item.SERIAL_END,
+                        AMOUNT = item.AMOUNT,
+                        SERIAL = item.SERIAL,
+                        DATECREATE = item.DATECREATE,
+                        USER_NAME = item.USER_NAME,
+                        NAME_WO = item.NAME_WO
+                    };
                     listdata.Add(viewdata);
                 }
             }

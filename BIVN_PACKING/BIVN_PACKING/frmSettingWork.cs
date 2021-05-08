@@ -18,15 +18,14 @@ namespace BIVN_PACKING
         private PVSService.PVSWebServiceSoapClient _pvs_service = new PVSService.PVSWebServiceSoapClient();
         private string Model;
       
-        private BIVN.BCLBFLMEntity boxInfo;
-        public frmSettingWork(string WoNo, string Model, BIVN.BCLBFLMEntity boxInfo)
+        private USAPService.BCLBFLMEntity boxInfo;
+        public frmSettingWork(USAPService.BCLBFLMEntity boxInfo)
         {
             InitializeComponent();
-            lblWoNo.Text = WoNo;
-            lblModel.Text = Model;
-            this.Model = Model;
             this.boxInfo = boxInfo;
-            
+            lblWoNo.Text = Convert.ToInt32(boxInfo.TN_NO).ToString();
+            lblModel.Text = boxInfo.PART_NO;
+            this.Model = boxInfo.PART_NO;
             tbWoQty.SelectAll();
             tbWoQty.Focus();
         }

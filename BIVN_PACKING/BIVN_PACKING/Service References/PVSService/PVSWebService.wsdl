@@ -161,6 +161,7 @@
       <s:element name="MasterInfos">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="producId" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="stationNo" type="s:string" />
           </s:sequence>
         </s:complexType>
@@ -690,17 +691,21 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetScanningLogsByBoardNo">
+      <s:element name="GetScanningLogsWithParam">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="boardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orderNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" nillable="true" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="productId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cus" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetScanningLogsByBoardNoResponse">
+      <s:element name="GetScanningLogsWithParamResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetScanningLogsByBoardNoResult" type="tns:ArrayOfSCANNING_LOGSEntity" />
+            <s:element minOccurs="0" maxOccurs="1" name="GetScanningLogsWithParamResult" type="tns:ArrayOfSCANNING_LOGSEntity" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -746,24 +751,6 @@
           </s:extension>
         </s:complexContent>
       </s:complexType>
-      <s:element name="GetScanningLogsWithParam">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="boardNo" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="orderNo" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="orderId" nillable="true" type="s1:guid" />
-            <s:element minOccurs="0" maxOccurs="1" name="productId" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="cus" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetScanningLogsWithParamResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetScanningLogsWithParamResult" type="tns:ArrayOfSCANNING_LOGSEntity" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="GetScanningLogsByQuery">
         <s:complexType>
           <s:sequence>
@@ -1795,12 +1782,6 @@
   <wsdl:message name="GetWorkOrderItemSoapOut">
     <wsdl:part name="parameters" element="tns:GetWorkOrderItemResponse" />
   </wsdl:message>
-  <wsdl:message name="GetScanningLogsByBoardNoSoapIn">
-    <wsdl:part name="parameters" element="tns:GetScanningLogsByBoardNo" />
-  </wsdl:message>
-  <wsdl:message name="GetScanningLogsByBoardNoSoapOut">
-    <wsdl:part name="parameters" element="tns:GetScanningLogsByBoardNoResponse" />
-  </wsdl:message>
   <wsdl:message name="GetScanningLogsWithParamSoapIn">
     <wsdl:part name="parameters" element="tns:GetScanningLogsWithParam" />
   </wsdl:message>
@@ -2133,10 +2114,6 @@
     <wsdl:operation name="GetWorkOrderItem">
       <wsdl:input message="tns:GetWorkOrderItemSoapIn" />
       <wsdl:output message="tns:GetWorkOrderItemSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetScanningLogsByBoardNo">
-      <wsdl:input message="tns:GetScanningLogsByBoardNoSoapIn" />
-      <wsdl:output message="tns:GetScanningLogsByBoardNoSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetScanningLogsWithParam">
       <wsdl:input message="tns:GetScanningLogsWithParamSoapIn" />
@@ -2558,15 +2535,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetWorkOrderItem">
       <soap:operation soapAction="http://tempuri.org/GetWorkOrderItem" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetScanningLogsByBoardNo">
-      <soap:operation soapAction="http://tempuri.org/GetScanningLogsByBoardNo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3164,15 +3132,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetWorkOrderItem">
       <soap12:operation soapAction="http://tempuri.org/GetWorkOrderItem" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetScanningLogsByBoardNo">
-      <soap12:operation soapAction="http://tempuri.org/GetScanningLogsByBoardNo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

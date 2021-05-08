@@ -42,24 +42,24 @@
             this.txtBarcode = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lblQtyWO = new System.Windows.Forms.Label();
-            this.lblQty = new System.Windows.Forms.Label();
+            this.lblQtyWoActual = new System.Windows.Forms.Label();
             this.lblNG = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblQtyBoxUsap = new System.Windows.Forms.Label();
             this.lblQtyBox = new System.Windows.Forms.Label();
+            this.lblQtyBoxActual = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lblSearch = new System.Windows.Forms.LinkLabel();
             this.RESULT = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtModel = new System.Windows.Forms.TextBox();
-            this.txtWoNo = new System.Windows.Forms.TextBox();
+            this.txbModel = new System.Windows.Forms.TextBox();
+            this.txbWoNo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtWoQty = new System.Windows.Forms.TextBox();
+            this.txbWoQty = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtSerialStart = new System.Windows.Forms.TextBox();
-            this.txtSeriaEnd = new System.Windows.Forms.TextBox();
+            this.txbSerialStart = new System.Windows.Forms.TextBox();
+            this.txbSeriaEnd = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblMessage = new System.Windows.Forms.Label();
@@ -89,6 +89,7 @@
             this.BOXID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.USER_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.groupBox3.SuspendLayout();
             this.panelBOXID.SuspendLayout();
@@ -142,7 +143,7 @@
             this.lblsetting.Name = "lblsetting";
             this.lblsetting.Size = new System.Drawing.Size(32, 33);
             this.lblsetting.TabIndex = 66;
-            this.lblsetting.Click += new System.EventHandler(this.lblsetting_Click_1);
+            this.lblsetting.Visible = false;
             // 
             // panelBOXID
             // 
@@ -231,7 +232,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.lblQtyWO);
-            this.groupBox4.Controls.Add(this.lblQty);
+            this.groupBox4.Controls.Add(this.lblQtyWoActual);
             this.groupBox4.Controls.Add(this.lblNG);
             this.groupBox4.Location = new System.Drawing.Point(7, 96);
             this.groupBox4.Name = "groupBox4";
@@ -251,16 +252,16 @@
             this.lblQtyWO.Text = "0";
             this.lblQtyWO.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblQty
+            // lblQtyWoActual
             // 
-            this.lblQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQty.ForeColor = System.Drawing.Color.Blue;
-            this.lblQty.Location = new System.Drawing.Point(51, 13);
-            this.lblQty.Name = "lblQty";
-            this.lblQty.Size = new System.Drawing.Size(96, 19);
-            this.lblQty.TabIndex = 5;
-            this.lblQty.Text = "0";
-            this.lblQty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblQtyWoActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtyWoActual.ForeColor = System.Drawing.Color.Blue;
+            this.lblQtyWoActual.Location = new System.Drawing.Point(51, 13);
+            this.lblQtyWoActual.Name = "lblQtyWoActual";
+            this.lblQtyWoActual.Size = new System.Drawing.Size(96, 19);
+            this.lblQtyWoActual.TabIndex = 5;
+            this.lblQtyWoActual.Text = "0";
+            this.lblQtyWoActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblNG
             // 
@@ -275,8 +276,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lblQtyBoxUsap);
             this.groupBox2.Controls.Add(this.lblQtyBox);
+            this.groupBox2.Controls.Add(this.lblQtyBoxActual);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Location = new System.Drawing.Point(384, 100);
             this.groupBox2.Name = "groupBox2";
@@ -285,27 +286,27 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "SL / T";
             // 
-            // lblQtyBoxUsap
-            // 
-            this.lblQtyBoxUsap.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQtyBoxUsap.ForeColor = System.Drawing.Color.Green;
-            this.lblQtyBoxUsap.Location = new System.Drawing.Point(104, 10);
-            this.lblQtyBoxUsap.Name = "lblQtyBoxUsap";
-            this.lblQtyBoxUsap.Size = new System.Drawing.Size(55, 31);
-            this.lblQtyBoxUsap.TabIndex = 3;
-            this.lblQtyBoxUsap.Text = "0";
-            this.lblQtyBoxUsap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lblQtyBox
             // 
             this.lblQtyBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQtyBox.ForeColor = System.Drawing.Color.Blue;
-            this.lblQtyBox.Location = new System.Drawing.Point(26, 10);
+            this.lblQtyBox.ForeColor = System.Drawing.Color.Green;
+            this.lblQtyBox.Location = new System.Drawing.Point(104, 10);
             this.lblQtyBox.Name = "lblQtyBox";
-            this.lblQtyBox.Size = new System.Drawing.Size(57, 31);
-            this.lblQtyBox.TabIndex = 5;
+            this.lblQtyBox.Size = new System.Drawing.Size(55, 31);
+            this.lblQtyBox.TabIndex = 3;
             this.lblQtyBox.Text = "0";
             this.lblQtyBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblQtyBoxActual
+            // 
+            this.lblQtyBoxActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtyBoxActual.ForeColor = System.Drawing.Color.Blue;
+            this.lblQtyBoxActual.Location = new System.Drawing.Point(26, 10);
+            this.lblQtyBoxActual.Name = "lblQtyBoxActual";
+            this.lblQtyBoxActual.Size = new System.Drawing.Size(57, 31);
+            this.lblQtyBoxActual.TabIndex = 5;
+            this.lblQtyBoxActual.Text = "0";
+            this.lblQtyBoxActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label10
             // 
@@ -340,15 +341,15 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtModel);
-            this.groupBox1.Controls.Add(this.txtWoNo);
+            this.groupBox1.Controls.Add(this.txbModel);
+            this.groupBox1.Controls.Add(this.txbWoNo);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtWoQty);
+            this.groupBox1.Controls.Add(this.txbWoQty);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtSerialStart);
-            this.groupBox1.Controls.Add(this.txtSeriaEnd);
+            this.groupBox1.Controls.Add(this.txbSerialStart);
+            this.groupBox1.Controls.Add(this.txbSeriaEnd);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Location = new System.Drawing.Point(7, 136);
             this.groupBox1.Name = "groupBox1";
@@ -356,29 +357,29 @@
             this.groupBox1.TabIndex = 52;
             this.groupBox1.TabStop = false;
             // 
-            // txtModel
+            // txbModel
             // 
-            this.txtModel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtModel.Enabled = false;
-            this.txtModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModel.Location = new System.Drawing.Point(116, 60);
-            this.txtModel.Name = "txtModel";
-            this.txtModel.ReadOnly = true;
-            this.txtModel.Size = new System.Drawing.Size(174, 20);
-            this.txtModel.TabIndex = 66;
-            this.txtModel.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtModel_PreviewKeyDown);
+            this.txbModel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txbModel.Enabled = false;
+            this.txbModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbModel.Location = new System.Drawing.Point(116, 60);
+            this.txbModel.Name = "txbModel";
+            this.txbModel.ReadOnly = true;
+            this.txbModel.Size = new System.Drawing.Size(174, 20);
+            this.txbModel.TabIndex = 66;
+            this.txbModel.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtModel_PreviewKeyDown);
             // 
-            // txtWoNo
+            // txbWoNo
             // 
-            this.txtWoNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtWoNo.Enabled = false;
-            this.txtWoNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWoNo.Location = new System.Drawing.Point(115, 10);
-            this.txtWoNo.Name = "txtWoNo";
-            this.txtWoNo.ReadOnly = true;
-            this.txtWoNo.Size = new System.Drawing.Size(174, 20);
-            this.txtWoNo.TabIndex = 51;
-            this.txtWoNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWoNo_KeyPress);
+            this.txbWoNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txbWoNo.Enabled = false;
+            this.txbWoNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbWoNo.Location = new System.Drawing.Point(115, 10);
+            this.txbWoNo.Name = "txbWoNo";
+            this.txbWoNo.ReadOnly = true;
+            this.txbWoNo.Size = new System.Drawing.Size(174, 20);
+            this.txbWoNo.TabIndex = 51;
+            this.txbWoNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWoNo_KeyPress);
             // 
             // label6
             // 
@@ -398,18 +399,18 @@
             this.label3.TabIndex = 30;
             this.label3.Text = "WO Qty:";
             // 
-            // txtWoQty
+            // txbWoQty
             // 
-            this.txtWoQty.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtWoQty.Enabled = false;
-            this.txtWoQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWoQty.Location = new System.Drawing.Point(115, 35);
-            this.txtWoQty.Name = "txtWoQty";
-            this.txtWoQty.ReadOnly = true;
-            this.txtWoQty.Size = new System.Drawing.Size(174, 20);
-            this.txtWoQty.TabIndex = 28;
-            this.txtWoQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWO_KeyPress);
-            this.txtWoQty.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtWO_PreviewKeyDown);
+            this.txbWoQty.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txbWoQty.Enabled = false;
+            this.txbWoQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbWoQty.Location = new System.Drawing.Point(115, 35);
+            this.txbWoQty.Name = "txbWoQty";
+            this.txbWoQty.ReadOnly = true;
+            this.txbWoQty.Size = new System.Drawing.Size(174, 20);
+            this.txbWoQty.TabIndex = 28;
+            this.txbWoQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWO_KeyPress);
+            this.txbWoQty.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtWO_PreviewKeyDown);
             // 
             // label2
             // 
@@ -429,29 +430,29 @@
             this.label4.TabIndex = 47;
             this.label4.Text = "Serial end:";
             // 
-            // txtSerialStart
+            // txbSerialStart
             // 
-            this.txtSerialStart.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtSerialStart.Enabled = false;
-            this.txtSerialStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSerialStart.Location = new System.Drawing.Point(115, 85);
-            this.txtSerialStart.Name = "txtSerialStart";
-            this.txtSerialStart.ReadOnly = true;
-            this.txtSerialStart.Size = new System.Drawing.Size(174, 20);
-            this.txtSerialStart.TabIndex = 44;
-            this.txtSerialStart.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSerialStart_KeyPress);
+            this.txbSerialStart.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txbSerialStart.Enabled = false;
+            this.txbSerialStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSerialStart.Location = new System.Drawing.Point(115, 85);
+            this.txbSerialStart.Name = "txbSerialStart";
+            this.txbSerialStart.ReadOnly = true;
+            this.txbSerialStart.Size = new System.Drawing.Size(174, 20);
+            this.txbSerialStart.TabIndex = 44;
+            this.txbSerialStart.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSerialStart_KeyPress);
             // 
-            // txtSeriaEnd
+            // txbSeriaEnd
             // 
-            this.txtSeriaEnd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtSeriaEnd.Enabled = false;
-            this.txtSeriaEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSeriaEnd.Location = new System.Drawing.Point(115, 110);
-            this.txtSeriaEnd.Name = "txtSeriaEnd";
-            this.txtSeriaEnd.ReadOnly = true;
-            this.txtSeriaEnd.Size = new System.Drawing.Size(174, 20);
-            this.txtSeriaEnd.TabIndex = 45;
-            this.txtSeriaEnd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSeriaEnd_KeyPress);
+            this.txbSeriaEnd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txbSeriaEnd.Enabled = false;
+            this.txbSeriaEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSeriaEnd.Location = new System.Drawing.Point(115, 110);
+            this.txbSeriaEnd.Name = "txbSeriaEnd";
+            this.txbSeriaEnd.ReadOnly = true;
+            this.txbSeriaEnd.Size = new System.Drawing.Size(174, 20);
+            this.txbSeriaEnd.TabIndex = 45;
+            this.txbSeriaEnd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSeriaEnd_KeyPress);
             // 
             // label8
             // 
@@ -670,7 +671,6 @@
             this.register.Size = new System.Drawing.Size(49, 20);
             this.register.Text = "Register";
             this.register.Visible = false;
-            this.register.Click += new System.EventHandler(this.register_Click);
             // 
             // toolStripStatusLabel7
             // 
@@ -679,7 +679,6 @@
             this.toolStripStatusLabel7.Size = new System.Drawing.Size(76, 20);
             this.toolStripStatusLabel7.Text = "System Users";
             this.toolStripStatusLabel7.Visible = false;
-            this.toolStripStatusLabel7.Click += new System.EventHandler(this.toolStripStatusLabel7_Click);
             // 
             // dgrvListSerialInBox
             // 
@@ -691,7 +690,8 @@
             this.NO,
             this.BOXID,
             this.serial,
-            this.date});
+            this.date,
+            this.USER_NAME});
             this.dgrvListSerialInBox.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgrvListSerialInBox.Location = new System.Drawing.Point(5, 359);
             this.dgrvListSerialInBox.Name = "dgrvListSerialInBox";
@@ -721,15 +721,22 @@
             this.serial.HeaderText = "SERIAL";
             this.serial.Name = "serial";
             this.serial.ReadOnly = true;
-            this.serial.Width = 300;
+            this.serial.Width = 200;
             // 
             // date
             // 
             this.date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.date.DataPropertyName = "date";
+            this.date.DataPropertyName = "DATECREATE";
             this.date.HeaderText = "DATE UPDATE";
             this.date.Name = "date";
             this.date.ReadOnly = true;
+            // 
+            // USER_NAME
+            // 
+            this.USER_NAME.DataPropertyName = "USER_NAME";
+            this.USER_NAME.HeaderText = "USERNAME";
+            this.USER_NAME.Name = "USER_NAME";
+            this.USER_NAME.ReadOnly = true;
             // 
             // frmMain
             // 
@@ -768,6 +775,11 @@
 
         }
 
+        private void DgrvListSerialInBox_RowContextMenuStripNeeded(object sender, System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox3;
@@ -779,7 +791,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblQty;
+        private System.Windows.Forms.Label lblQtyWoActual;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label RESULT;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -797,15 +809,15 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
         private System.Windows.Forms.ToolStripStatusLabel tstAccount;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label lblQtyBoxUsap;
         private System.Windows.Forms.Label lblQtyBox;
+        private System.Windows.Forms.Label lblQtyBoxActual;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtWoQty;
+        private System.Windows.Forms.TextBox txbWoQty;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtSerialStart;
-        private System.Windows.Forms.TextBox txtSeriaEnd;
+        private System.Windows.Forms.TextBox txbSerialStart;
+        private System.Windows.Forms.TextBox txbSeriaEnd;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ToolStripStatusLabel tuong;
         private System.Windows.Forms.ToolStripStatusLabel register;
@@ -815,21 +827,22 @@
         private System.Windows.Forms.Panel panelBOXID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtBoxid;
-        private System.Windows.Forms.TextBox txtWoNo;
+        private System.Windows.Forms.TextBox txbWoNo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.LinkLabel llreset;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel8;
         private System.Windows.Forms.LinkLabel lblsetting;
-        private System.Windows.Forms.TextBox txtModel;
+        private System.Windows.Forms.TextBox txbModel;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
         private System.Windows.Forms.LinkLabel lblResetBarcode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BOXID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel lblVersion;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button btnTestSerial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BOXID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn USER_NAME;
     }
 }

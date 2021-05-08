@@ -32,7 +32,7 @@
     <MinimumRequiredVersion>1.0.0.15</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>60</ApplicationRevision>
+    <ApplicationRevision>61</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -211,31 +211,6 @@
     <Compile Include="Business\User.cs" />
     <Compile Include="Business\UserClaas.cs" />
     <Compile Include="Common.cs" />
-    <Compile Include="DAL\Database.cs" />
-    <Compile Include="Entitis\ModelEntitys.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelEntitys.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entitis\ModelEntitys.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelEntitys.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entitis\ModelEntitys.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelEntitys.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Entitis\Models.cs">
-      <DependentUpon>ModelEntitys.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entitis\Produce.cs">
-      <DependentUpon>ModelEntitys.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entitis\Users.cs">
-      <DependentUpon>ModelEntitys.tt</DependentUpon>
-    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,19 +237,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="frmSetting.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Service References\BIVNService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="frmSetting.Designer.cs">
-      <DependentUpon>frmSetting.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Register.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Register.Designer.cs">
-      <DependentUpon>Register.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\BIVN\Reference.cs">
+    <Compile Include="Service References\USAPService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -283,12 +251,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="SystemUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SystemUser.Designer.cs">
-      <DependentUpon>SystemUser.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -312,23 +274,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="frmSetting.resx">
-      <DependentUpon>frmSetting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Register.resx">
-      <DependentUpon>Register.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SystemUser.resx">
-      <DependentUpon>SystemUser.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="BIVN_PACKING_TemporaryKey.pfx" />
-    <EntityDeploy Include="Entitis\ModelEntitys.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelEntitys.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Entitis\ModelEntitys.edmx.diagram">
-      <DependentUpon>ModelEntitys.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -340,37 +286,47 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\BIVN\BIVN_PACKING.BIVN.BCLBFLMEntity.datasource">
+    <None Include="Service References\BIVNService\BIVNWebService.wsdl" />
+    <None Include="Service References\BIVNService\BIVN_PACKING.BIVNService.BIVNPackEntity.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\BIVN\BIVN_PACKING.BIVN.DailyResponse.datasource">
+    <None Include="Service References\BIVNService\BIVN_PACKING.BIVNService.GetListPackResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\BIVN\BIVN_PACKING.BIVN.GetActualProductResponse.datasource">
+    <None Include="Service References\BIVNService\BIVN_PACKING.BIVNService.SaveFormResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\BIVN\BIVN_PACKING.BIVN.GetActualProductWidthKeyResponse.datasource">
+    <None Include="Service References\USAPService\BIVN_PACKING.USAPService.BCLBFLMEntity.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\BIVN\BIVN_PACKING.BIVN.GetByBcNoResponse.datasource">
+    <None Include="Service References\USAPService\BIVN_PACKING.USAPService.DailyResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\BIVN\BIVN_PACKING.BIVN.GetByIssueSheetResponse.datasource">
+    <None Include="Service References\USAPService\BIVN_PACKING.USAPService.GetActualProductResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\BIVN\BIVN_PACKING.BIVN.GetDataPointConfirmsResponse.datasource">
+    <None Include="Service References\USAPService\BIVN_PACKING.USAPService.GetActualProductWidthKeyResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\BIVN\BIVN_PACKING.BIVN.GetDataPointsResponse.datasource">
+    <None Include="Service References\USAPService\BIVN_PACKING.USAPService.GetByBcNoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\BIVN\BIVN_PACKING.BIVN.GetListReportResponse.datasource">
+    <None Include="Service References\USAPService\BIVN_PACKING.USAPService.GetByIssueSheetResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\BIVN\BIVN_PACKING.BIVN.MonthlyResponse.datasource">
+    <None Include="Service References\USAPService\BIVN_PACKING.USAPService.GetDataPointConfirmsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\BIVN\USAPWebService.wsdl" />
+    <None Include="Service References\USAPService\BIVN_PACKING.USAPService.GetDataPointsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\USAPService\BIVN_PACKING.USAPService.GetListReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\USAPService\BIVN_PACKING.USAPService.MonthlyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\USAPService\USAPWebService.wsdl" />
     <None Include="Service References\PVSService\BIVN_PACKING.PVSService.ArrayOfString.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -477,9 +433,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetRuleByProductResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetScanningLogsByBoardNoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetScanningLogsByQueryResponse.datasource">
@@ -656,6 +609,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\BIVNService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\BIVNService\configuration.svcinfo" />
+    <None Include="Service References\BIVNService\configuration91.svcinfo" />
+    <None Include="Service References\BIVNService\BIVNWebService.disco" />
     <None Include="AutoItX3.Assembly.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -664,16 +624,6 @@
     </Content>
     <Content Include="AutoItX3_x64.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Entitis\ModelEntitys.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelEntitys.edmx</DependentUpon>
-      <LastGenOutput>ModelEntitys.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Entitis\ModelEntitys.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelEntitys.edmx</DependentUpon>
-      <LastGenOutput>ModelEntitys.cs</LastGenOutput>
     </Content>
     <Content Include="logo.ico" />
     <None Include="Service References\PVSService\Reference.svcmap">
@@ -684,13 +634,13 @@
     <None Include="Service References\PVSService\configuration91.svcinfo" />
     <None Include="Service References\PVSService\PVSWebService.disco" />
     <None Include="Resources\09-32.png" />
-    <None Include="Service References\BIVN\Reference.svcmap">
+    <None Include="Service References\USAPService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\BIVN\configuration.svcinfo" />
-    <None Include="Service References\BIVN\configuration91.svcinfo" />
-    <None Include="Service References\BIVN\USAPWebService.disco" />
+    <None Include="Service References\USAPService\configuration.svcinfo" />
+    <None Include="Service References\USAPService\configuration91.svcinfo" />
+    <None Include="Service References\USAPService\USAPWebService.disco" />
     <None Include="Resources\binoculars.png" />
     <None Include="Resources\download.png" />
     <None Include="Resources\arrow-pointing-to-right.png" />
@@ -715,8 +665,12 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\BIVN\" />
+    <WCFMetadataStorage Include="Service References\BIVNService\" />
+    <WCFMetadataStorage Include="Service References\USAPService\" />
     <WCFMetadataStorage Include="Service References\PVSService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entitis\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

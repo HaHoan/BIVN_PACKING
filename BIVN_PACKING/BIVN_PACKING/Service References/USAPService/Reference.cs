@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BIVN_PACKING.BIVN {
+namespace BIVN_PACKING.USAPService {
     using System.Runtime.Serialization;
     using System;
     
@@ -17,7 +17,7 @@ namespace BIVN_PACKING.BIVN {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="BaseEntity", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.BIVN.BCLBFLMEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.USAPService.BCLBFLMEntity))]
     public partial class BaseEntity : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -47,7 +47,7 @@ namespace BIVN_PACKING.BIVN {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="BCLBFLMEntity", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
-    public partial class BCLBFLMEntity : BIVN_PACKING.BIVN.BaseEntity {
+    public partial class BCLBFLMEntity : BIVN_PACKING.USAPService.BaseEntity {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string BC_NOField;
@@ -425,71 +425,71 @@ namespace BIVN_PACKING.BIVN {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BIVN.USAPWebServiceSoap")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="USAPService.USAPWebServiceSoap")]
     public interface USAPWebServiceSoap {
         
         // CODEGEN: Generating message contract since element name BC_NO from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetByBcNo", ReplyAction="*")]
-        BIVN_PACKING.BIVN.GetByBcNoResponse GetByBcNo(BIVN_PACKING.BIVN.GetByBcNoRequest request);
+        BIVN_PACKING.USAPService.GetByBcNoResponse GetByBcNo(BIVN_PACKING.USAPService.GetByBcNoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetByBcNo", ReplyAction="*")]
-        System.Threading.Tasks.Task<BIVN_PACKING.BIVN.GetByBcNoResponse> GetByBcNoAsync(BIVN_PACKING.BIVN.GetByBcNoRequest request);
+        System.Threading.Tasks.Task<BIVN_PACKING.USAPService.GetByBcNoResponse> GetByBcNoAsync(BIVN_PACKING.USAPService.GetByBcNoRequest request);
         
         // CODEGEN: Generating message contract since element name user from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetActualProduct", ReplyAction="*")]
-        BIVN_PACKING.BIVN.GetActualProductResponse GetActualProduct(BIVN_PACKING.BIVN.GetActualProductRequest request);
+        BIVN_PACKING.USAPService.GetActualProductResponse GetActualProduct(BIVN_PACKING.USAPService.GetActualProductRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetActualProduct", ReplyAction="*")]
-        System.Threading.Tasks.Task<BIVN_PACKING.BIVN.GetActualProductResponse> GetActualProductAsync(BIVN_PACKING.BIVN.GetActualProductRequest request);
+        System.Threading.Tasks.Task<BIVN_PACKING.USAPService.GetActualProductResponse> GetActualProductAsync(BIVN_PACKING.USAPService.GetActualProductRequest request);
         
         // CODEGEN: Generating message contract since element name user from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetActualProductWidthKey", ReplyAction="*")]
-        BIVN_PACKING.BIVN.GetActualProductWidthKeyResponse GetActualProductWidthKey(BIVN_PACKING.BIVN.GetActualProductWidthKeyRequest request);
+        BIVN_PACKING.USAPService.GetActualProductWidthKeyResponse GetActualProductWidthKey(BIVN_PACKING.USAPService.GetActualProductWidthKeyRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetActualProductWidthKey", ReplyAction="*")]
-        System.Threading.Tasks.Task<BIVN_PACKING.BIVN.GetActualProductWidthKeyResponse> GetActualProductWidthKeyAsync(BIVN_PACKING.BIVN.GetActualProductWidthKeyRequest request);
+        System.Threading.Tasks.Task<BIVN_PACKING.USAPService.GetActualProductWidthKeyResponse> GetActualProductWidthKeyAsync(BIVN_PACKING.USAPService.GetActualProductWidthKeyRequest request);
         
         // CODEGEN: Generating message contract since element name issue from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetByIssueSheet", ReplyAction="*")]
-        BIVN_PACKING.BIVN.GetByIssueSheetResponse GetByIssueSheet(BIVN_PACKING.BIVN.GetByIssueSheetRequest request);
+        BIVN_PACKING.USAPService.GetByIssueSheetResponse GetByIssueSheet(BIVN_PACKING.USAPService.GetByIssueSheetRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetByIssueSheet", ReplyAction="*")]
-        System.Threading.Tasks.Task<BIVN_PACKING.BIVN.GetByIssueSheetResponse> GetByIssueSheetAsync(BIVN_PACKING.BIVN.GetByIssueSheetRequest request);
+        System.Threading.Tasks.Task<BIVN_PACKING.USAPService.GetByIssueSheetResponse> GetByIssueSheetAsync(BIVN_PACKING.USAPService.GetByIssueSheetRequest request);
         
         // CODEGEN: Generating message contract since element name GetListReportResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListReport", ReplyAction="*")]
-        BIVN_PACKING.BIVN.GetListReportResponse GetListReport(BIVN_PACKING.BIVN.GetListReportRequest request);
+        BIVN_PACKING.USAPService.GetListReportResponse GetListReport(BIVN_PACKING.USAPService.GetListReportRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListReport", ReplyAction="*")]
-        System.Threading.Tasks.Task<BIVN_PACKING.BIVN.GetListReportResponse> GetListReportAsync(BIVN_PACKING.BIVN.GetListReportRequest request);
+        System.Threading.Tasks.Task<BIVN_PACKING.USAPService.GetListReportResponse> GetListReportAsync(BIVN_PACKING.USAPService.GetListReportRequest request);
         
         // CODEGEN: Generating message contract since element name GetDataPointsResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetDataPoints", ReplyAction="*")]
-        BIVN_PACKING.BIVN.GetDataPointsResponse GetDataPoints(BIVN_PACKING.BIVN.GetDataPointsRequest request);
+        BIVN_PACKING.USAPService.GetDataPointsResponse GetDataPoints(BIVN_PACKING.USAPService.GetDataPointsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetDataPoints", ReplyAction="*")]
-        System.Threading.Tasks.Task<BIVN_PACKING.BIVN.GetDataPointsResponse> GetDataPointsAsync(BIVN_PACKING.BIVN.GetDataPointsRequest request);
+        System.Threading.Tasks.Task<BIVN_PACKING.USAPService.GetDataPointsResponse> GetDataPointsAsync(BIVN_PACKING.USAPService.GetDataPointsRequest request);
         
         // CODEGEN: Generating message contract since element name GetDataPointConfirmsResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetDataPointConfirms", ReplyAction="*")]
-        BIVN_PACKING.BIVN.GetDataPointConfirmsResponse GetDataPointConfirms(BIVN_PACKING.BIVN.GetDataPointConfirmsRequest request);
+        BIVN_PACKING.USAPService.GetDataPointConfirmsResponse GetDataPointConfirms(BIVN_PACKING.USAPService.GetDataPointConfirmsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetDataPointConfirms", ReplyAction="*")]
-        System.Threading.Tasks.Task<BIVN_PACKING.BIVN.GetDataPointConfirmsResponse> GetDataPointConfirmsAsync(BIVN_PACKING.BIVN.GetDataPointConfirmsRequest request);
+        System.Threading.Tasks.Task<BIVN_PACKING.USAPService.GetDataPointConfirmsResponse> GetDataPointConfirmsAsync(BIVN_PACKING.USAPService.GetDataPointConfirmsRequest request);
         
         // CODEGEN: Generating message contract since element name DailyResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Daily", ReplyAction="*")]
-        BIVN_PACKING.BIVN.DailyResponse Daily(BIVN_PACKING.BIVN.DailyRequest request);
+        BIVN_PACKING.USAPService.DailyResponse Daily(BIVN_PACKING.USAPService.DailyRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Daily", ReplyAction="*")]
-        System.Threading.Tasks.Task<BIVN_PACKING.BIVN.DailyResponse> DailyAsync(BIVN_PACKING.BIVN.DailyRequest request);
+        System.Threading.Tasks.Task<BIVN_PACKING.USAPService.DailyResponse> DailyAsync(BIVN_PACKING.USAPService.DailyRequest request);
         
         // CODEGEN: Generating message contract since element name MonthlyResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Monthly", ReplyAction="*")]
-        BIVN_PACKING.BIVN.MonthlyResponse Monthly(BIVN_PACKING.BIVN.MonthlyRequest request);
+        BIVN_PACKING.USAPService.MonthlyResponse Monthly(BIVN_PACKING.USAPService.MonthlyRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Monthly", ReplyAction="*")]
-        System.Threading.Tasks.Task<BIVN_PACKING.BIVN.MonthlyResponse> MonthlyAsync(BIVN_PACKING.BIVN.MonthlyRequest request);
+        System.Threading.Tasks.Task<BIVN_PACKING.USAPService.MonthlyResponse> MonthlyAsync(BIVN_PACKING.USAPService.MonthlyRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -499,12 +499,12 @@ namespace BIVN_PACKING.BIVN {
     public partial class GetByBcNoRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetByBcNo", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.BIVN.GetByBcNoRequestBody Body;
+        public BIVN_PACKING.USAPService.GetByBcNoRequestBody Body;
         
         public GetByBcNoRequest() {
         }
         
-        public GetByBcNoRequest(BIVN_PACKING.BIVN.GetByBcNoRequestBody Body) {
+        public GetByBcNoRequest(BIVN_PACKING.USAPService.GetByBcNoRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -533,12 +533,12 @@ namespace BIVN_PACKING.BIVN {
     public partial class GetByBcNoResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetByBcNoResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.BIVN.GetByBcNoResponseBody Body;
+        public BIVN_PACKING.USAPService.GetByBcNoResponseBody Body;
         
         public GetByBcNoResponse() {
         }
         
-        public GetByBcNoResponse(BIVN_PACKING.BIVN.GetByBcNoResponseBody Body) {
+        public GetByBcNoResponse(BIVN_PACKING.USAPService.GetByBcNoResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -550,12 +550,12 @@ namespace BIVN_PACKING.BIVN {
     public partial class GetByBcNoResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public BIVN_PACKING.BIVN.BCLBFLMEntity GetByBcNoResult;
+        public BIVN_PACKING.USAPService.BCLBFLMEntity GetByBcNoResult;
         
         public GetByBcNoResponseBody() {
         }
         
-        public GetByBcNoResponseBody(BIVN_PACKING.BIVN.BCLBFLMEntity GetByBcNoResult) {
+        public GetByBcNoResponseBody(BIVN_PACKING.USAPService.BCLBFLMEntity GetByBcNoResult) {
             this.GetByBcNoResult = GetByBcNoResult;
         }
     }
@@ -567,12 +567,12 @@ namespace BIVN_PACKING.BIVN {
     public partial class GetActualProductRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetActualProduct", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.BIVN.GetActualProductRequestBody Body;
+        public BIVN_PACKING.USAPService.GetActualProductRequestBody Body;
         
         public GetActualProductRequest() {
         }
         
-        public GetActualProductRequest(BIVN_PACKING.BIVN.GetActualProductRequestBody Body) {
+        public GetActualProductRequest(BIVN_PACKING.USAPService.GetActualProductRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -609,12 +609,12 @@ namespace BIVN_PACKING.BIVN {
     public partial class GetActualProductResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetActualProductResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.BIVN.GetActualProductResponseBody Body;
+        public BIVN_PACKING.USAPService.GetActualProductResponseBody Body;
         
         public GetActualProductResponse() {
         }
         
-        public GetActualProductResponse(BIVN_PACKING.BIVN.GetActualProductResponseBody Body) {
+        public GetActualProductResponse(BIVN_PACKING.USAPService.GetActualProductResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -643,12 +643,12 @@ namespace BIVN_PACKING.BIVN {
     public partial class GetActualProductWidthKeyRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetActualProductWidthKey", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.BIVN.GetActualProductWidthKeyRequestBody Body;
+        public BIVN_PACKING.USAPService.GetActualProductWidthKeyRequestBody Body;
         
         public GetActualProductWidthKeyRequest() {
         }
         
-        public GetActualProductWidthKeyRequest(BIVN_PACKING.BIVN.GetActualProductWidthKeyRequestBody Body) {
+        public GetActualProductWidthKeyRequest(BIVN_PACKING.USAPService.GetActualProductWidthKeyRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -689,12 +689,12 @@ namespace BIVN_PACKING.BIVN {
     public partial class GetActualProductWidthKeyResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetActualProductWidthKeyResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.BIVN.GetActualProductWidthKeyResponseBody Body;
+        public BIVN_PACKING.USAPService.GetActualProductWidthKeyResponseBody Body;
         
         public GetActualProductWidthKeyResponse() {
         }
         
-        public GetActualProductWidthKeyResponse(BIVN_PACKING.BIVN.GetActualProductWidthKeyResponseBody Body) {
+        public GetActualProductWidthKeyResponse(BIVN_PACKING.USAPService.GetActualProductWidthKeyResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -723,12 +723,12 @@ namespace BIVN_PACKING.BIVN {
     public partial class GetByIssueSheetRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetByIssueSheet", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.BIVN.GetByIssueSheetRequestBody Body;
+        public BIVN_PACKING.USAPService.GetByIssueSheetRequestBody Body;
         
         public GetByIssueSheetRequest() {
         }
         
-        public GetByIssueSheetRequest(BIVN_PACKING.BIVN.GetByIssueSheetRequestBody Body) {
+        public GetByIssueSheetRequest(BIVN_PACKING.USAPService.GetByIssueSheetRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -757,12 +757,12 @@ namespace BIVN_PACKING.BIVN {
     public partial class GetByIssueSheetResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetByIssueSheetResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.BIVN.GetByIssueSheetResponseBody Body;
+        public BIVN_PACKING.USAPService.GetByIssueSheetResponseBody Body;
         
         public GetByIssueSheetResponse() {
         }
         
-        public GetByIssueSheetResponse(BIVN_PACKING.BIVN.GetByIssueSheetResponseBody Body) {
+        public GetByIssueSheetResponse(BIVN_PACKING.USAPService.GetByIssueSheetResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -791,12 +791,12 @@ namespace BIVN_PACKING.BIVN {
     public partial class GetListReportRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetListReport", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.BIVN.GetListReportRequestBody Body;
+        public BIVN_PACKING.USAPService.GetListReportRequestBody Body;
         
         public GetListReportRequest() {
         }
         
-        public GetListReportRequest(BIVN_PACKING.BIVN.GetListReportRequestBody Body) {
+        public GetListReportRequest(BIVN_PACKING.USAPService.GetListReportRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -818,12 +818,12 @@ namespace BIVN_PACKING.BIVN {
     public partial class GetListReportResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetListReportResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.BIVN.GetListReportResponseBody Body;
+        public BIVN_PACKING.USAPService.GetListReportResponseBody Body;
         
         public GetListReportResponse() {
         }
         
-        public GetListReportResponse(BIVN_PACKING.BIVN.GetListReportResponseBody Body) {
+        public GetListReportResponse(BIVN_PACKING.USAPService.GetListReportResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -852,12 +852,12 @@ namespace BIVN_PACKING.BIVN {
     public partial class GetDataPointsRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDataPoints", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.BIVN.GetDataPointsRequestBody Body;
+        public BIVN_PACKING.USAPService.GetDataPointsRequestBody Body;
         
         public GetDataPointsRequest() {
         }
         
-        public GetDataPointsRequest(BIVN_PACKING.BIVN.GetDataPointsRequestBody Body) {
+        public GetDataPointsRequest(BIVN_PACKING.USAPService.GetDataPointsRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -879,12 +879,12 @@ namespace BIVN_PACKING.BIVN {
     public partial class GetDataPointsResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDataPointsResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.BIVN.GetDataPointsResponseBody Body;
+        public BIVN_PACKING.USAPService.GetDataPointsResponseBody Body;
         
         public GetDataPointsResponse() {
         }
         
-        public GetDataPointsResponse(BIVN_PACKING.BIVN.GetDataPointsResponseBody Body) {
+        public GetDataPointsResponse(BIVN_PACKING.USAPService.GetDataPointsResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -913,12 +913,12 @@ namespace BIVN_PACKING.BIVN {
     public partial class GetDataPointConfirmsRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDataPointConfirms", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.BIVN.GetDataPointConfirmsRequestBody Body;
+        public BIVN_PACKING.USAPService.GetDataPointConfirmsRequestBody Body;
         
         public GetDataPointConfirmsRequest() {
         }
         
-        public GetDataPointConfirmsRequest(BIVN_PACKING.BIVN.GetDataPointConfirmsRequestBody Body) {
+        public GetDataPointConfirmsRequest(BIVN_PACKING.USAPService.GetDataPointConfirmsRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -940,12 +940,12 @@ namespace BIVN_PACKING.BIVN {
     public partial class GetDataPointConfirmsResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDataPointConfirmsResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.BIVN.GetDataPointConfirmsResponseBody Body;
+        public BIVN_PACKING.USAPService.GetDataPointConfirmsResponseBody Body;
         
         public GetDataPointConfirmsResponse() {
         }
         
-        public GetDataPointConfirmsResponse(BIVN_PACKING.BIVN.GetDataPointConfirmsResponseBody Body) {
+        public GetDataPointConfirmsResponse(BIVN_PACKING.USAPService.GetDataPointConfirmsResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -974,12 +974,12 @@ namespace BIVN_PACKING.BIVN {
     public partial class DailyRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="Daily", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.BIVN.DailyRequestBody Body;
+        public BIVN_PACKING.USAPService.DailyRequestBody Body;
         
         public DailyRequest() {
         }
         
-        public DailyRequest(BIVN_PACKING.BIVN.DailyRequestBody Body) {
+        public DailyRequest(BIVN_PACKING.USAPService.DailyRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1008,12 +1008,12 @@ namespace BIVN_PACKING.BIVN {
     public partial class DailyResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DailyResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.BIVN.DailyResponseBody Body;
+        public BIVN_PACKING.USAPService.DailyResponseBody Body;
         
         public DailyResponse() {
         }
         
-        public DailyResponse(BIVN_PACKING.BIVN.DailyResponseBody Body) {
+        public DailyResponse(BIVN_PACKING.USAPService.DailyResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1042,12 +1042,12 @@ namespace BIVN_PACKING.BIVN {
     public partial class MonthlyRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="Monthly", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.BIVN.MonthlyRequestBody Body;
+        public BIVN_PACKING.USAPService.MonthlyRequestBody Body;
         
         public MonthlyRequest() {
         }
         
-        public MonthlyRequest(BIVN_PACKING.BIVN.MonthlyRequestBody Body) {
+        public MonthlyRequest(BIVN_PACKING.USAPService.MonthlyRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1076,12 +1076,12 @@ namespace BIVN_PACKING.BIVN {
     public partial class MonthlyResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="MonthlyResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.BIVN.MonthlyResponseBody Body;
+        public BIVN_PACKING.USAPService.MonthlyResponseBody Body;
         
         public MonthlyResponse() {
         }
         
-        public MonthlyResponse(BIVN_PACKING.BIVN.MonthlyResponseBody Body) {
+        public MonthlyResponse(BIVN_PACKING.USAPService.MonthlyResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1104,12 +1104,12 @@ namespace BIVN_PACKING.BIVN {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface USAPWebServiceSoapChannel : BIVN_PACKING.BIVN.USAPWebServiceSoap, System.ServiceModel.IClientChannel {
+    public interface USAPWebServiceSoapChannel : BIVN_PACKING.USAPService.USAPWebServiceSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class USAPWebServiceSoapClient : System.ServiceModel.ClientBase<BIVN_PACKING.BIVN.USAPWebServiceSoap>, BIVN_PACKING.BIVN.USAPWebServiceSoap {
+    public partial class USAPWebServiceSoapClient : System.ServiceModel.ClientBase<BIVN_PACKING.USAPService.USAPWebServiceSoap>, BIVN_PACKING.USAPService.USAPWebServiceSoap {
         
         public USAPWebServiceSoapClient() {
         }
@@ -1131,232 +1131,232 @@ namespace BIVN_PACKING.BIVN {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BIVN_PACKING.BIVN.GetByBcNoResponse BIVN_PACKING.BIVN.USAPWebServiceSoap.GetByBcNo(BIVN_PACKING.BIVN.GetByBcNoRequest request) {
+        BIVN_PACKING.USAPService.GetByBcNoResponse BIVN_PACKING.USAPService.USAPWebServiceSoap.GetByBcNo(BIVN_PACKING.USAPService.GetByBcNoRequest request) {
             return base.Channel.GetByBcNo(request);
         }
         
-        public BIVN_PACKING.BIVN.BCLBFLMEntity GetByBcNo(string BC_NO) {
-            BIVN_PACKING.BIVN.GetByBcNoRequest inValue = new BIVN_PACKING.BIVN.GetByBcNoRequest();
-            inValue.Body = new BIVN_PACKING.BIVN.GetByBcNoRequestBody();
+        public BIVN_PACKING.USAPService.BCLBFLMEntity GetByBcNo(string BC_NO) {
+            BIVN_PACKING.USAPService.GetByBcNoRequest inValue = new BIVN_PACKING.USAPService.GetByBcNoRequest();
+            inValue.Body = new BIVN_PACKING.USAPService.GetByBcNoRequestBody();
             inValue.Body.BC_NO = BC_NO;
-            BIVN_PACKING.BIVN.GetByBcNoResponse retVal = ((BIVN_PACKING.BIVN.USAPWebServiceSoap)(this)).GetByBcNo(inValue);
+            BIVN_PACKING.USAPService.GetByBcNoResponse retVal = ((BIVN_PACKING.USAPService.USAPWebServiceSoap)(this)).GetByBcNo(inValue);
             return retVal.Body.GetByBcNoResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BIVN_PACKING.BIVN.GetByBcNoResponse> BIVN_PACKING.BIVN.USAPWebServiceSoap.GetByBcNoAsync(BIVN_PACKING.BIVN.GetByBcNoRequest request) {
+        System.Threading.Tasks.Task<BIVN_PACKING.USAPService.GetByBcNoResponse> BIVN_PACKING.USAPService.USAPWebServiceSoap.GetByBcNoAsync(BIVN_PACKING.USAPService.GetByBcNoRequest request) {
             return base.Channel.GetByBcNoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BIVN_PACKING.BIVN.GetByBcNoResponse> GetByBcNoAsync(string BC_NO) {
-            BIVN_PACKING.BIVN.GetByBcNoRequest inValue = new BIVN_PACKING.BIVN.GetByBcNoRequest();
-            inValue.Body = new BIVN_PACKING.BIVN.GetByBcNoRequestBody();
+        public System.Threading.Tasks.Task<BIVN_PACKING.USAPService.GetByBcNoResponse> GetByBcNoAsync(string BC_NO) {
+            BIVN_PACKING.USAPService.GetByBcNoRequest inValue = new BIVN_PACKING.USAPService.GetByBcNoRequest();
+            inValue.Body = new BIVN_PACKING.USAPService.GetByBcNoRequestBody();
             inValue.Body.BC_NO = BC_NO;
-            return ((BIVN_PACKING.BIVN.USAPWebServiceSoap)(this)).GetByBcNoAsync(inValue);
+            return ((BIVN_PACKING.USAPService.USAPWebServiceSoap)(this)).GetByBcNoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BIVN_PACKING.BIVN.GetActualProductResponse BIVN_PACKING.BIVN.USAPWebServiceSoap.GetActualProduct(BIVN_PACKING.BIVN.GetActualProductRequest request) {
+        BIVN_PACKING.USAPService.GetActualProductResponse BIVN_PACKING.USAPService.USAPWebServiceSoap.GetActualProduct(BIVN_PACKING.USAPService.GetActualProductRequest request) {
             return base.Channel.GetActualProduct(request);
         }
         
         public string GetActualProduct(string user, System.DateTime startTime, System.DateTime endTime) {
-            BIVN_PACKING.BIVN.GetActualProductRequest inValue = new BIVN_PACKING.BIVN.GetActualProductRequest();
-            inValue.Body = new BIVN_PACKING.BIVN.GetActualProductRequestBody();
+            BIVN_PACKING.USAPService.GetActualProductRequest inValue = new BIVN_PACKING.USAPService.GetActualProductRequest();
+            inValue.Body = new BIVN_PACKING.USAPService.GetActualProductRequestBody();
             inValue.Body.user = user;
             inValue.Body.startTime = startTime;
             inValue.Body.endTime = endTime;
-            BIVN_PACKING.BIVN.GetActualProductResponse retVal = ((BIVN_PACKING.BIVN.USAPWebServiceSoap)(this)).GetActualProduct(inValue);
+            BIVN_PACKING.USAPService.GetActualProductResponse retVal = ((BIVN_PACKING.USAPService.USAPWebServiceSoap)(this)).GetActualProduct(inValue);
             return retVal.Body.GetActualProductResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BIVN_PACKING.BIVN.GetActualProductResponse> BIVN_PACKING.BIVN.USAPWebServiceSoap.GetActualProductAsync(BIVN_PACKING.BIVN.GetActualProductRequest request) {
+        System.Threading.Tasks.Task<BIVN_PACKING.USAPService.GetActualProductResponse> BIVN_PACKING.USAPService.USAPWebServiceSoap.GetActualProductAsync(BIVN_PACKING.USAPService.GetActualProductRequest request) {
             return base.Channel.GetActualProductAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BIVN_PACKING.BIVN.GetActualProductResponse> GetActualProductAsync(string user, System.DateTime startTime, System.DateTime endTime) {
-            BIVN_PACKING.BIVN.GetActualProductRequest inValue = new BIVN_PACKING.BIVN.GetActualProductRequest();
-            inValue.Body = new BIVN_PACKING.BIVN.GetActualProductRequestBody();
+        public System.Threading.Tasks.Task<BIVN_PACKING.USAPService.GetActualProductResponse> GetActualProductAsync(string user, System.DateTime startTime, System.DateTime endTime) {
+            BIVN_PACKING.USAPService.GetActualProductRequest inValue = new BIVN_PACKING.USAPService.GetActualProductRequest();
+            inValue.Body = new BIVN_PACKING.USAPService.GetActualProductRequestBody();
             inValue.Body.user = user;
             inValue.Body.startTime = startTime;
             inValue.Body.endTime = endTime;
-            return ((BIVN_PACKING.BIVN.USAPWebServiceSoap)(this)).GetActualProductAsync(inValue);
+            return ((BIVN_PACKING.USAPService.USAPWebServiceSoap)(this)).GetActualProductAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BIVN_PACKING.BIVN.GetActualProductWidthKeyResponse BIVN_PACKING.BIVN.USAPWebServiceSoap.GetActualProductWidthKey(BIVN_PACKING.BIVN.GetActualProductWidthKeyRequest request) {
+        BIVN_PACKING.USAPService.GetActualProductWidthKeyResponse BIVN_PACKING.USAPService.USAPWebServiceSoap.GetActualProductWidthKey(BIVN_PACKING.USAPService.GetActualProductWidthKeyRequest request) {
             return base.Channel.GetActualProductWidthKey(request);
         }
         
         public string GetActualProductWidthKey(string user, string key, System.DateTime startTime, System.DateTime endTime) {
-            BIVN_PACKING.BIVN.GetActualProductWidthKeyRequest inValue = new BIVN_PACKING.BIVN.GetActualProductWidthKeyRequest();
-            inValue.Body = new BIVN_PACKING.BIVN.GetActualProductWidthKeyRequestBody();
+            BIVN_PACKING.USAPService.GetActualProductWidthKeyRequest inValue = new BIVN_PACKING.USAPService.GetActualProductWidthKeyRequest();
+            inValue.Body = new BIVN_PACKING.USAPService.GetActualProductWidthKeyRequestBody();
             inValue.Body.user = user;
             inValue.Body.key = key;
             inValue.Body.startTime = startTime;
             inValue.Body.endTime = endTime;
-            BIVN_PACKING.BIVN.GetActualProductWidthKeyResponse retVal = ((BIVN_PACKING.BIVN.USAPWebServiceSoap)(this)).GetActualProductWidthKey(inValue);
+            BIVN_PACKING.USAPService.GetActualProductWidthKeyResponse retVal = ((BIVN_PACKING.USAPService.USAPWebServiceSoap)(this)).GetActualProductWidthKey(inValue);
             return retVal.Body.GetActualProductWidthKeyResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BIVN_PACKING.BIVN.GetActualProductWidthKeyResponse> BIVN_PACKING.BIVN.USAPWebServiceSoap.GetActualProductWidthKeyAsync(BIVN_PACKING.BIVN.GetActualProductWidthKeyRequest request) {
+        System.Threading.Tasks.Task<BIVN_PACKING.USAPService.GetActualProductWidthKeyResponse> BIVN_PACKING.USAPService.USAPWebServiceSoap.GetActualProductWidthKeyAsync(BIVN_PACKING.USAPService.GetActualProductWidthKeyRequest request) {
             return base.Channel.GetActualProductWidthKeyAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BIVN_PACKING.BIVN.GetActualProductWidthKeyResponse> GetActualProductWidthKeyAsync(string user, string key, System.DateTime startTime, System.DateTime endTime) {
-            BIVN_PACKING.BIVN.GetActualProductWidthKeyRequest inValue = new BIVN_PACKING.BIVN.GetActualProductWidthKeyRequest();
-            inValue.Body = new BIVN_PACKING.BIVN.GetActualProductWidthKeyRequestBody();
+        public System.Threading.Tasks.Task<BIVN_PACKING.USAPService.GetActualProductWidthKeyResponse> GetActualProductWidthKeyAsync(string user, string key, System.DateTime startTime, System.DateTime endTime) {
+            BIVN_PACKING.USAPService.GetActualProductWidthKeyRequest inValue = new BIVN_PACKING.USAPService.GetActualProductWidthKeyRequest();
+            inValue.Body = new BIVN_PACKING.USAPService.GetActualProductWidthKeyRequestBody();
             inValue.Body.user = user;
             inValue.Body.key = key;
             inValue.Body.startTime = startTime;
             inValue.Body.endTime = endTime;
-            return ((BIVN_PACKING.BIVN.USAPWebServiceSoap)(this)).GetActualProductWidthKeyAsync(inValue);
+            return ((BIVN_PACKING.USAPService.USAPWebServiceSoap)(this)).GetActualProductWidthKeyAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BIVN_PACKING.BIVN.GetByIssueSheetResponse BIVN_PACKING.BIVN.USAPWebServiceSoap.GetByIssueSheet(BIVN_PACKING.BIVN.GetByIssueSheetRequest request) {
+        BIVN_PACKING.USAPService.GetByIssueSheetResponse BIVN_PACKING.USAPService.USAPWebServiceSoap.GetByIssueSheet(BIVN_PACKING.USAPService.GetByIssueSheetRequest request) {
             return base.Channel.GetByIssueSheet(request);
         }
         
         public string GetByIssueSheet(string issue) {
-            BIVN_PACKING.BIVN.GetByIssueSheetRequest inValue = new BIVN_PACKING.BIVN.GetByIssueSheetRequest();
-            inValue.Body = new BIVN_PACKING.BIVN.GetByIssueSheetRequestBody();
+            BIVN_PACKING.USAPService.GetByIssueSheetRequest inValue = new BIVN_PACKING.USAPService.GetByIssueSheetRequest();
+            inValue.Body = new BIVN_PACKING.USAPService.GetByIssueSheetRequestBody();
             inValue.Body.issue = issue;
-            BIVN_PACKING.BIVN.GetByIssueSheetResponse retVal = ((BIVN_PACKING.BIVN.USAPWebServiceSoap)(this)).GetByIssueSheet(inValue);
+            BIVN_PACKING.USAPService.GetByIssueSheetResponse retVal = ((BIVN_PACKING.USAPService.USAPWebServiceSoap)(this)).GetByIssueSheet(inValue);
             return retVal.Body.GetByIssueSheetResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BIVN_PACKING.BIVN.GetByIssueSheetResponse> BIVN_PACKING.BIVN.USAPWebServiceSoap.GetByIssueSheetAsync(BIVN_PACKING.BIVN.GetByIssueSheetRequest request) {
+        System.Threading.Tasks.Task<BIVN_PACKING.USAPService.GetByIssueSheetResponse> BIVN_PACKING.USAPService.USAPWebServiceSoap.GetByIssueSheetAsync(BIVN_PACKING.USAPService.GetByIssueSheetRequest request) {
             return base.Channel.GetByIssueSheetAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BIVN_PACKING.BIVN.GetByIssueSheetResponse> GetByIssueSheetAsync(string issue) {
-            BIVN_PACKING.BIVN.GetByIssueSheetRequest inValue = new BIVN_PACKING.BIVN.GetByIssueSheetRequest();
-            inValue.Body = new BIVN_PACKING.BIVN.GetByIssueSheetRequestBody();
+        public System.Threading.Tasks.Task<BIVN_PACKING.USAPService.GetByIssueSheetResponse> GetByIssueSheetAsync(string issue) {
+            BIVN_PACKING.USAPService.GetByIssueSheetRequest inValue = new BIVN_PACKING.USAPService.GetByIssueSheetRequest();
+            inValue.Body = new BIVN_PACKING.USAPService.GetByIssueSheetRequestBody();
             inValue.Body.issue = issue;
-            return ((BIVN_PACKING.BIVN.USAPWebServiceSoap)(this)).GetByIssueSheetAsync(inValue);
+            return ((BIVN_PACKING.USAPService.USAPWebServiceSoap)(this)).GetByIssueSheetAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BIVN_PACKING.BIVN.GetListReportResponse BIVN_PACKING.BIVN.USAPWebServiceSoap.GetListReport(BIVN_PACKING.BIVN.GetListReportRequest request) {
+        BIVN_PACKING.USAPService.GetListReportResponse BIVN_PACKING.USAPService.USAPWebServiceSoap.GetListReport(BIVN_PACKING.USAPService.GetListReportRequest request) {
             return base.Channel.GetListReport(request);
         }
         
         public string GetListReport() {
-            BIVN_PACKING.BIVN.GetListReportRequest inValue = new BIVN_PACKING.BIVN.GetListReportRequest();
-            inValue.Body = new BIVN_PACKING.BIVN.GetListReportRequestBody();
-            BIVN_PACKING.BIVN.GetListReportResponse retVal = ((BIVN_PACKING.BIVN.USAPWebServiceSoap)(this)).GetListReport(inValue);
+            BIVN_PACKING.USAPService.GetListReportRequest inValue = new BIVN_PACKING.USAPService.GetListReportRequest();
+            inValue.Body = new BIVN_PACKING.USAPService.GetListReportRequestBody();
+            BIVN_PACKING.USAPService.GetListReportResponse retVal = ((BIVN_PACKING.USAPService.USAPWebServiceSoap)(this)).GetListReport(inValue);
             return retVal.Body.GetListReportResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BIVN_PACKING.BIVN.GetListReportResponse> BIVN_PACKING.BIVN.USAPWebServiceSoap.GetListReportAsync(BIVN_PACKING.BIVN.GetListReportRequest request) {
+        System.Threading.Tasks.Task<BIVN_PACKING.USAPService.GetListReportResponse> BIVN_PACKING.USAPService.USAPWebServiceSoap.GetListReportAsync(BIVN_PACKING.USAPService.GetListReportRequest request) {
             return base.Channel.GetListReportAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BIVN_PACKING.BIVN.GetListReportResponse> GetListReportAsync() {
-            BIVN_PACKING.BIVN.GetListReportRequest inValue = new BIVN_PACKING.BIVN.GetListReportRequest();
-            inValue.Body = new BIVN_PACKING.BIVN.GetListReportRequestBody();
-            return ((BIVN_PACKING.BIVN.USAPWebServiceSoap)(this)).GetListReportAsync(inValue);
+        public System.Threading.Tasks.Task<BIVN_PACKING.USAPService.GetListReportResponse> GetListReportAsync() {
+            BIVN_PACKING.USAPService.GetListReportRequest inValue = new BIVN_PACKING.USAPService.GetListReportRequest();
+            inValue.Body = new BIVN_PACKING.USAPService.GetListReportRequestBody();
+            return ((BIVN_PACKING.USAPService.USAPWebServiceSoap)(this)).GetListReportAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BIVN_PACKING.BIVN.GetDataPointsResponse BIVN_PACKING.BIVN.USAPWebServiceSoap.GetDataPoints(BIVN_PACKING.BIVN.GetDataPointsRequest request) {
+        BIVN_PACKING.USAPService.GetDataPointsResponse BIVN_PACKING.USAPService.USAPWebServiceSoap.GetDataPoints(BIVN_PACKING.USAPService.GetDataPointsRequest request) {
             return base.Channel.GetDataPoints(request);
         }
         
         public string GetDataPoints() {
-            BIVN_PACKING.BIVN.GetDataPointsRequest inValue = new BIVN_PACKING.BIVN.GetDataPointsRequest();
-            inValue.Body = new BIVN_PACKING.BIVN.GetDataPointsRequestBody();
-            BIVN_PACKING.BIVN.GetDataPointsResponse retVal = ((BIVN_PACKING.BIVN.USAPWebServiceSoap)(this)).GetDataPoints(inValue);
+            BIVN_PACKING.USAPService.GetDataPointsRequest inValue = new BIVN_PACKING.USAPService.GetDataPointsRequest();
+            inValue.Body = new BIVN_PACKING.USAPService.GetDataPointsRequestBody();
+            BIVN_PACKING.USAPService.GetDataPointsResponse retVal = ((BIVN_PACKING.USAPService.USAPWebServiceSoap)(this)).GetDataPoints(inValue);
             return retVal.Body.GetDataPointsResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BIVN_PACKING.BIVN.GetDataPointsResponse> BIVN_PACKING.BIVN.USAPWebServiceSoap.GetDataPointsAsync(BIVN_PACKING.BIVN.GetDataPointsRequest request) {
+        System.Threading.Tasks.Task<BIVN_PACKING.USAPService.GetDataPointsResponse> BIVN_PACKING.USAPService.USAPWebServiceSoap.GetDataPointsAsync(BIVN_PACKING.USAPService.GetDataPointsRequest request) {
             return base.Channel.GetDataPointsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BIVN_PACKING.BIVN.GetDataPointsResponse> GetDataPointsAsync() {
-            BIVN_PACKING.BIVN.GetDataPointsRequest inValue = new BIVN_PACKING.BIVN.GetDataPointsRequest();
-            inValue.Body = new BIVN_PACKING.BIVN.GetDataPointsRequestBody();
-            return ((BIVN_PACKING.BIVN.USAPWebServiceSoap)(this)).GetDataPointsAsync(inValue);
+        public System.Threading.Tasks.Task<BIVN_PACKING.USAPService.GetDataPointsResponse> GetDataPointsAsync() {
+            BIVN_PACKING.USAPService.GetDataPointsRequest inValue = new BIVN_PACKING.USAPService.GetDataPointsRequest();
+            inValue.Body = new BIVN_PACKING.USAPService.GetDataPointsRequestBody();
+            return ((BIVN_PACKING.USAPService.USAPWebServiceSoap)(this)).GetDataPointsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BIVN_PACKING.BIVN.GetDataPointConfirmsResponse BIVN_PACKING.BIVN.USAPWebServiceSoap.GetDataPointConfirms(BIVN_PACKING.BIVN.GetDataPointConfirmsRequest request) {
+        BIVN_PACKING.USAPService.GetDataPointConfirmsResponse BIVN_PACKING.USAPService.USAPWebServiceSoap.GetDataPointConfirms(BIVN_PACKING.USAPService.GetDataPointConfirmsRequest request) {
             return base.Channel.GetDataPointConfirms(request);
         }
         
         public string GetDataPointConfirms() {
-            BIVN_PACKING.BIVN.GetDataPointConfirmsRequest inValue = new BIVN_PACKING.BIVN.GetDataPointConfirmsRequest();
-            inValue.Body = new BIVN_PACKING.BIVN.GetDataPointConfirmsRequestBody();
-            BIVN_PACKING.BIVN.GetDataPointConfirmsResponse retVal = ((BIVN_PACKING.BIVN.USAPWebServiceSoap)(this)).GetDataPointConfirms(inValue);
+            BIVN_PACKING.USAPService.GetDataPointConfirmsRequest inValue = new BIVN_PACKING.USAPService.GetDataPointConfirmsRequest();
+            inValue.Body = new BIVN_PACKING.USAPService.GetDataPointConfirmsRequestBody();
+            BIVN_PACKING.USAPService.GetDataPointConfirmsResponse retVal = ((BIVN_PACKING.USAPService.USAPWebServiceSoap)(this)).GetDataPointConfirms(inValue);
             return retVal.Body.GetDataPointConfirmsResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BIVN_PACKING.BIVN.GetDataPointConfirmsResponse> BIVN_PACKING.BIVN.USAPWebServiceSoap.GetDataPointConfirmsAsync(BIVN_PACKING.BIVN.GetDataPointConfirmsRequest request) {
+        System.Threading.Tasks.Task<BIVN_PACKING.USAPService.GetDataPointConfirmsResponse> BIVN_PACKING.USAPService.USAPWebServiceSoap.GetDataPointConfirmsAsync(BIVN_PACKING.USAPService.GetDataPointConfirmsRequest request) {
             return base.Channel.GetDataPointConfirmsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BIVN_PACKING.BIVN.GetDataPointConfirmsResponse> GetDataPointConfirmsAsync() {
-            BIVN_PACKING.BIVN.GetDataPointConfirmsRequest inValue = new BIVN_PACKING.BIVN.GetDataPointConfirmsRequest();
-            inValue.Body = new BIVN_PACKING.BIVN.GetDataPointConfirmsRequestBody();
-            return ((BIVN_PACKING.BIVN.USAPWebServiceSoap)(this)).GetDataPointConfirmsAsync(inValue);
+        public System.Threading.Tasks.Task<BIVN_PACKING.USAPService.GetDataPointConfirmsResponse> GetDataPointConfirmsAsync() {
+            BIVN_PACKING.USAPService.GetDataPointConfirmsRequest inValue = new BIVN_PACKING.USAPService.GetDataPointConfirmsRequest();
+            inValue.Body = new BIVN_PACKING.USAPService.GetDataPointConfirmsRequestBody();
+            return ((BIVN_PACKING.USAPService.USAPWebServiceSoap)(this)).GetDataPointConfirmsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BIVN_PACKING.BIVN.DailyResponse BIVN_PACKING.BIVN.USAPWebServiceSoap.Daily(BIVN_PACKING.BIVN.DailyRequest request) {
+        BIVN_PACKING.USAPService.DailyResponse BIVN_PACKING.USAPService.USAPWebServiceSoap.Daily(BIVN_PACKING.USAPService.DailyRequest request) {
             return base.Channel.Daily(request);
         }
         
         public string Daily(System.DateTime input) {
-            BIVN_PACKING.BIVN.DailyRequest inValue = new BIVN_PACKING.BIVN.DailyRequest();
-            inValue.Body = new BIVN_PACKING.BIVN.DailyRequestBody();
+            BIVN_PACKING.USAPService.DailyRequest inValue = new BIVN_PACKING.USAPService.DailyRequest();
+            inValue.Body = new BIVN_PACKING.USAPService.DailyRequestBody();
             inValue.Body.input = input;
-            BIVN_PACKING.BIVN.DailyResponse retVal = ((BIVN_PACKING.BIVN.USAPWebServiceSoap)(this)).Daily(inValue);
+            BIVN_PACKING.USAPService.DailyResponse retVal = ((BIVN_PACKING.USAPService.USAPWebServiceSoap)(this)).Daily(inValue);
             return retVal.Body.DailyResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BIVN_PACKING.BIVN.DailyResponse> BIVN_PACKING.BIVN.USAPWebServiceSoap.DailyAsync(BIVN_PACKING.BIVN.DailyRequest request) {
+        System.Threading.Tasks.Task<BIVN_PACKING.USAPService.DailyResponse> BIVN_PACKING.USAPService.USAPWebServiceSoap.DailyAsync(BIVN_PACKING.USAPService.DailyRequest request) {
             return base.Channel.DailyAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BIVN_PACKING.BIVN.DailyResponse> DailyAsync(System.DateTime input) {
-            BIVN_PACKING.BIVN.DailyRequest inValue = new BIVN_PACKING.BIVN.DailyRequest();
-            inValue.Body = new BIVN_PACKING.BIVN.DailyRequestBody();
+        public System.Threading.Tasks.Task<BIVN_PACKING.USAPService.DailyResponse> DailyAsync(System.DateTime input) {
+            BIVN_PACKING.USAPService.DailyRequest inValue = new BIVN_PACKING.USAPService.DailyRequest();
+            inValue.Body = new BIVN_PACKING.USAPService.DailyRequestBody();
             inValue.Body.input = input;
-            return ((BIVN_PACKING.BIVN.USAPWebServiceSoap)(this)).DailyAsync(inValue);
+            return ((BIVN_PACKING.USAPService.USAPWebServiceSoap)(this)).DailyAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BIVN_PACKING.BIVN.MonthlyResponse BIVN_PACKING.BIVN.USAPWebServiceSoap.Monthly(BIVN_PACKING.BIVN.MonthlyRequest request) {
+        BIVN_PACKING.USAPService.MonthlyResponse BIVN_PACKING.USAPService.USAPWebServiceSoap.Monthly(BIVN_PACKING.USAPService.MonthlyRequest request) {
             return base.Channel.Monthly(request);
         }
         
         public string Monthly(System.DateTime input) {
-            BIVN_PACKING.BIVN.MonthlyRequest inValue = new BIVN_PACKING.BIVN.MonthlyRequest();
-            inValue.Body = new BIVN_PACKING.BIVN.MonthlyRequestBody();
+            BIVN_PACKING.USAPService.MonthlyRequest inValue = new BIVN_PACKING.USAPService.MonthlyRequest();
+            inValue.Body = new BIVN_PACKING.USAPService.MonthlyRequestBody();
             inValue.Body.input = input;
-            BIVN_PACKING.BIVN.MonthlyResponse retVal = ((BIVN_PACKING.BIVN.USAPWebServiceSoap)(this)).Monthly(inValue);
+            BIVN_PACKING.USAPService.MonthlyResponse retVal = ((BIVN_PACKING.USAPService.USAPWebServiceSoap)(this)).Monthly(inValue);
             return retVal.Body.MonthlyResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BIVN_PACKING.BIVN.MonthlyResponse> BIVN_PACKING.BIVN.USAPWebServiceSoap.MonthlyAsync(BIVN_PACKING.BIVN.MonthlyRequest request) {
+        System.Threading.Tasks.Task<BIVN_PACKING.USAPService.MonthlyResponse> BIVN_PACKING.USAPService.USAPWebServiceSoap.MonthlyAsync(BIVN_PACKING.USAPService.MonthlyRequest request) {
             return base.Channel.MonthlyAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BIVN_PACKING.BIVN.MonthlyResponse> MonthlyAsync(System.DateTime input) {
-            BIVN_PACKING.BIVN.MonthlyRequest inValue = new BIVN_PACKING.BIVN.MonthlyRequest();
-            inValue.Body = new BIVN_PACKING.BIVN.MonthlyRequestBody();
+        public System.Threading.Tasks.Task<BIVN_PACKING.USAPService.MonthlyResponse> MonthlyAsync(System.DateTime input) {
+            BIVN_PACKING.USAPService.MonthlyRequest inValue = new BIVN_PACKING.USAPService.MonthlyRequest();
+            inValue.Body = new BIVN_PACKING.USAPService.MonthlyRequestBody();
             inValue.Body.input = input;
-            return ((BIVN_PACKING.BIVN.USAPWebServiceSoap)(this)).MonthlyAsync(inValue);
+            return ((BIVN_PACKING.USAPService.USAPWebServiceSoap)(this)).MonthlyAsync(inValue);
         }
     }
 }

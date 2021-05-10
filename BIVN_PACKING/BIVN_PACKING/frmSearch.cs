@@ -23,6 +23,9 @@ namespace BIVN_PACKING
         {
             DataLogin();
             InitializeComponent();
+            dtptimestart.Value = DateTime.Now.AddDays(-7);
+            cbbOption.SelectedIndex = 0;
+           
         }
         private void ShowMessage(string key, string str_status, string str_message)
         {
@@ -58,14 +61,7 @@ namespace BIVN_PACKING
                 dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
         }
-        private void ressearch_Click(object sender, EventArgs e)
-        {
-            ShowMessage("Default", @"[N\A]", "no result");
-            dataGridView1.DataSource = null;
-            txtSearch.ResetText();
-            txtSearch.Focus();
 
-        }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -73,7 +69,7 @@ namespace BIVN_PACKING
             {
                 ShowMessage("NULL", @"NULL", "Please enter the serial you want to delete...");
                 lblMessage.ForeColor = Color.White;
-                txtSearch.Focus();
+                txbSearch.Focus();
                 return;
             }
             var info = _bivnService.GetListPack("", "", "", result).ToList();
@@ -101,35 +97,6 @@ namespace BIVN_PACKING
 
         }
 
-        private void txtSearch_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (txtSearch.Text != "")
-                {
-                    var data = _bivnService.GetListPack("", "", "", txtSearch.Text.Trim()).ToList();
-                    data.Reverse();
-                    dataGridView1.DataSource = data;
-                    DgvPerformance(this.dataGridView1);
-                    if (data.Count != 0)
-                    {
-                        result = txtSearch.Text;
-                        lblMessage.Text = txtSearch.Text + " " + $"[{data.Count()}]";
-                        lblMessage.ForeColor = Color.DarkGreen;
-                        txtSearch.SelectAll();
-                        txtSearch.Focus();
-                    }
-                    else
-                    {
-                        lblMessage.Text = "no results";
-                        txtSearch.Focus();
-                    }
-
-                }
-
-            }
-
-        }
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -190,109 +157,85 @@ namespace BIVN_PACKING
         }
 
 
-        //private void txtSearch_TextChanged(object sender, EventArgs e)
-        //{
-        //    var data = _db.Produce.Where(x => x.BOXID.Contains(txtSearch.Text) || x.MODEL.Contains(txtSearch.Text) || x.SERIAL.Contains(txtSearch.Text) || x.NAME_WO.Contains(txtSearch.Text)).ToList();
-        //    if (data.Count != 0)
-        //    {
-        //        dataGridView1.DataSource = data;
-        //    }
-        //}
 
-        private void dtptimestart_ValueChanged(object sender, EventArgs e)
+        private void updateDataBySearch(List<BIVNService.BIVNPackEntity> data)
         {
-            List<BIVNService.BIVNPackEntity> listdata = new List<BIVNService.BIVNPackEntity>();
-            string datestart = dtptimestart.Value.Date.ToString();
-            string dateend = dtptimeend.Value.Date.ToString();
-            DateTime dt1 = DateTime.Parse($"{datestart}").Date;
-            DateTime dt2 = DateTime.Parse($"{dateend}").Date;
-            var getdatabytime = _bivnService.GetListPack("", "", "", "").ToList();
-            foreach (var item in getdatabytime)
+            data.Reverse();
+            dataGridView1.DataSource = data;
+            DgvPerformance(this.dataGridView1);
+            if (data.Count != 0)
             {
-                DateTime? getdata = item.DATECREATE.Date;
-                if (dt1 <= getdata && getdata <= dt2)
-                {
-                    var viewdata = new BIVNService.BIVNPackEntity()
-                    {
-                        BOXID = item.BOXID,
-                        WO = item.WO,
-                        MODEL = item.MODEL,
-                        SERIAL_START = item.SERIAL_START,
-                        SERIAL_END = item.SERIAL_END,
-                        AMOUNT = item.AMOUNT,
-                        SERIAL = item.SERIAL,
-                        DATECREATE = item.DATECREATE,
-                        USER_NAME = item.USER_NAME,
-                        NAME_WO = item.NAME_WO
-                    };
-                    listdata.Add(viewdata);
-                }
+                result = txbSearch.Text;
+                lblMessage.Text = txbSearch.Text + " " + $"[{data.Count()}]";
+                lblMessage.ForeColor = Color.DarkGreen;
+                txbSearch.SelectAll();
+                txbSearch.Focus();
             }
-            listdata.Reverse();
-            dataGridView1.DataSource = listdata;
-            if (dataGridView1.DataSource != null)
+            else
             {
-                dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                lblMessage.Text = "no results";
+                txbSearch.Focus();
             }
-            lblMessage.Text = listdata.Count().ToString();
-            lblMessage.ForeColor = Color.DarkGreen;
+
         }
 
-        private void dtptimeend_ValueChanged(object sender, EventArgs e)
+        private void bgwSearch_DoWork(object sender, DoWorkEventArgs e)
         {
-            var listdata = new List<BIVNService.BIVNPackEntity>();
-            string datestart = dtptimestart.Value.Date.ToString();
-            string dateend = dtptimeend.Value.Date.ToString();
-            DateTime dt1 = DateTime.Parse($"{datestart}").Date;
-            DateTime dt2 = DateTime.Parse($"{dateend}").Date;
-            var getdatabytime = _bivnService.GetListPack("", "", "", "").ToList();
-            foreach (var item in getdatabytime)
+            var arg = e.Argument as string;
+            if (arg == Constant.FILTER_BY_MODEL)
             {
-                DateTime? getdata = item.DATECREATE.Date;
-                if (dt1 <= getdata && getdata <= dt2)
-                {
-                    var viewdata = new BIVNService.BIVNPackEntity()
-                    {
-                        BOXID = item.BOXID,
-                        WO = item.WO,
-                        MODEL = item.MODEL,
-                        SERIAL_START = item.SERIAL_START,
-                        SERIAL_END = item.SERIAL_END,
-                        AMOUNT = item.AMOUNT,
-                        SERIAL = item.SERIAL,
-                        DATECREATE = item.DATECREATE,
-                        USER_NAME = item.USER_NAME,
-                        NAME_WO = item.NAME_WO
-                    };
-                    listdata.Add(viewdata);
-                }
+                var data = _bivnService.GetListPack("", txbSearch.Text.Trim(), "", "").Where(m => m.DATECREATE.Date >= dtptimestart.Value.Date && m.DATECREATE.Date <= dtptimeend.Value.Date).ToList();
+                e.Result = data;
             }
-            listdata.Reverse();
-            dataGridView1.DataSource = listdata;
-            if (dataGridView1.DataSource != null)
+            else if (arg == Constant.FILTER_BY_SERIAL)
             {
-                dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                var data = _bivnService.GetListPack("", "", "", txbSearch.Text.Trim()).Where(m => m.DATECREATE.Date >= dtptimestart.Value.Date && m.DATECREATE.Date <= dtptimeend.Value.Date).ToList();
+                e.Result = data;
             }
-            lblMessage.Text = listdata.Count().ToString();
-            lblMessage.ForeColor = Color.DarkGreen;
+        }
+
+        private void bgwSearch_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            var data = e.Result as List<BIVNService.BIVNPackEntity>;
+            updateDataBySearch(data);
+            lblStatus.Text = "None";
+        }
+
+
+        string filterOption = Constant.FILTER_BY_SERIAL;
+        private void cbbOption_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbOption.SelectedIndex == 1)
+            {
+                filterOption = Constant.FILTER_BY_SERIAL;
+
+            }
+            else if (cbbOption.SelectedIndex == 0)
+            {
+                filterOption = Constant.FILTER_BY_MODEL;
+            }
+            this.ActiveControl = txbSearch;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txbSearch.Text.Trim()))
+            {
+                lblStatus.Text = "Loading...";
+                string arg = filterOption;
+                bgwSearch.RunWorkerAsync(argument: arg);
+            }
+
+        }
+
+        private void txbSearch_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txbSearch.Text.Trim()) && e.KeyCode == Keys.Enter)
+            {
+                lblStatus.Text = "Loading...";
+                string arg = filterOption;
+                bgwSearch.RunWorkerAsync(argument: arg);
+            }
         }
     }
 }

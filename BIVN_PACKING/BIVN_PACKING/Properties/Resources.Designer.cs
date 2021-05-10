@@ -113,6 +113,26 @@ namespace BIVN_PACKING.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap binoculars1 {
+            get {
+                object obj = ResourceManager.GetObject("binoculars1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap binoculars2 {
+            get {
+                object obj = ResourceManager.GetObject("binoculars2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap csv_file_icon_spreadsheet_document_600w_1467820178 {
             get {
                 object obj = ResourceManager.GetObject("csv-file-icon-spreadsheet-document-600w-1467820178", resourceCulture);

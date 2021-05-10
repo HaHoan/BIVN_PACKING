@@ -34,25 +34,30 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSearch));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txbSearch = new System.Windows.Forms.TextBox();
+            this.cbbOption = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.LinkLabel();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.dtptimeend = new System.Windows.Forms.DateTimePicker();
             this.dtptimestart = new System.Windows.Forms.DateTimePicker();
-            this.ressearch = new System.Windows.Forms.LinkLabel();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblMessage = new System.Windows.Forms.Label();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.lblexport = new System.Windows.Forms.LinkLabel();
             this.dataGridView1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.bgwSearch = new System.ComponentModel.BackgroundWorker();
+            this.lblexport = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txbSearch);
+            this.groupBox1.Controls.Add(this.cbbOption);
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.lblStatus);
             this.groupBox1.Controls.Add(this.dtptimeend);
             this.groupBox1.Controls.Add(this.dtptimestart);
-            this.groupBox1.Controls.Add(this.ressearch);
-            this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Location = new System.Drawing.Point(292, 40);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(619, 95);
@@ -60,41 +65,62 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Information";
             // 
+            // txbSearch
+            // 
+            this.txbSearch.Location = new System.Drawing.Point(160, 23);
+            this.txbSearch.Name = "txbSearch";
+            this.txbSearch.Size = new System.Drawing.Size(324, 20);
+            this.txbSearch.TabIndex = 78;
+            this.txbSearch.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txbSearch_PreviewKeyDown);
+            // 
+            // cbbOption
+            // 
+            this.cbbOption.FormattingEnabled = true;
+            this.cbbOption.Items.AddRange(new object[] {
+            "MODEL",
+            "SERIAL"});
+            this.cbbOption.Location = new System.Drawing.Point(32, 23);
+            this.cbbOption.Name = "cbbOption";
+            this.cbbOption.Size = new System.Drawing.Size(121, 21);
+            this.cbbOption.TabIndex = 77;
+            this.cbbOption.SelectedIndexChanged += new System.EventHandler(this.cbbOption_SelectedIndexChanged);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.Image = global::BIVN_PACKING.Properties.Resources.binoculars1;
+            this.btnSearch.Location = new System.Drawing.Point(507, 54);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(24, 23);
+            this.btnSearch.TabIndex = 76;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(563, 63);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(33, 13);
+            this.lblStatus.TabIndex = 74;
+            this.lblStatus.Text = "None";
+            // 
             // dtptimeend
             // 
+            this.dtptimeend.CustomFormat = "dd/MM/yyyy";
+            this.dtptimeend.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtptimeend.Location = new System.Drawing.Point(284, 57);
             this.dtptimeend.Name = "dtptimeend";
             this.dtptimeend.Size = new System.Drawing.Size(200, 20);
-            this.dtptimeend.TabIndex = 69;
-            this.dtptimeend.ValueChanged += new System.EventHandler(this.dtptimeend_ValueChanged);
+            this.dtptimeend.TabIndex = 3;
             // 
             // dtptimestart
             // 
-            this.dtptimestart.Location = new System.Drawing.Point(64, 57);
+            this.dtptimestart.CustomFormat = "dd/MM/yyyy";
+            this.dtptimestart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtptimestart.Location = new System.Drawing.Point(32, 57);
             this.dtptimestart.Name = "dtptimestart";
-            this.dtptimestart.Size = new System.Drawing.Size(200, 20);
-            this.dtptimestart.TabIndex = 68;
-            this.dtptimestart.ValueChanged += new System.EventHandler(this.dtptimestart_ValueChanged);
-            // 
-            // ressearch
-            // 
-            this.ressearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ressearch.Image = global::BIVN_PACKING.Properties.Resources.refesh_16;
-            this.ressearch.Location = new System.Drawing.Point(490, 22);
-            this.ressearch.Name = "ressearch";
-            this.ressearch.Size = new System.Drawing.Size(24, 23);
-            this.ressearch.TabIndex = 40;
-            this.ressearch.Click += new System.EventHandler(this.ressearch_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtSearch.Location = new System.Drawing.Point(64, 24);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(420, 20);
-            this.txtSearch.TabIndex = 0;
-            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
-            this.txtSearch.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtSearch_PreviewKeyDown);
+            this.dtptimestart.Size = new System.Drawing.Size(232, 20);
+            this.dtptimestart.TabIndex = 2;
             // 
             // label1
             // 
@@ -134,16 +160,6 @@
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Visible = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // lblexport
-            // 
-            this.lblexport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblexport.Image = global::BIVN_PACKING.Properties.Resources.file1;
-            this.lblexport.Location = new System.Drawing.Point(1039, 138);
-            this.lblexport.Name = "lblexport";
-            this.lblexport.Size = new System.Drawing.Size(43, 33);
-            this.lblexport.TabIndex = 64;
-            this.lblexport.Click += new System.EventHandler(this.lblexport_Click);
             // 
             // dataGridView1
             // 
@@ -191,6 +207,21 @@
             this.dataGridView1.Size = new System.Drawing.Size(1070, 529);
             this.dataGridView1.TabIndex = 85;
             // 
+            // bgwSearch
+            // 
+            this.bgwSearch.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwSearch_DoWork);
+            this.bgwSearch.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwSearch_RunWorkerCompleted);
+            // 
+            // lblexport
+            // 
+            this.lblexport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblexport.Image = global::BIVN_PACKING.Properties.Resources.file1;
+            this.lblexport.Location = new System.Drawing.Point(1039, 138);
+            this.lblexport.Name = "lblexport";
+            this.lblexport.Size = new System.Drawing.Size(43, 33);
+            this.lblexport.TabIndex = 64;
+            this.lblexport.Click += new System.EventHandler(this.lblexport_Click);
+            // 
             // frmSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,14 +248,17 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblMessage;
-        private System.Windows.Forms.LinkLabel ressearch;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.LinkLabel lblexport;
         private System.Windows.Forms.DateTimePicker dtptimeend;
         private System.Windows.Forms.DateTimePicker dtptimestart;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dataGridView1;
+        private System.ComponentModel.BackgroundWorker bgwSearch;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.LinkLabel btnSearch;
+        private System.Windows.Forms.ComboBox cbbOption;
+        private System.Windows.Forms.TextBox txbSearch;
     }
 }

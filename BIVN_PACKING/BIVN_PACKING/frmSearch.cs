@@ -189,7 +189,7 @@ namespace BIVN_PACKING
             }
             else if (arg == Constant.FILTER_BY_SERIAL)
             {
-                var data = _bivnService.GetListPack("", "", "", txbSearch.Text.Trim()).Where(m => m.DATECREATE.Date >= dtptimestart.Value.Date && m.DATECREATE.Date <= dtptimeend.Value.Date).ToList();
+                var data = _bivnService.GetListPack("", "", "", txbSearch.Text.Trim()).ToList();
                 e.Result = data;
             }
         }

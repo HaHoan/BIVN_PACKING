@@ -640,14 +640,14 @@ namespace BIVN_PACKING
                 }
                 BIVNService.BIVNPackEntity prod = new BIVNService.BIVNPackEntity()
                 {
-                    BOXID = txtBoxid.Text,
-                    NAME_WO = txbWoNo.Text,
-                    WO = txbWoQty.Text,
-                    MODEL = txbModel.Text,
-                    SERIAL_START = txbSerialStart.Text,
-                    SERIAL_END = txbSeriaEnd.Text,
-                    AMOUNT = lblQtyBox.Text,
-                    SERIAL = txtBarcode.Text,
+                    BOXID = txtBoxid.Text.Trim(),
+                    NAME_WO = txbWoNo.Text.Trim(),
+                    WO = txbWoQty.Text.Trim(),
+                    MODEL = txbModel.Text.Trim(),
+                    SERIAL_START = txbSerialStart.Text.Trim(),
+                    SERIAL_END = txbSeriaEnd.Text.Trim(),
+                    AMOUNT = lblQtyBox.Text.Trim(),
+                    SERIAL = txtBarcode.Text.Trim(),
                     USER_NAME = Data.UserName,
                     DATECREATE = _pvs_service.GetDateTime()
                 };

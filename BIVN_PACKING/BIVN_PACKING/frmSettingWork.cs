@@ -14,7 +14,7 @@ namespace BIVN_PACKING
    
     public partial class frmSettingWork : Form
     {
-        public Action<string, string, string> updateAfterSetting;
+        public Action<string, string, string,string,string> updateAfterSetting;
         private PVSService.PVSWebServiceSoapClient _pvs_service = new PVSService.PVSWebServiceSoapClient();
         private string Model;
       
@@ -131,7 +131,7 @@ namespace BIVN_PACKING
                 return;
             }
            
-            updateAfterSetting(qty, serialStart, serialEnd);
+            updateAfterSetting(lblWoNo.Text.Trim(),lblModel.Text.Trim(),qty, serialStart, serialEnd);
             Close();
         }
 

@@ -228,6 +228,13 @@ namespace BIVN_PACKING.BIVNService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BIVNService.BIVNWebServiceSoap")]
     public interface BIVNWebServiceSoap {
         
+        // CODEGEN: Generating message contract since element name boardNo from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BarcodeExist", ReplyAction="*")]
+        BIVN_PACKING.BIVNService.BarcodeExistResponse BarcodeExist(BIVN_PACKING.BIVNService.BarcodeExistRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BarcodeExist", ReplyAction="*")]
+        System.Threading.Tasks.Task<BIVN_PACKING.BIVNService.BarcodeExistResponse> BarcodeExistAsync(BIVN_PACKING.BIVNService.BarcodeExistRequest request);
+        
         // CODEGEN: Generating message contract since element name boxId from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListPack", ReplyAction="*")]
         BIVN_PACKING.BIVNService.GetListPackResponse GetListPack(BIVN_PACKING.BIVNService.GetListPackRequest request);
@@ -235,12 +242,87 @@ namespace BIVN_PACKING.BIVNService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListPack", ReplyAction="*")]
         System.Threading.Tasks.Task<BIVN_PACKING.BIVNService.GetListPackResponse> GetListPackAsync(BIVN_PACKING.BIVNService.GetListPackRequest request);
         
+        // CODEGEN: Generating message contract since element name boxId from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetPacks", ReplyAction="*")]
+        BIVN_PACKING.BIVNService.GetPacksResponse GetPacks(BIVN_PACKING.BIVNService.GetPacksRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetPacks", ReplyAction="*")]
+        System.Threading.Tasks.Task<BIVN_PACKING.BIVNService.GetPacksResponse> GetPacksAsync(BIVN_PACKING.BIVNService.GetPacksRequest request);
+        
         // CODEGEN: Generating message contract since element name keyValue from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SaveForm", ReplyAction="*")]
         BIVN_PACKING.BIVNService.SaveFormResponse SaveForm(BIVN_PACKING.BIVNService.SaveFormRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SaveForm", ReplyAction="*")]
         System.Threading.Tasks.Task<BIVN_PACKING.BIVNService.SaveFormResponse> SaveFormAsync(BIVN_PACKING.BIVNService.SaveFormRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class BarcodeExistRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="BarcodeExist", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.BIVNService.BarcodeExistRequestBody Body;
+        
+        public BarcodeExistRequest() {
+        }
+        
+        public BarcodeExistRequest(BIVN_PACKING.BIVNService.BarcodeExistRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class BarcodeExistRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string boardNo;
+        
+        public BarcodeExistRequestBody() {
+        }
+        
+        public BarcodeExistRequestBody(string boardNo) {
+            this.boardNo = boardNo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class BarcodeExistResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="BarcodeExistResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.BIVNService.BarcodeExistResponseBody Body;
+        
+        public BarcodeExistResponse() {
+        }
+        
+        public BarcodeExistResponse(BIVN_PACKING.BIVNService.BarcodeExistResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class BarcodeExistResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool BarcodeExistResult;
+        
+        public BarcodeExistResponseBody() {
+        }
+        
+        public BarcodeExistResponseBody(bool BarcodeExistResult) {
+            this.BarcodeExistResult = BarcodeExistResult;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -320,6 +402,90 @@ namespace BIVN_PACKING.BIVNService {
         
         public GetListPackResponseBody(BIVN_PACKING.BIVNService.BIVNPackEntity[] GetListPackResult) {
             this.GetListPackResult = GetListPackResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetPacksRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPacks", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.BIVNService.GetPacksRequestBody Body;
+        
+        public GetPacksRequest() {
+        }
+        
+        public GetPacksRequest(BIVN_PACKING.BIVNService.GetPacksRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetPacksRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string boxId;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string productId;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string orderno;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public System.DateTime from;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public System.DateTime to;
+        
+        public GetPacksRequestBody() {
+        }
+        
+        public GetPacksRequestBody(string boxId, string productId, string orderno, System.DateTime from, System.DateTime to) {
+            this.boxId = boxId;
+            this.productId = productId;
+            this.orderno = orderno;
+            this.from = from;
+            this.to = to;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetPacksResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPacksResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.BIVNService.GetPacksResponseBody Body;
+        
+        public GetPacksResponse() {
+        }
+        
+        public GetPacksResponse(BIVN_PACKING.BIVNService.GetPacksResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetPacksResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BIVN_PACKING.BIVNService.BIVNPackEntity[] GetPacksResult;
+        
+        public GetPacksResponseBody() {
+        }
+        
+        public GetPacksResponseBody(BIVN_PACKING.BIVNService.BIVNPackEntity[] GetPacksResult) {
+            this.GetPacksResult = GetPacksResult;
         }
     }
     
@@ -416,6 +582,31 @@ namespace BIVN_PACKING.BIVNService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BIVN_PACKING.BIVNService.BarcodeExistResponse BIVN_PACKING.BIVNService.BIVNWebServiceSoap.BarcodeExist(BIVN_PACKING.BIVNService.BarcodeExistRequest request) {
+            return base.Channel.BarcodeExist(request);
+        }
+        
+        public bool BarcodeExist(string boardNo) {
+            BIVN_PACKING.BIVNService.BarcodeExistRequest inValue = new BIVN_PACKING.BIVNService.BarcodeExistRequest();
+            inValue.Body = new BIVN_PACKING.BIVNService.BarcodeExistRequestBody();
+            inValue.Body.boardNo = boardNo;
+            BIVN_PACKING.BIVNService.BarcodeExistResponse retVal = ((BIVN_PACKING.BIVNService.BIVNWebServiceSoap)(this)).BarcodeExist(inValue);
+            return retVal.Body.BarcodeExistResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BIVN_PACKING.BIVNService.BarcodeExistResponse> BIVN_PACKING.BIVNService.BIVNWebServiceSoap.BarcodeExistAsync(BIVN_PACKING.BIVNService.BarcodeExistRequest request) {
+            return base.Channel.BarcodeExistAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BIVN_PACKING.BIVNService.BarcodeExistResponse> BarcodeExistAsync(string boardNo) {
+            BIVN_PACKING.BIVNService.BarcodeExistRequest inValue = new BIVN_PACKING.BIVNService.BarcodeExistRequest();
+            inValue.Body = new BIVN_PACKING.BIVNService.BarcodeExistRequestBody();
+            inValue.Body.boardNo = boardNo;
+            return ((BIVN_PACKING.BIVNService.BIVNWebServiceSoap)(this)).BarcodeExistAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         BIVN_PACKING.BIVNService.GetListPackResponse BIVN_PACKING.BIVNService.BIVNWebServiceSoap.GetListPack(BIVN_PACKING.BIVNService.GetListPackRequest request) {
             return base.Channel.GetListPack(request);
         }
@@ -444,6 +635,39 @@ namespace BIVN_PACKING.BIVNService {
             inValue.Body.orderno = orderno;
             inValue.Body.serial = serial;
             return ((BIVN_PACKING.BIVNService.BIVNWebServiceSoap)(this)).GetListPackAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BIVN_PACKING.BIVNService.GetPacksResponse BIVN_PACKING.BIVNService.BIVNWebServiceSoap.GetPacks(BIVN_PACKING.BIVNService.GetPacksRequest request) {
+            return base.Channel.GetPacks(request);
+        }
+        
+        public BIVN_PACKING.BIVNService.BIVNPackEntity[] GetPacks(string boxId, string productId, string orderno, System.DateTime from, System.DateTime to) {
+            BIVN_PACKING.BIVNService.GetPacksRequest inValue = new BIVN_PACKING.BIVNService.GetPacksRequest();
+            inValue.Body = new BIVN_PACKING.BIVNService.GetPacksRequestBody();
+            inValue.Body.boxId = boxId;
+            inValue.Body.productId = productId;
+            inValue.Body.orderno = orderno;
+            inValue.Body.from = from;
+            inValue.Body.to = to;
+            BIVN_PACKING.BIVNService.GetPacksResponse retVal = ((BIVN_PACKING.BIVNService.BIVNWebServiceSoap)(this)).GetPacks(inValue);
+            return retVal.Body.GetPacksResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BIVN_PACKING.BIVNService.GetPacksResponse> BIVN_PACKING.BIVNService.BIVNWebServiceSoap.GetPacksAsync(BIVN_PACKING.BIVNService.GetPacksRequest request) {
+            return base.Channel.GetPacksAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BIVN_PACKING.BIVNService.GetPacksResponse> GetPacksAsync(string boxId, string productId, string orderno, System.DateTime from, System.DateTime to) {
+            BIVN_PACKING.BIVNService.GetPacksRequest inValue = new BIVN_PACKING.BIVNService.GetPacksRequest();
+            inValue.Body = new BIVN_PACKING.BIVNService.GetPacksRequestBody();
+            inValue.Body.boxId = boxId;
+            inValue.Body.productId = productId;
+            inValue.Body.orderno = orderno;
+            inValue.Body.from = from;
+            inValue.Body.to = to;
+            return ((BIVN_PACKING.BIVNService.BIVNWebServiceSoap)(this)).GetPacksAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

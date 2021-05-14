@@ -335,34 +335,90 @@ namespace BIVN_PACKING
                         return;
                     }
 
+                    // lấy tên wo thông qua box
                     var woUsap = Convert.ToInt32(_boxInfo.TN_NO).ToString();
 
+                    // list các serial trong wo đã bắn
                     var listWoActual = _bivnService.GetListPack("", "", woUsap, "").ToList();
+
+                    // số lượng wo thực tế đã bắn
+                    _woQtyActual = listWoActual.Count();
+
+                    // nếu wo đã được bán rôi
                     if (listWoActual.Count() != 0)
                     {
+                        // lấy thông tin wo 
                         var woInfo = listWoActual.FirstOrDefault();
-                        _woQtyActual = listWoActual.Count();
-                        SettingWorkInfo(woUsap, boxID, woInfo.WO, woInfo.SERIAL_START, woInfo.SERIAL_END);
+
+                        // lấy số lượng serial cần bắn / wo
+                        _woQty = int.Parse(woInfo.WO);
+
+                        // nếu số lượng thực tế lớn hơn thì thông báo đầy và nhập lại box mới
+                        if (_woQty <= _woQtyActual)
+                        {
+                            ShowMessage("PASS", "FULL", $"[{woUsap}] Đã đầy Wo [{_woQtyActual}] / [{_woQty}]");
+                            txtBoxid.ResetText();
+                            txtBoxid.Focus();
+                            return;
+                        }
+
+                        // các thông tin của wo
+                        lblQtyWO.Text = txbWoQty.Text = _woQty.ToString();
+                        lblQtyWoActual.Text = _woQtyActual.ToString();
+                        txbSerialStart.Text = woInfo.SERIAL_START.ToString();
+                        txbSeriaEnd.Text = woInfo.SERIAL_END.ToString();
+                        txbWoNo.Text = woUsap;
+                        txbModel.Text = boxID;
+                        lblQtyBox.Text = Convert.ToInt32(_boxInfo.OS_QTY).ToString();
+
+                        // lấy số lượng serial đã bắn / box
+                        _listSerialInBox = _bivnService.GetListPack(boxID, "", woUsap, "").ToList();
+                        _boxQty = _listSerialInBox.Count();
+                        lblQtyBoxActual.Text = _boxQty.ToString();
+                        ListAllSerialInBox();
+                        if (_boxQty >= Convert.ToInt32(_boxInfo.OS_QTY))
+                        {
+                            ShowMessage("PASS", "OK", $"Thùng {boxID} đã đầy [{_boxQty}] / [{Convert.ToInt32(_boxInfo.OS_QTY)}].\nVui lòng bắn thùng khác!");
+                            txtBoxid.SelectAll();
+                            txtBoxid.Focus();
+
+                            return;
+                        }
+
+                        ShowMessage("PASS", "OK", $"BoxID {boxID} OK.\nInsert Serial!");
+                        txtBoxid.Enabled = false;
+                        panelBarcode.Enabled = true;
+                        txtBarcode.Focus();
                     }
                     else
                     {
                         ShowMessage("Wait", "Wait", $"Please complete infomation!");
                         frmSettingWork frmSettingWork = new frmSettingWork(_boxInfo);
-                        bool isFocusBarcode = false;
-                        frmSettingWork.updateAfterSetting = (qty, start, end) =>
+                        frmSettingWork.updateAfterSetting = (woUsapSettting, modelSetting, qty, start, end) =>
                         {
-                            SettingWorkInfo(woUsap, boxID, qty, start, end);
-                            isFocusBarcode = true;
+                            this.BeginInvoke(new Action(() =>
+                            {
+                                lblQtyWO.Text = txbWoQty.Text = qty.ToString();
+                                lblQtyWoActual.Text = "0";
+                                txbSerialStart.Text = start;
+                                txbSeriaEnd.Text = end;
+                                txbWoNo.Text = woUsapSettting;
+                                txbModel.Text = modelSetting;
+                                lblQtyBox.Text = Convert.ToInt32(_boxInfo.OS_QTY).ToString();
+                                _boxQty = 0;
+                                lblQtyBoxActual.Text = _boxQty.ToString();
+                                _listSerialInBox = new List<BIVNService.BIVNPackEntity>();
+                                ListAllSerialInBox();
+                                txtBoxid.Enabled = false;
+                                panelBarcode.Enabled = true;
+                                txtBarcode.Focus();
+                             
+                            }));
+
 
                         };
                         frmSettingWork.ShowDialog();
-                        if (isFocusBarcode)
-                        {
-                            txtBarcode.Enabled = true;
-                            panelBarcode.Enabled = true;
-                            txtBarcode.Focus();
 
-                        }
                     }
                 }
             }
@@ -374,25 +430,6 @@ namespace BIVN_PACKING
         }
         private void ListAllSerialInBox()
         {
-            // var catagorydata = new List<Dataview>();
-
-            //foreach (var s in _listSerialInBox)
-            //{
-            //    this.dgrvListSerialInBox.Rows[i].Cells[0].Value = i;
-            //    if (s.DATECREATE is DateTime date)
-            //    {
-            //        catagorydata.Add(new Dataview()
-            //        {
-            //            No = i.ToString(),
-            //            serial = s.SERIAL,
-            //            date = date,
-            //            BOXID = s.BOXID
-            //        });
-            //    }
-
-            //    i++;
-            //}
-
             this.BeginInvoke(new Action(() =>
             {
                 dgrvListSerialInBox.DataSource = null;
@@ -407,28 +444,21 @@ namespace BIVN_PACKING
         {
             try
             {
-                _woQty = int.Parse(Wo);
+
 
                 lblQtyWO.Text = txbWoQty.Text = Wo.ToString();
+                lblQtyWoActual.Text = _woQtyActual.ToString();
                 txbSerialStart.Text = serialStart.ToString();
                 txbSeriaEnd.Text = serialEnd.ToString();
-                lblQtyWoActual.Text = _woQtyActual.ToString();
+                txbWoNo.Text = woUsap;
+                txbModel.Text = boxID;
+                lblQtyBox.Text = Convert.ToInt32(_boxInfo.OS_QTY).ToString();
+                lblQtyBoxActual.Text = _boxQty.ToString();
 
-                txbWoQty.Enabled = txbSerialStart.Enabled = txbSeriaEnd.Enabled = false;
-                if (_woQty <= _woQtyActual)
-                {
-                    ShowMessage("PASS", "FULL", $"[{woUsap}] Đã đầy Wo [{_woQtyActual}] / [{_woQty}]");
-                    txtBoxid.ResetText();
-                    txtBoxid.Focus();
-                    return;
-                }
                 _listSerialInBox = _bivnService.GetListPack(boxID, "", woUsap, "").ToList();
                 _boxQty = _listSerialInBox.Count();
                 ListAllSerialInBox();
-                txbWoNo.Text = woUsap;
-                txbModel.Text = _boxInfo.PART_NO;
-                lblQtyBox.Text = Convert.ToInt32(_boxInfo.OS_QTY).ToString();
-                lblQtyBoxActual.Text = _boxQty.ToString();
+
                 if (_boxQty >= Convert.ToInt32(_boxInfo.OS_QTY))
                 {
                     ShowMessage("PASS", "OK", $"Thùng {boxID} đã đầy [{_boxQty}] / [{Convert.ToInt32(_boxInfo.OS_QTY)}].\nVui lòng bắn thùng khác!");
@@ -630,8 +660,8 @@ namespace BIVN_PACKING
                     ShowMessage("FAIL", @"FAIL", $"Serial không nằm trong dải cho phép!");
                     return;
                 }
-                var serialExist = _bivnService.GetListPack("", "", "", serial).FirstOrDefault();
-                if (serialExist != null)
+                var serialExist = _bivnService.BarcodeExist(serial);
+                if (serialExist)
                 {
                     ShowMessage("FAIL", @"FAIL", $"Serial đã tồn tại.\nVui lòng bắn Serial khác.");
                     txtBarcode.SelectAll();
@@ -769,7 +799,7 @@ namespace BIVN_PACKING
                 //string text = dgrvListSerialInBox.Rows[rowindex].Cells[columnindex].Value.ToString();
 
                 //m.Show(dgrvListSerialInBox, new Point(e.X, e.Y), LeftRightAlignment.Right);
-                
+
 
             }
         }
@@ -779,7 +809,7 @@ namespace BIVN_PACKING
 
         }
 
-     
+
         private void ClearAll()
         {
             txbWoNo.ResetText();

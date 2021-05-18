@@ -23,7 +23,6 @@ namespace BIVN_PACKING
         {
             DataLogin();
             InitializeComponent();
-            dtptimestart.Value = DateTime.Now.AddDays(-7);
             cbbOption.SelectedIndex = 0;
            
         }

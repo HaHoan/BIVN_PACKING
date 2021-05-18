@@ -368,7 +368,7 @@ namespace BIVN_PACKING
                         txbSerialStart.Text = woInfo.SERIAL_START.ToString();
                         txbSeriaEnd.Text = woInfo.SERIAL_END.ToString();
                         txbWoNo.Text = woUsap;
-                        txbModel.Text = boxID;
+                        txbModel.Text = _boxInfo.PART_NO;
                         lblQtyBox.Text = Convert.ToInt32(_boxInfo.OS_QTY).ToString();
 
                         // lấy số lượng serial đã bắn / box
@@ -440,46 +440,7 @@ namespace BIVN_PACKING
                 }
             }));
         }
-        private void SettingWorkInfo(string woUsap, string boxID, string Wo, string serialStart, string serialEnd)
-        {
-            try
-            {
-
-
-                lblQtyWO.Text = txbWoQty.Text = Wo.ToString();
-                lblQtyWoActual.Text = _woQtyActual.ToString();
-                txbSerialStart.Text = serialStart.ToString();
-                txbSeriaEnd.Text = serialEnd.ToString();
-                txbWoNo.Text = woUsap;
-                txbModel.Text = boxID;
-                lblQtyBox.Text = Convert.ToInt32(_boxInfo.OS_QTY).ToString();
-                lblQtyBoxActual.Text = _boxQty.ToString();
-
-                _listSerialInBox = _bivnService.GetListPack(boxID, "", woUsap, "").ToList();
-                _boxQty = _listSerialInBox.Count();
-                ListAllSerialInBox();
-
-                if (_boxQty >= Convert.ToInt32(_boxInfo.OS_QTY))
-                {
-                    ShowMessage("PASS", "OK", $"Thùng {boxID} đã đầy [{_boxQty}] / [{Convert.ToInt32(_boxInfo.OS_QTY)}].\nVui lòng bắn thùng khác!");
-                    txtBoxid.SelectAll();
-                    txtBoxid.Focus();
-
-                    return;
-                }
-
-                ShowMessage("PASS", "OK", $"BoxID {boxID} OK.\nInsert Serial!");
-                txtBoxid.Enabled = false;
-                panelBarcode.Enabled = true;
-                txtBarcode.Focus();
-            }
-            catch (Exception e)
-            {
-                ShowMessage("FAIL", @"FAIL", e.Message.ToString());
-
-            }
-
-        }
+      
         private void txtWoNo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -774,14 +735,14 @@ namespace BIVN_PACKING
             }
             MessageBox.Show("OK");*/
 
-            OpenFileDialog choofdlog = new OpenFileDialog();
-            choofdlog.FilterIndex = 1;
+            //OpenFileDialog choofdlog = new OpenFileDialog();
+            //choofdlog.FilterIndex = 1;
 
-            if (choofdlog.ShowDialog() == DialogResult.OK)
-            {
-                string sFileName = choofdlog.FileName;
-                Common.ImportModel(sFileName);
-            }
+            //if (choofdlog.ShowDialog() == DialogResult.OK)
+            //{
+            //    string sFileName = choofdlog.FileName;
+            //    Common.ImportModel(sFileName);
+            //}
 
         }
 

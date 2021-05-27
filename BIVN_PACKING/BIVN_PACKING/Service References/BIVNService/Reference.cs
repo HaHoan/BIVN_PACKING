@@ -249,6 +249,13 @@ namespace BIVN_PACKING.BIVNService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetPacks", ReplyAction="*")]
         System.Threading.Tasks.Task<BIVN_PACKING.BIVNService.GetPacksResponse> GetPacksAsync(BIVN_PACKING.BIVNService.GetPacksRequest request);
         
+        // CODEGEN: Generating message contract since element name orderno from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetTotalByWo", ReplyAction="*")]
+        BIVN_PACKING.BIVNService.GetTotalByWoResponse GetTotalByWo(BIVN_PACKING.BIVNService.GetTotalByWoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetTotalByWo", ReplyAction="*")]
+        System.Threading.Tasks.Task<BIVN_PACKING.BIVNService.GetTotalByWoResponse> GetTotalByWoAsync(BIVN_PACKING.BIVNService.GetTotalByWoRequest request);
+        
         // CODEGEN: Generating message contract since element name keyValue from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SaveForm", ReplyAction="*")]
         BIVN_PACKING.BIVNService.SaveFormResponse SaveForm(BIVN_PACKING.BIVNService.SaveFormRequest request);
@@ -493,6 +500,74 @@ namespace BIVN_PACKING.BIVNService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetTotalByWoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetTotalByWo", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.BIVNService.GetTotalByWoRequestBody Body;
+        
+        public GetTotalByWoRequest() {
+        }
+        
+        public GetTotalByWoRequest(BIVN_PACKING.BIVNService.GetTotalByWoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetTotalByWoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string orderno;
+        
+        public GetTotalByWoRequestBody() {
+        }
+        
+        public GetTotalByWoRequestBody(string orderno) {
+            this.orderno = orderno;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetTotalByWoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetTotalByWoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.BIVNService.GetTotalByWoResponseBody Body;
+        
+        public GetTotalByWoResponse() {
+        }
+        
+        public GetTotalByWoResponse(BIVN_PACKING.BIVNService.GetTotalByWoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetTotalByWoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int GetTotalByWoResult;
+        
+        public GetTotalByWoResponseBody() {
+        }
+        
+        public GetTotalByWoResponseBody(int GetTotalByWoResult) {
+            this.GetTotalByWoResult = GetTotalByWoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SaveFormRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveForm", Namespace="http://tempuri.org/", Order=0)]
@@ -668,6 +743,31 @@ namespace BIVN_PACKING.BIVNService {
             inValue.Body.from = from;
             inValue.Body.to = to;
             return ((BIVN_PACKING.BIVNService.BIVNWebServiceSoap)(this)).GetPacksAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BIVN_PACKING.BIVNService.GetTotalByWoResponse BIVN_PACKING.BIVNService.BIVNWebServiceSoap.GetTotalByWo(BIVN_PACKING.BIVNService.GetTotalByWoRequest request) {
+            return base.Channel.GetTotalByWo(request);
+        }
+        
+        public int GetTotalByWo(string orderno) {
+            BIVN_PACKING.BIVNService.GetTotalByWoRequest inValue = new BIVN_PACKING.BIVNService.GetTotalByWoRequest();
+            inValue.Body = new BIVN_PACKING.BIVNService.GetTotalByWoRequestBody();
+            inValue.Body.orderno = orderno;
+            BIVN_PACKING.BIVNService.GetTotalByWoResponse retVal = ((BIVN_PACKING.BIVNService.BIVNWebServiceSoap)(this)).GetTotalByWo(inValue);
+            return retVal.Body.GetTotalByWoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BIVN_PACKING.BIVNService.GetTotalByWoResponse> BIVN_PACKING.BIVNService.BIVNWebServiceSoap.GetTotalByWoAsync(BIVN_PACKING.BIVNService.GetTotalByWoRequest request) {
+            return base.Channel.GetTotalByWoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BIVN_PACKING.BIVNService.GetTotalByWoResponse> GetTotalByWoAsync(string orderno) {
+            BIVN_PACKING.BIVNService.GetTotalByWoRequest inValue = new BIVN_PACKING.BIVNService.GetTotalByWoRequest();
+            inValue.Body = new BIVN_PACKING.BIVNService.GetTotalByWoRequestBody();
+            inValue.Body.orderno = orderno;
+            return ((BIVN_PACKING.BIVNService.BIVNWebServiceSoap)(this)).GetTotalByWoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

@@ -338,17 +338,17 @@ namespace BIVN_PACKING
                     // lấy tên wo thông qua box
                     var woUsap = Convert.ToInt32(_boxInfo.TN_NO).ToString();
 
-                    // list các serial trong wo đã bắn
-                    var listWoActual = _bivnService.GetListPack("", "", woUsap, "").ToList();
-
                     // số lượng wo thực tế đã bắn
-                    _woQtyActual = listWoActual.Count();
+                    _woQtyActual = _bivnService.GetTotalByWo(woUsap);
 
                     // nếu wo đã được bán rôi
-                    if (listWoActual.Count() != 0)
+                    if (_woQtyActual != 0)
                     {
+                        // lấy số lượng serial đã bắn / box
+                        _listSerialInBox = _bivnService.GetListPack(boxID,_boxInfo.PART_NO, woUsap, "").ToList();
+
                         // lấy thông tin wo 
-                        var woInfo = listWoActual.FirstOrDefault();
+                        var woInfo = _listSerialInBox.FirstOrDefault();
 
                         // lấy số lượng serial cần bắn / wo
                         _woQty = int.Parse(woInfo.WO);
@@ -371,8 +371,7 @@ namespace BIVN_PACKING
                         txbModel.Text = _boxInfo.PART_NO;
                         lblQtyBox.Text = Convert.ToInt32(_boxInfo.OS_QTY).ToString();
 
-                        // lấy số lượng serial đã bắn / box
-                        _listSerialInBox = _bivnService.GetListPack(boxID, "", woUsap, "").ToList();
+                       
                         _boxQty = _listSerialInBox.Count();
                         lblQtyBoxActual.Text = _boxQty.ToString();
                         ListAllSerialInBox();

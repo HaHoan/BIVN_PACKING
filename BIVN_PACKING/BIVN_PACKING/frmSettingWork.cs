@@ -16,6 +16,7 @@ namespace BIVN_PACKING
     {
         public Action<string, string, string,string,string> updateAfterSetting;
         private PVSService.PVSWebServiceSoapClient _pvs_service = new PVSService.PVSWebServiceSoapClient();
+        private BIVNService.BIVNWebServiceSoapClient _bivnService = new BIVNService.BIVNWebServiceSoapClient();
         private string Model;
       
         private USAPService.BCLBFLMEntity boxInfo;
@@ -130,7 +131,23 @@ namespace BIVN_PACKING
                 ShowMessage("FAIL", @"FAIL", $"Dải serial có "+numberWork + " bản mạch. Khác với số lượng work đã nhập");
                 return;
             }
-           
+            try
+            {
+                _bivnService.SaveOrderNo("", new BIVNService.BIVNWorkOrderEntity()
+                {
+                    Order_No = lblWoNo.Text.Trim(),
+                    Qty = int.Parse(qty),
+                    Board_Start = serialStart,
+                    Board_End = serialEnd
+                });
+
+            }
+            catch (Exception)
+            {
+                lblError.Text = "Chưa lưu thành công!";
+                return;
+            }
+         
             updateAfterSetting(lblWoNo.Text.Trim(),lblModel.Text.Trim(),qty, serialStart, serialEnd);
             Close();
         }

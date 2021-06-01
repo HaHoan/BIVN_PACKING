@@ -32,7 +32,7 @@
     <MinimumRequiredVersion>1.0.0.15</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>70</ApplicationRevision>
+    <ApplicationRevision>73</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -321,7 +321,13 @@
     <None Include="Service References\BIVNService\BIVN_PACKING.BIVNService.BIVNPackEntity.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\BIVNService\BIVN_PACKING.BIVNService.BIVNWorkOrderEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\BIVNService\BIVN_PACKING.BIVNService.GetListPackResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIVNService\BIVN_PACKING.BIVNService.GetOrderNoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\BIVNService\BIVN_PACKING.BIVNService.GetPacksResponse.datasource">
@@ -331,6 +337,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\BIVNService\BIVN_PACKING.BIVNService.SaveFormResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIVNService\BIVN_PACKING.BIVNService.SaveOrderNoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\USAPService\BIVN_PACKING.USAPService.BCLBFLMEntity.datasource">

@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1500
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIVN_PACKING", "BIVN_PACKING.csproj", "{03E767FA-E173-45B3-9B73-68EF67617822}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormProject", "..\..\..\..\..\WEB\FormProject-master\FormProject\FormProject.csproj", "{F38F2F88-6E04-4DB9-82FC-1C4E06968B41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{03E767FA-E173-45B3-9B73-68EF67617822}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03E767FA-E173-45B3-9B73-68EF67617822}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03E767FA-E173-45B3-9B73-68EF67617822}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F38F2F88-6E04-4DB9-82FC-1C4E06968B41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F38F2F88-6E04-4DB9-82FC-1C4E06968B41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F38F2F88-6E04-4DB9-82FC-1C4E06968B41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F38F2F88-6E04-4DB9-82FC-1C4E06968B41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {632DD3C5-F532-4D27-BFA2-80CA7B69E482}
 	EndGlobalSection
 EndGlobal

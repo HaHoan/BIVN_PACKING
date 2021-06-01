@@ -198,6 +198,7 @@ namespace BIVN_PACKING.BIVNService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="BaseEntity", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.BIVNService.BIVNWorkOrderEntity))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.BIVNService.BIVNPackEntity))]
     public partial class BaseEntity : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -220,6 +221,76 @@ namespace BIVN_PACKING.BIVNService {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BIVNWorkOrderEntity", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class BIVNWorkOrderEntity : BIVN_PACKING.BIVNService.BaseEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Order_NoField;
+        
+        private int QtyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Board_StartField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Board_EndField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Order_No {
+            get {
+                return this.Order_NoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Order_NoField, value) != true)) {
+                    this.Order_NoField = value;
+                    this.RaisePropertyChanged("Order_No");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Qty {
+            get {
+                return this.QtyField;
+            }
+            set {
+                if ((this.QtyField.Equals(value) != true)) {
+                    this.QtyField = value;
+                    this.RaisePropertyChanged("Qty");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Board_Start {
+            get {
+                return this.Board_StartField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Board_StartField, value) != true)) {
+                    this.Board_StartField = value;
+                    this.RaisePropertyChanged("Board_Start");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Board_End {
+            get {
+                return this.Board_EndField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Board_EndField, value) != true)) {
+                    this.Board_EndField = value;
+                    this.RaisePropertyChanged("Board_End");
+                }
             }
         }
     }
@@ -262,6 +333,20 @@ namespace BIVN_PACKING.BIVNService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SaveForm", ReplyAction="*")]
         System.Threading.Tasks.Task<BIVN_PACKING.BIVNService.SaveFormResponse> SaveFormAsync(BIVN_PACKING.BIVNService.SaveFormRequest request);
+        
+        // CODEGEN: Generating message contract since element name orderNo from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetOrderNo", ReplyAction="*")]
+        BIVN_PACKING.BIVNService.GetOrderNoResponse GetOrderNo(BIVN_PACKING.BIVNService.GetOrderNoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetOrderNo", ReplyAction="*")]
+        System.Threading.Tasks.Task<BIVN_PACKING.BIVNService.GetOrderNoResponse> GetOrderNoAsync(BIVN_PACKING.BIVNService.GetOrderNoRequest request);
+        
+        // CODEGEN: Generating message contract since element name keyValue from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SaveOrderNo", ReplyAction="*")]
+        BIVN_PACKING.BIVNService.SaveOrderNoResponse SaveOrderNo(BIVN_PACKING.BIVNService.SaveOrderNoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SaveOrderNo", ReplyAction="*")]
+        System.Threading.Tasks.Task<BIVN_PACKING.BIVNService.SaveOrderNoResponse> SaveOrderNoAsync(BIVN_PACKING.BIVNService.SaveOrderNoRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -629,6 +714,139 @@ namespace BIVN_PACKING.BIVNService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetOrderNoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetOrderNo", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.BIVNService.GetOrderNoRequestBody Body;
+        
+        public GetOrderNoRequest() {
+        }
+        
+        public GetOrderNoRequest(BIVN_PACKING.BIVNService.GetOrderNoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetOrderNoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string orderNo;
+        
+        public GetOrderNoRequestBody() {
+        }
+        
+        public GetOrderNoRequestBody(string orderNo) {
+            this.orderNo = orderNo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetOrderNoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetOrderNoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.BIVNService.GetOrderNoResponseBody Body;
+        
+        public GetOrderNoResponse() {
+        }
+        
+        public GetOrderNoResponse(BIVN_PACKING.BIVNService.GetOrderNoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetOrderNoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BIVN_PACKING.BIVNService.BIVNWorkOrderEntity GetOrderNoResult;
+        
+        public GetOrderNoResponseBody() {
+        }
+        
+        public GetOrderNoResponseBody(BIVN_PACKING.BIVNService.BIVNWorkOrderEntity GetOrderNoResult) {
+            this.GetOrderNoResult = GetOrderNoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SaveOrderNoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveOrderNo", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.BIVNService.SaveOrderNoRequestBody Body;
+        
+        public SaveOrderNoRequest() {
+        }
+        
+        public SaveOrderNoRequest(BIVN_PACKING.BIVNService.SaveOrderNoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class SaveOrderNoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string keyValue;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public BIVN_PACKING.BIVNService.BIVNWorkOrderEntity entity;
+        
+        public SaveOrderNoRequestBody() {
+        }
+        
+        public SaveOrderNoRequestBody(string keyValue, BIVN_PACKING.BIVNService.BIVNWorkOrderEntity entity) {
+            this.keyValue = keyValue;
+            this.entity = entity;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SaveOrderNoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveOrderNoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.BIVNService.SaveOrderNoResponseBody Body;
+        
+        public SaveOrderNoResponse() {
+        }
+        
+        public SaveOrderNoResponse(BIVN_PACKING.BIVNService.SaveOrderNoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class SaveOrderNoResponseBody {
+        
+        public SaveOrderNoResponseBody() {
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface BIVNWebServiceSoapChannel : BIVN_PACKING.BIVNService.BIVNWebServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -794,6 +1012,57 @@ namespace BIVN_PACKING.BIVNService {
             inValue.Body.keyValue = keyValue;
             inValue.Body.entity = entity;
             return ((BIVN_PACKING.BIVNService.BIVNWebServiceSoap)(this)).SaveFormAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BIVN_PACKING.BIVNService.GetOrderNoResponse BIVN_PACKING.BIVNService.BIVNWebServiceSoap.GetOrderNo(BIVN_PACKING.BIVNService.GetOrderNoRequest request) {
+            return base.Channel.GetOrderNo(request);
+        }
+        
+        public BIVN_PACKING.BIVNService.BIVNWorkOrderEntity GetOrderNo(string orderNo) {
+            BIVN_PACKING.BIVNService.GetOrderNoRequest inValue = new BIVN_PACKING.BIVNService.GetOrderNoRequest();
+            inValue.Body = new BIVN_PACKING.BIVNService.GetOrderNoRequestBody();
+            inValue.Body.orderNo = orderNo;
+            BIVN_PACKING.BIVNService.GetOrderNoResponse retVal = ((BIVN_PACKING.BIVNService.BIVNWebServiceSoap)(this)).GetOrderNo(inValue);
+            return retVal.Body.GetOrderNoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BIVN_PACKING.BIVNService.GetOrderNoResponse> BIVN_PACKING.BIVNService.BIVNWebServiceSoap.GetOrderNoAsync(BIVN_PACKING.BIVNService.GetOrderNoRequest request) {
+            return base.Channel.GetOrderNoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BIVN_PACKING.BIVNService.GetOrderNoResponse> GetOrderNoAsync(string orderNo) {
+            BIVN_PACKING.BIVNService.GetOrderNoRequest inValue = new BIVN_PACKING.BIVNService.GetOrderNoRequest();
+            inValue.Body = new BIVN_PACKING.BIVNService.GetOrderNoRequestBody();
+            inValue.Body.orderNo = orderNo;
+            return ((BIVN_PACKING.BIVNService.BIVNWebServiceSoap)(this)).GetOrderNoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BIVN_PACKING.BIVNService.SaveOrderNoResponse BIVN_PACKING.BIVNService.BIVNWebServiceSoap.SaveOrderNo(BIVN_PACKING.BIVNService.SaveOrderNoRequest request) {
+            return base.Channel.SaveOrderNo(request);
+        }
+        
+        public void SaveOrderNo(string keyValue, BIVN_PACKING.BIVNService.BIVNWorkOrderEntity entity) {
+            BIVN_PACKING.BIVNService.SaveOrderNoRequest inValue = new BIVN_PACKING.BIVNService.SaveOrderNoRequest();
+            inValue.Body = new BIVN_PACKING.BIVNService.SaveOrderNoRequestBody();
+            inValue.Body.keyValue = keyValue;
+            inValue.Body.entity = entity;
+            BIVN_PACKING.BIVNService.SaveOrderNoResponse retVal = ((BIVN_PACKING.BIVNService.BIVNWebServiceSoap)(this)).SaveOrderNo(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BIVN_PACKING.BIVNService.SaveOrderNoResponse> BIVN_PACKING.BIVNService.BIVNWebServiceSoap.SaveOrderNoAsync(BIVN_PACKING.BIVNService.SaveOrderNoRequest request) {
+            return base.Channel.SaveOrderNoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BIVN_PACKING.BIVNService.SaveOrderNoResponse> SaveOrderNoAsync(string keyValue, BIVN_PACKING.BIVNService.BIVNWorkOrderEntity entity) {
+            BIVN_PACKING.BIVNService.SaveOrderNoRequest inValue = new BIVN_PACKING.BIVNService.SaveOrderNoRequest();
+            inValue.Body = new BIVN_PACKING.BIVNService.SaveOrderNoRequestBody();
+            inValue.Body.keyValue = keyValue;
+            inValue.Body.entity = entity;
+            return ((BIVN_PACKING.BIVNService.BIVNWebServiceSoap)(this)).SaveOrderNoAsync(inValue);
         }
     }
 }

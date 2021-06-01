@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -338,20 +339,39 @@ namespace BIVN_PACKING
                     // lấy tên wo thông qua box
                     var woUsap = Convert.ToInt32(_boxInfo.TN_NO).ToString();
 
+                
+                    // lấy thông tin wo 
+                    var woInfo = _bivnService.GetOrderNo(woUsap);
+
                     // số lượng wo thực tế đã bắn
                     _woQtyActual = _bivnService.GetTotalByWo(woUsap);
 
-                    // nếu wo đã được bán rôi
-                    if (_woQtyActual != 0)
+                    if (woInfo == null && _woQtyActual > 0)
                     {
-                        // lấy số lượng serial đã bắn / box
-                        _listSerialInBox = _bivnService.GetListPack(boxID,_boxInfo.PART_NO, woUsap, "").ToList();
+                        var woInList = _bivnService.GetListPack("", "", woUsap, "").FirstOrDefault();
+                        _bivnService.SaveOrderNo("", new BIVNService.BIVNWorkOrderEntity()
+                        {
+                            Order_No = woInList.NAME_WO,
+                            Qty = int.Parse(woInList.WO),
+                            Board_Start = woInList.SERIAL_START,
+                            Board_End = woInList.SERIAL_END
+                        });
 
-                        // lấy thông tin wo 
-                        var woInfo = _listSerialInBox.FirstOrDefault();
+                        woInfo = new BIVNService.BIVNWorkOrderEntity()
+                        {
+                            Order_No = woInList.NAME_WO,
+                            Qty = int.Parse(woInList.WO),
+                            Board_Start = woInList.SERIAL_START,
+                            Board_End = woInList.SERIAL_END
+                        };
+                    }
 
+                    // nếu thong tin wo đã được bán rôi
+                    if (woInfo != null)
+                    {
+                       
                         // lấy số lượng serial cần bắn / wo
-                        _woQty = int.Parse(woInfo.WO);
+                        _woQty = woInfo.Qty;
 
                         // nếu số lượng thực tế lớn hơn thì thông báo đầy và nhập lại box mới
                         if (_woQty <= _woQtyActual)
@@ -365,13 +385,16 @@ namespace BIVN_PACKING
                         // các thông tin của wo
                         lblQtyWO.Text = txbWoQty.Text = _woQty.ToString();
                         lblQtyWoActual.Text = _woQtyActual.ToString();
-                        txbSerialStart.Text = woInfo.SERIAL_START.ToString();
-                        txbSeriaEnd.Text = woInfo.SERIAL_END.ToString();
+                        txbSerialStart.Text = woInfo.Board_Start.ToString();
+                        txbSeriaEnd.Text = woInfo.Board_End.ToString();
                         txbWoNo.Text = woUsap;
                         txbModel.Text = _boxInfo.PART_NO;
                         lblQtyBox.Text = Convert.ToInt32(_boxInfo.OS_QTY).ToString();
 
-                       
+
+                        // lấy số lượng serial đã bắn / box
+                        _listSerialInBox = _bivnService.GetListPack(boxID, _boxInfo.PART_NO, woUsap, "").ToList();
+
                         _boxQty = _listSerialInBox.Count();
                         lblQtyBoxActual.Text = _boxQty.ToString();
                         ListAllSerialInBox();
@@ -673,6 +696,9 @@ namespace BIVN_PACKING
 
                 txtBarcode.ResetText();
                 txtBarcode.Focus();
+             
+              
+
             }
         }
 

@@ -30,8 +30,9 @@ namespace BIVN_PACKING
                 lblthongbao.Text = "Account does not exist";
                 return;
             }
-
+          
             Properties.Settings.Default.user = txtUsername.Text;
+            Properties.Settings.Default.userID = UserEntity.ID;
             Properties.Settings.Default.Save();
             this.Hide();
             new frmMain().Show();

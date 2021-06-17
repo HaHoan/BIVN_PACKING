@@ -217,11 +217,23 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEditModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditModel.Designer.cs">
+      <DependentUpon>frmEditModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModel.Designer.cs">
+      <DependentUpon>frmModel.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSearch.cs">
       <SubType>Form</SubType>
@@ -276,8 +288,14 @@
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEditModel.resx">
+      <DependentUpon>frmEditModel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModel.resx">
+      <DependentUpon>frmModel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSearch.resx">
       <DependentUpon>frmSearch.cs</DependentUpon>

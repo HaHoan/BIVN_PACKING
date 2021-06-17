@@ -237,6 +237,9 @@ namespace BIVN_PACKING
             }
         }
     }
-
+    public static class ROLES
+    {
+        public static string ADMINISTRATORS = "ADMINISTRATORS";
+    }
 
 }

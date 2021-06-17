@@ -795,6 +795,18 @@ namespace BIVN_PACKING
 
         }
 
+        private void lblsetting_Click(object sender, EventArgs e)
+        {
+            var roleUser = _pvs_service.GetRoleMember(Properties.Settings.Default.userID);
+            if (roleUser != null && roleUser.FirstOrDefault() != null && roleUser.FirstOrDefault().ROLE_ID == ROLES.ADMINISTRATORS)
+            {
+                new frmModel().ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Bạn phải đăng nhập bằng tài khoản admin");
+            }
+        }
 
         private void ClearAll()
         {

@@ -12,18 +12,12 @@ namespace BIVN_PACKING
     using System;
     using System.Collections.Generic;
     
-    public partial class Produce1
+    public partial class sysdiagram
     {
-        public int ID { get; set; }
-        public string BOXID { get; set; }
-        public string WO { get; set; }
-        public string MODEL { get; set; }
-        public string SERIAL_START { get; set; }
-        public string SERIAL_END { get; set; }
-        public string AMOUNT { get; set; }
-        public string SERIAL { get; set; }
-        public System.DateTime DATECREATE { get; set; }
-        public string USER_NAME { get; set; }
-        public string NAME_WO { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

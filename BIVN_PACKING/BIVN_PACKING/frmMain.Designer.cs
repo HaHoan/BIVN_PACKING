@@ -31,10 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnTestSerial = new System.Windows.Forms.Button();
+            this.lblsetting = new System.Windows.Forms.LinkLabel();
             this.panelBOXID = new System.Windows.Forms.Panel();
+            this.llreset = new System.Windows.Forms.LinkLabel();
             this.label5 = new System.Windows.Forms.Label();
             this.txtBoxid = new System.Windows.Forms.TextBox();
             this.panelBarcode = new System.Windows.Forms.Panel();
+            this.lblResetBarcode = new System.Windows.Forms.LinkLabel();
+            this.labba = new System.Windows.Forms.Label();
             this.txtBarcode = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lblQtyWO = new System.Windows.Forms.Label();
@@ -44,6 +48,7 @@
             this.lblQtyBox = new System.Windows.Forms.Label();
             this.lblQtyBoxActual = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.lblSearch = new System.Windows.Forms.LinkLabel();
             this.RESULT = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txbModel = new System.Windows.Forms.TextBox();
@@ -61,9 +66,11 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblSp = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblVersion = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -84,13 +91,7 @@
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.USER_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblsetting = new System.Windows.Forms.LinkLabel();
-            this.llreset = new System.Windows.Forms.LinkLabel();
-            this.lblResetBarcode = new System.Windows.Forms.LinkLabel();
-            this.labba = new System.Windows.Forms.Label();
-            this.lblSearch = new System.Windows.Forms.LinkLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSuaHang = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.panelBOXID.SuspendLayout();
             this.panelBarcode.SuspendLayout();
@@ -99,13 +100,14 @@
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrvListSerialInBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnSuaHang);
             this.groupBox3.Controls.Add(this.btnTestSerial);
             this.groupBox3.Controls.Add(this.lblsetting);
             this.groupBox3.Controls.Add(this.panelBOXID);
@@ -135,6 +137,16 @@
             this.btnTestSerial.Visible = false;
             this.btnTestSerial.Click += new System.EventHandler(this.btnTestSerial_Click);
             // 
+            // lblsetting
+            // 
+            this.lblsetting.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblsetting.Image = global::BIVN_PACKING.Properties.Resources.tools_16;
+            this.lblsetting.Location = new System.Drawing.Point(587, 252);
+            this.lblsetting.Name = "lblsetting";
+            this.lblsetting.Size = new System.Drawing.Size(32, 33);
+            this.lblsetting.TabIndex = 66;
+            this.lblsetting.Click += new System.EventHandler(this.lblsetting_Click);
+            // 
             // panelBOXID
             // 
             this.panelBOXID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -145,6 +157,16 @@
             this.panelBOXID.Name = "panelBOXID";
             this.panelBOXID.Size = new System.Drawing.Size(333, 30);
             this.panelBOXID.TabIndex = 62;
+            // 
+            // llreset
+            // 
+            this.llreset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.llreset.Image = global::BIVN_PACKING.Properties.Resources.refesh_16;
+            this.llreset.Location = new System.Drawing.Point(303, 4);
+            this.llreset.Name = "llreset";
+            this.llreset.Size = new System.Drawing.Size(22, 19);
+            this.llreset.TabIndex = 63;
+            this.llreset.Click += new System.EventHandler(this.llreset_Click);
             // 
             // label5
             // 
@@ -177,6 +199,26 @@
             this.panelBarcode.Name = "panelBarcode";
             this.panelBarcode.Size = new System.Drawing.Size(333, 30);
             this.panelBarcode.TabIndex = 61;
+            // 
+            // lblResetBarcode
+            // 
+            this.lblResetBarcode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblResetBarcode.Image = global::BIVN_PACKING.Properties.Resources.refesh_16;
+            this.lblResetBarcode.Location = new System.Drawing.Point(303, 7);
+            this.lblResetBarcode.Name = "lblResetBarcode";
+            this.lblResetBarcode.Size = new System.Drawing.Size(22, 19);
+            this.lblResetBarcode.TabIndex = 64;
+            this.lblResetBarcode.Click += new System.EventHandler(this.lblResetBarcode_Click);
+            // 
+            // labba
+            // 
+            this.labba.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labba.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.labba.Image = global::BIVN_PACKING.Properties.Resources.barcode_32;
+            this.labba.Location = new System.Drawing.Point(7, 1);
+            this.labba.Name = "labba";
+            this.labba.Size = new System.Drawing.Size(33, 25);
+            this.labba.TabIndex = 31;
             // 
             // txtBarcode
             // 
@@ -278,6 +320,16 @@
             this.label10.TabIndex = 4;
             this.label10.Text = "/";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblSearch.Image = global::BIVN_PACKING.Properties.Resources.search;
+            this.lblSearch.Location = new System.Drawing.Point(625, 249);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(34, 36);
+            this.lblSearch.TabIndex = 53;
+            this.lblSearch.Click += new System.EventHandler(this.lblSearch_Click);
             // 
             // RESULT
             // 
@@ -476,6 +528,18 @@
             this.label1.Text = "BIVN_PACKING";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Image = global::BIVN_PACKING.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(599, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(66, 56);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // statusStrip1
             // 
             this.statusStrip1.BackColor = System.Drawing.Color.White;
@@ -519,6 +583,15 @@
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
             this.toolStripStatusLabel4.Size = new System.Drawing.Size(43, 20);
             this.toolStripStatusLabel4.Text = "PE-IT";
+            // 
+            // toolStripStatusLabel8
+            // 
+            this.toolStripStatusLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.toolStripStatusLabel8.Image = global::BIVN_PACKING.Properties.Resources._09_32;
+            this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
+            this.toolStripStatusLabel8.Size = new System.Drawing.Size(56, 20);
+            this.toolStripStatusLabel8.Text = "3143";
             // 
             // toolStripStatusLabel3
             // 
@@ -667,76 +740,17 @@
             this.USER_NAME.Name = "USER_NAME";
             this.USER_NAME.ReadOnly = true;
             // 
-            // toolStripStatusLabel8
+            // btnSuaHang
             // 
-            this.toolStripStatusLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripStatusLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.toolStripStatusLabel8.Image = global::BIVN_PACKING.Properties.Resources._09_32;
-            this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
-            this.toolStripStatusLabel8.Size = new System.Drawing.Size(56, 20);
-            this.toolStripStatusLabel8.Text = "3143";
-            // 
-            // lblsetting
-            // 
-            this.lblsetting.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblsetting.Image = global::BIVN_PACKING.Properties.Resources.tools_16;
-            this.lblsetting.Location = new System.Drawing.Point(587, 252);
-            this.lblsetting.Name = "lblsetting";
-            this.lblsetting.Size = new System.Drawing.Size(32, 33);
-            this.lblsetting.TabIndex = 66;
-            this.lblsetting.Click += new System.EventHandler(this.lblsetting_Click);
-            // 
-            // llreset
-            // 
-            this.llreset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.llreset.Image = global::BIVN_PACKING.Properties.Resources.refesh_16;
-            this.llreset.Location = new System.Drawing.Point(303, 4);
-            this.llreset.Name = "llreset";
-            this.llreset.Size = new System.Drawing.Size(22, 19);
-            this.llreset.TabIndex = 63;
-            this.llreset.Click += new System.EventHandler(this.llreset_Click);
-            // 
-            // lblResetBarcode
-            // 
-            this.lblResetBarcode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblResetBarcode.Image = global::BIVN_PACKING.Properties.Resources.refesh_16;
-            this.lblResetBarcode.Location = new System.Drawing.Point(303, 7);
-            this.lblResetBarcode.Name = "lblResetBarcode";
-            this.lblResetBarcode.Size = new System.Drawing.Size(22, 19);
-            this.lblResetBarcode.TabIndex = 64;
-            this.lblResetBarcode.Click += new System.EventHandler(this.lblResetBarcode_Click);
-            // 
-            // labba
-            // 
-            this.labba.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labba.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.labba.Image = global::BIVN_PACKING.Properties.Resources.barcode_32;
-            this.labba.Location = new System.Drawing.Point(7, 1);
-            this.labba.Name = "labba";
-            this.labba.Size = new System.Drawing.Size(33, 25);
-            this.labba.TabIndex = 31;
-            // 
-            // lblSearch
-            // 
-            this.lblSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSearch.Image = global::BIVN_PACKING.Properties.Resources.search;
-            this.lblSearch.Location = new System.Drawing.Point(625, 249);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(34, 36);
-            this.lblSearch.TabIndex = 53;
-            this.lblSearch.Click += new System.EventHandler(this.lblSearch_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = global::BIVN_PACKING.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(599, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(66, 56);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.btnSuaHang.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnSuaHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaHang.Location = new System.Drawing.Point(473, 252);
+            this.btnSuaHang.Name = "btnSuaHang";
+            this.btnSuaHang.Size = new System.Drawing.Size(95, 31);
+            this.btnSuaHang.TabIndex = 68;
+            this.btnSuaHang.Text = "Sửa Hàng";
+            this.btnSuaHang.UseVisualStyleBackColor = false;
+            this.btnSuaHang.Click += new System.EventHandler(this.btnSuaHang_Click);
             // 
             // frmMain
             // 
@@ -766,10 +780,10 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrvListSerialInBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -844,5 +858,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn serial;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn USER_NAME;
+        private System.Windows.Forms.Button btnSuaHang;
     }
 }

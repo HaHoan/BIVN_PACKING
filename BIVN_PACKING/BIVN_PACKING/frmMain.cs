@@ -808,6 +808,22 @@ namespace BIVN_PACKING
             }
         }
 
+        private void btnSuaHang_Click(object sender, EventArgs e)
+        {
+            using(var db = new BIVNEntities())
+            {
+                var user = db.Admins.Where(m => m.Code == Properties.Settings.Default.userID).FirstOrDefault();
+                if (user != null)
+                {
+                    new frmHangSua().ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Liên Hệ với IT để được đăng kí người sửa hàng");
+                }
+            }
+        }
+
         private void ClearAll()
         {
             txbWoNo.ResetText();

@@ -25,9 +25,10 @@ namespace BIVN_PACKING
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Produce> Produces { get; set; }
-        public DbSet<WorkOrder> WorkOrders { get; set; }
         public DbSet<Admin> Admins { get; set; }
+        public DbSet<Produce> Produces { get; set; }
         public DbSet<Repair> Repairs { get; set; }
+        public DbSet<sysdiagram> sysdiagrams { get; set; }
+        public DbSet<WorkOrder> WorkOrders { get; set; }
     }
 }

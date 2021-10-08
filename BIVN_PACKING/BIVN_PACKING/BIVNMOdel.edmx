@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BIVNModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Produce">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BOXID" Type="nvarchar" MaxLength="128" />
+          <Property Name="WO" Type="nvarchar" MaxLength="128" />
+          <Property Name="MODEL" Type="nvarchar" MaxLength="128" />
+          <Property Name="SERIAL_START" Type="nvarchar" MaxLength="100" />
+          <Property Name="SERIAL_END" Type="nvarchar" MaxLength="100" />
+          <Property Name="AMOUNT" Type="varchar" MaxLength="10" />
+          <Property Name="SERIAL" Type="nvarchar" MaxLength="100" />
+          <Property Name="DATECREATE" Type="datetime" />
+          <Property Name="USER_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="NAME_WO" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Repair">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BOXID" Type="nvarchar" MaxLength="50" />
+          <Property Name="SERIAL" Type="nvarchar" MaxLength="50" />
+          <Property Name="AMOUNT" Type="int" />
+          <Property Name="DATECREATE" Type="datetime" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="WorkOrder">
+          <Key>
+            <PropertyRef Name="Order_No" />
+          </Key>
+          <Property Name="Order_No" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Qty" Type="int" />
+          <Property Name="Board_Start" Type="nvarchar" MaxLength="50" />
+          <Property Name="Board_End" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="BIVNModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Produce" EntityType="Self.Produce" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Repair" EntityType="Self.Repair" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorkOrder" EntityType="Self.WorkOrder" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BIVNModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Produce">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BOXID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="WO" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="MODEL" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="SERIAL_START" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SERIAL_END" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AMOUNT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SERIAL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DATECREATE" Type="DateTime" Precision="3" />
+          <Property Name="USER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NAME_WO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WorkOrder">
+          <Key>
+            <PropertyRef Name="Order_No" />
+          </Key>
+          <Property Name="Order_No" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Qty" Type="Int32" />
+          <Property Name="Board_Start" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Board_End" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="BIVNEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Produces" EntityType="Self.Produce" />
+          <EntitySet Name="WorkOrders" EntityType="Self.WorkOrder" />
+          <EntitySet Name="Admins" EntityType="BIVNModel.Admin" />
+          <EntitySet Name="Repairs" EntityType="BIVNModel.Repair" />
+        </EntityContainer>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Repair">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BOXID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SERIAL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AMOUNT" Type="Int32" />
+          <Property Name="DATECREATE" Type="DateTime" Precision="3" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BIVNModelStoreContainer" CdmEntityContainer="BIVNEntities">
+          <EntitySetMapping Name="Produces">
+            <EntityTypeMapping TypeName="BIVNModel.Produce">
+              <MappingFragment StoreEntitySet="Produce">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BOXID" ColumnName="BOXID" />
+                <ScalarProperty Name="WO" ColumnName="WO" />
+                <ScalarProperty Name="MODEL" ColumnName="MODEL" />
+                <ScalarProperty Name="SERIAL_START" ColumnName="SERIAL_START" />
+                <ScalarProperty Name="SERIAL_END" ColumnName="SERIAL_END" />
+                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+                <ScalarProperty Name="SERIAL" ColumnName="SERIAL" />
+                <ScalarProperty Name="DATECREATE" ColumnName="DATECREATE" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+                <ScalarProperty Name="NAME_WO" ColumnName="NAME_WO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkOrders">
+            <EntityTypeMapping TypeName="BIVNModel.WorkOrder">
+              <MappingFragment StoreEntitySet="WorkOrder">
+                <ScalarProperty Name="Order_No" ColumnName="Order_No" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Board_Start" ColumnName="Board_Start" />
+                <ScalarProperty Name="Board_End" ColumnName="Board_End" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="BIVNModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Repairs">
+            <EntityTypeMapping TypeName="BIVNModel.Repair">
+              <MappingFragment StoreEntitySet="Repair">
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="DATECREATE" ColumnName="DATECREATE" />
+                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+                <ScalarProperty Name="SERIAL" ColumnName="SERIAL" />
+                <ScalarProperty Name="BOXID" ColumnName="BOXID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -15,6 +15,7 @@ namespace BIVN_PACKING
     {
         USAPService.USAPWebServiceSoapClient _dbClient = new USAPService.USAPWebServiceSoapClient();
         private USAPService.BCLBFLMEntity _boxInfo = new USAPService.BCLBFLMEntity();
+        private PVSService.BARCODE_RULE_ITEMSEntity _rule = new PVSService.BARCODE_RULE_ITEMSEntity();
         private BIVNService.BIVNWebServiceSoapClient _bivnService = new BIVNService.BIVNWebServiceSoapClient();
         private PVSService.PVSWebServiceSoapClient _pvs_service = new PVSService.PVSWebServiceSoapClient();
         int _boxQty = 0;
@@ -90,6 +91,14 @@ namespace BIVN_PACKING
                             txtBoxid.Focus();
                             return;
                         }
+                        var rule = _pvs_service.GetBarcodeRuleEntityByRuleNO(_boxInfo.PART_NO);
+                        if(rule != null)
+                        {
+                            _rule = _pvs_service.GetBarcodeRuleItemsById(rule.ID.ToString());
+                        }
+                     
+                        
+                        lblModel.Text = _boxInfo.PART_NO;
                         lblQtyBox.Text = Convert.ToInt32(_boxInfo.OS_QTY).ToString();
                         // lấy số lượng serial đã bắn / box
                         _listSerialInBox = db.Repairs.Where(m => m.BOXID == boxID).ToList();
@@ -130,11 +139,7 @@ namespace BIVN_PACKING
                 }
             }));
         }
-        private void txtBoxid_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+     
         private void txtBarcode_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -146,6 +151,16 @@ namespace BIVN_PACKING
                     return;
                 }
                 var serial = txtBarcode.Text.Trim();
+                if(_rule != null && _rule.LOCATION is int location && _rule.CONTENT_LENGTH is int content_length)
+                {
+                  
+                    if(serial.Substring(location - 1, content_length) != _rule.CONTENT)
+                    {
+                        new Error($"Serial cần bắt đầu bằng {_rule.CONTENT}").ShowDialog();
+                        return;
+                    }
+                 
+                }
                 try
                 {
                     using (var db = new BIVNEntities())
@@ -153,10 +168,11 @@ namespace BIVN_PACKING
                         var prod = new Repair()
                         {
                             BOXID = txtBoxid.Text.Trim(),
-                            AMOUNT = int.Parse(lblQtyBox.Text.Trim()),
+                            AMOUNT = Convert.ToInt32(_boxInfo.OS_QTY),
                             SERIAL = txtBarcode.Text.Trim(),
                             USERNAME = Data.UserName,
-                            DATECREATE = _pvs_service.GetDateTime()
+                            DATECREATE = _pvs_service.GetDateTime(),
+                            MODEL = _boxInfo.PART_NO
                         };
 
                         db.Repairs.Add(prod);

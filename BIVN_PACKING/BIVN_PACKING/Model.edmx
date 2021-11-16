@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BIVNModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BIVNModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admin">
           <Key>
             <PropertyRef Name="ID" />
@@ -17,13 +17,13 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="BOXID" Type="nvarchar" MaxLength="128" />
-          <Property Name="WO" Type="nvarchar" MaxLength="128" />
+          <Property Name="BOXID" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="WO" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="MODEL" Type="nvarchar" MaxLength="128" />
           <Property Name="SERIAL_START" Type="nvarchar" MaxLength="100" />
           <Property Name="SERIAL_END" Type="nvarchar" MaxLength="100" />
           <Property Name="AMOUNT" Type="varchar" MaxLength="10" />
-          <Property Name="SERIAL" Type="nvarchar" MaxLength="100" />
+          <Property Name="SERIAL" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="DATECREATE" Type="datetime" />
           <Property Name="USER_NAME" Type="nvarchar" MaxLength="50" />
           <Property Name="NAME_WO" Type="nvarchar" MaxLength="50" />
@@ -38,6 +38,7 @@
           <Property Name="AMOUNT" Type="int" />
           <Property Name="DATECREATE" Type="datetime" />
           <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="MODEL" Type="nvarchar" MaxLength="128" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -65,8 +66,7 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WorkOrder" EntityType="Self.WorkOrder" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BIVNModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -82,27 +82,16 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BOXID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="WO" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="BOXID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="WO" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MODEL" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="SERIAL_START" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="SERIAL_END" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="AMOUNT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="SERIAL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SERIAL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DATECREATE" Type="DateTime" Precision="3" />
           <Property Name="USER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NAME_WO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Repair">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BOXID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SERIAL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AMOUNT" Type="Int32" />
-          <Property Name="DATECREATE" Type="DateTime" Precision="3" />
-          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -126,10 +115,22 @@
         <EntityContainer Name="BIVNEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Admins" EntityType="Self.Admin" />
           <EntitySet Name="Produces" EntityType="Self.Produce" />
-          <EntitySet Name="Repairs" EntityType="Self.Repair" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="WorkOrders" EntityType="Self.WorkOrder" />
+          <EntitySet Name="Repairs" EntityType="BIVNModel1.Repair" />
         </EntityContainer>
+        <EntityType Name="Repair">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BOXID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SERIAL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AMOUNT" Type="Int32" />
+          <Property Name="DATECREATE" Type="DateTime" Precision="3" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MODEL" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -161,18 +162,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Repairs">
-            <EntityTypeMapping TypeName="BIVNModel1.Repair">
-              <MappingFragment StoreEntitySet="Repair">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="BOXID" ColumnName="BOXID" />
-                <ScalarProperty Name="SERIAL" ColumnName="SERIAL" />
-                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
-                <ScalarProperty Name="DATECREATE" ColumnName="DATECREATE" />
-                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="BIVNModel1.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -191,6 +180,19 @@
                 <ScalarProperty Name="Qty" ColumnName="Qty" />
                 <ScalarProperty Name="Board_Start" ColumnName="Board_Start" />
                 <ScalarProperty Name="Board_End" ColumnName="Board_End" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Repairs">
+            <EntityTypeMapping TypeName="BIVNModel1.Repair">
+              <MappingFragment StoreEntitySet="Repair">
+                <ScalarProperty Name="MODEL" ColumnName="MODEL" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="DATECREATE" ColumnName="DATECREATE" />
+                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+                <ScalarProperty Name="SERIAL" ColumnName="SERIAL" />
+                <ScalarProperty Name="BOXID" ColumnName="BOXID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

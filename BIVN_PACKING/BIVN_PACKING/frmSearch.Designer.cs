@@ -46,12 +46,14 @@
             this.dataGridView1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bgwSearch = new System.ComponentModel.BackgroundWorker();
             this.lblexport = new System.Windows.Forms.LinkLabel();
+            this.cbHangSua = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbHangSua);
             this.groupBox1.Controls.Add(this.txbSearch);
             this.groupBox1.Controls.Add(this.cbbOption);
             this.groupBox1.Controls.Add(this.btnSearch);
@@ -222,6 +224,16 @@
             this.lblexport.TabIndex = 64;
             this.lblexport.Click += new System.EventHandler(this.lblexport_Click);
             // 
+            // cbHangSua
+            // 
+            this.cbHangSua.AutoSize = true;
+            this.cbHangSua.Location = new System.Drawing.Point(491, 25);
+            this.cbHangSua.Name = "cbHangSua";
+            this.cbHangSua.Size = new System.Drawing.Size(72, 17);
+            this.cbHangSua.TabIndex = 79;
+            this.cbHangSua.Text = "Hàng sửa";
+            this.cbHangSua.UseVisualStyleBackColor = true;
+            // 
             // frmSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,5 +272,6 @@
         private System.Windows.Forms.LinkLabel btnSearch;
         private System.Windows.Forms.ComboBox cbbOption;
         private System.Windows.Forms.TextBox txbSearch;
+        private System.Windows.Forms.CheckBox cbHangSua;
     }
 }

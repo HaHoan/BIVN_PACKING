@@ -56,8 +56,10 @@ namespace BIVN_PACKING
             bgrwSoftInfo.RunWorkerAsync();
             FileShare.Connect(FileShare.PATH, new System.Net.NetworkCredential(FileShare.USER, FileShare.PASSWORD));
             this.dgrvListSerialInBox.AutoGenerateColumns = false;
-        }
 
+            
+        }
+       
         private void BgrwSoftInfo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             var result = e.Result as Base_Soft_InfoEntity;
@@ -339,7 +341,7 @@ namespace BIVN_PACKING
                     // lấy tên wo thông qua box
                     var woUsap = Convert.ToInt32(_boxInfo.TN_NO).ToString();
 
-                
+
                     // lấy thông tin wo 
                     var woInfo = _bivnService.GetOrderNo(woUsap);
 
@@ -369,13 +371,14 @@ namespace BIVN_PACKING
                     // nếu thong tin wo đã được bán rôi
                     if (woInfo != null)
                     {
-                       
+
                         // lấy số lượng serial cần bắn / wo
                         _woQty = woInfo.Qty;
 
                         // nếu số lượng thực tế lớn hơn thì thông báo đầy và nhập lại box mới
                         if (_woQty <= _woQtyActual)
                         {
+                            new Error($"[{woUsap}] Đã đầy Wo [{_woQtyActual}] / [{_woQty}]").ShowDialog();
                             ShowMessage("PASS", "FULL", $"[{woUsap}] Đã đầy Wo [{_woQtyActual}] / [{_woQty}]");
                             txtBoxid.ResetText();
                             txtBoxid.Focus();
@@ -403,7 +406,7 @@ namespace BIVN_PACKING
                             ShowMessage("PASS", "OK", $"Thùng {boxID} đã đầy [{_boxQty}] / [{Convert.ToInt32(_boxInfo.OS_QTY)}].\nVui lòng bắn thùng khác!");
                             txtBoxid.SelectAll();
                             txtBoxid.Focus();
-
+                            new Error($"Thùng {boxID} đã đầy [{_boxQty}] / [{Convert.ToInt32(_boxInfo.OS_QTY)}].\nVui lòng bắn thùng khác!").ShowDialog();
                             return;
                         }
 
@@ -434,7 +437,7 @@ namespace BIVN_PACKING
                                 txtBoxid.Enabled = false;
                                 panelBarcode.Enabled = true;
                                 txtBarcode.Focus();
-                             
+
                             }));
 
 
@@ -462,7 +465,7 @@ namespace BIVN_PACKING
                 }
             }));
         }
-      
+
         private void txtWoNo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -696,8 +699,8 @@ namespace BIVN_PACKING
 
                 txtBarcode.ResetText();
                 txtBarcode.Focus();
-             
-              
+
+
 
             }
         }
@@ -810,7 +813,7 @@ namespace BIVN_PACKING
 
         private void btnSuaHang_Click(object sender, EventArgs e)
         {
-            using(var db = new BIVNEntities())
+            using (var db = new BIVNEntities())
             {
                 var user = db.Admins.Where(m => m.Code == Properties.Settings.Default.userID).FirstOrDefault();
                 if (user != null)

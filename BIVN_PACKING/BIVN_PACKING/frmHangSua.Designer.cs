@@ -49,6 +49,7 @@
             this.serial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.USER_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblModel = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.panelBOXID.SuspendLayout();
             this.panelBarcode.SuspendLayout();
@@ -265,11 +266,21 @@
             this.USER_NAME.Name = "USER_NAME";
             this.USER_NAME.ReadOnly = true;
             // 
+            // lblModel
+            // 
+            this.lblModel.AutoSize = true;
+            this.lblModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModel.Location = new System.Drawing.Point(358, 101);
+            this.lblModel.Name = "lblModel";
+            this.lblModel.Size = new System.Drawing.Size(0, 16);
+            this.lblModel.TabIndex = 81;
+            // 
             // frmHangSua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(695, 472);
+            this.Controls.Add(this.lblModel);
             this.Controls.Add(this.dgrvListSerialInBox);
             this.Controls.Add(this.panelBarcode);
             this.Controls.Add(this.panelBOXID);
@@ -287,6 +298,7 @@
             this.panelBarcode.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrvListSerialInBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -311,5 +323,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn serial;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn USER_NAME;
+        private System.Windows.Forms.Label lblModel;
     }
 }

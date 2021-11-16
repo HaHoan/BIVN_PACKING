@@ -32,7 +32,7 @@
     <MinimumRequiredVersion>1.0.0.15</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>73</ApplicationRevision>
+    <ApplicationRevision>76</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -214,6 +214,12 @@
     <Compile Include="Business\User.cs" />
     <Compile Include="Business\UserClaas.cs" />
     <Compile Include="Common.cs" />
+    <Compile Include="Error.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Error.Designer.cs">
+      <DependentUpon>Error.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +306,9 @@
     <Compile Include="WorkOrder.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Error.resx">
+      <DependentUpon>Error.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -378,6 +387,45 @@
     <None Include="Service References\BIVNService\BIVN_PACKING.BIVNService.SaveOrderNoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.CheckRepairResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetBarcodeRuleItemsByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetReplacingLogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetRuleNoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetStationByHostNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetStationByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetSteelMeshResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetTotalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetWorkOrderProcedureByOrderIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.INSPECTION_OPTIONSEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.MurataRemoveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.REPLACING_LOGSEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.STEEL_MESH_STATUSEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\USAPService\BIVN_PACKING.USAPService.BCLBFLMEntity.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -454,12 +502,6 @@
     <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetEntityINSPECTION_PROCESSESResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetLineStartByLineIdJsonResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetLineStartByLineIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetListBarodeRuleItemsStartWidthResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -481,19 +523,7 @@
     <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetListModelStartWidthResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetListOrderItemsByIdJsonResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetListOrderItemsByIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetMacResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetMaterialByIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetMaterialWithParamResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PVSService\BIVN_PACKING.PVSService.GetModelbyModelNameResponse.datasource">
@@ -571,9 +601,6 @@
     <None Include="Service References\PVSService\BIVN_PACKING.PVSService.KyoSaveBoardResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.MACHINESEntity.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\PVSService\BIVN_PACKING.PVSService.MasterEntity.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -586,22 +613,7 @@
     <None Include="Service References\PVSService\BIVN_PACKING.PVSService.MasterSavesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.MaterialAllLinesStartedResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.MaterialGetOperationLogsResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.MaterialLinesResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\PVSService\BIVN_PACKING.PVSService.MATERIAL_DOCUMENTSEntity.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.MATERIAL_ORDERSEntity.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PVSService\BIVN_PACKING.PVSService.MATERIAL_ORDER_ITEMSEntity.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PVSService\BIVN_PACKING.PVSService.ModelSavesResponse.datasource">

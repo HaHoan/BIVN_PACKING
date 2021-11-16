@@ -24,7 +24,7 @@ namespace BIVN_PACKING
             DataLogin();
             InitializeComponent();
             cbbOption.SelectedIndex = 0;
-           
+
         }
         private void ShowMessage(string key, string str_status, string str_message)
         {
@@ -157,15 +157,30 @@ namespace BIVN_PACKING
 
 
 
-        private void updateDataBySearch(List<BIVNService.BIVNPackEntity> data)
+        private void updateDataBySearch(object result)
         {
-            data.Reverse();
-            dataGridView1.DataSource = data;
+            int count = 0;
+            if (cbHangSua.Checked)
+            {
+                var data = (List<Repair>)result;
+                data.Reverse();
+                dataGridView1.DataSource = data;
+                count = data.Count;
+            }
+            else
+            {
+                var data = (List<BIVNService.BIVNPackEntity>)result;
+                data.Reverse();
+                dataGridView1.DataSource = data;
+                count = data.Count;
+            }
+
+
             DgvPerformance(this.dataGridView1);
-            if (data.Count != 0)
+            if (count != 0)
             {
                 result = txbSearch.Text;
-                lblMessage.Text = txbSearch.Text + " " + $"[{data.Count()}]";
+                lblMessage.Text = txbSearch.Text + " " + $"[{count}]";
                 lblMessage.ForeColor = Color.DarkGreen;
                 txbSearch.SelectAll();
                 txbSearch.Focus();
@@ -181,23 +196,50 @@ namespace BIVN_PACKING
         private void bgwSearch_DoWork(object sender, DoWorkEventArgs e)
         {
             var arg = e.Argument as string;
-            if (arg == Constant.FILTER_BY_MODEL)
+            if (cbHangSua.Checked)
             {
-                var data = _bivnService.GetListPack("", txbSearch.Text.Trim(), "", "").Where(m => m.DATECREATE.Date >= dtptimestart.Value.Date && m.DATECREATE.Date <= dtptimeend.Value.Date).ToList();
-                e.Result = data;
+                using (var db = new BIVNEntities())
+                {
+                    if (arg == Constant.FILTER_BY_SERIAL)
+                    {
+                        var data = db.Repairs.Where(m => m.SERIAL == txbSearch.Text.Trim() && m.DATECREATE >= dtptimestart.Value.Date && m.DATECREATE <= dtptimeend.Value.Date).ToList();
+
+                        e.Result = data;
+                    }
+                    else if(arg == Constant.FILTER_BY_MODEL)
+                    {
+                        var data = db.Repairs.Where(m => m.MODEL == txbSearch.Text.Trim() && m.DATECREATE >= dtptimestart.Value.Date && m.DATECREATE <= dtptimeend.Value.Date).ToList();
+
+                        e.Result = data;
+                    }
+                }
             }
-            else if (arg == Constant.FILTER_BY_SERIAL)
+            else
             {
-                var data = _bivnService.GetListPack("", "", "", txbSearch.Text.Trim()).ToList();
-                e.Result = data;
+                if (arg == Constant.FILTER_BY_MODEL)
+                {
+                    var data = _bivnService.GetListPack("", txbSearch.Text.Trim(), "", "").Where(m => m.DATECREATE.Date >= dtptimestart.Value.Date && m.DATECREATE.Date <= dtptimeend.Value.Date).ToList();
+                    e.Result = data;
+                }
+                else if (arg == Constant.FILTER_BY_SERIAL)
+                {
+                    var data = _bivnService.GetListPack("", "", "", txbSearch.Text.Trim()).Where(m => m.DATECREATE.Date >= dtptimestart.Value.Date && m.DATECREATE.Date <= dtptimeend.Value.Date).ToList();
+                    e.Result = data;
+                }
             }
+
         }
 
         private void bgwSearch_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            var data = e.Result as List<BIVNService.BIVNPackEntity>;
-            updateDataBySearch(data);
+            if (e.Result != null)
+            {
+                updateDataBySearch(e.Result);
+
+            }
+
             lblStatus.Text = "None";
+
         }
 
 

@@ -15,6 +15,259 @@ namespace BIVN_PACKING.PVSService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseEntity", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.REPLACING_LOGSEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.STEEL_MESH_STATUSEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.NichiconEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.MuratasEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.MasterEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.Base_Soft_InfoEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.Base_ModelsEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.WORK_ORDERSEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.KyoMacEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.KYOCERAEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.USERSEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.BOARD_BIND_STATUSEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.WORK_ORDER_ITEMSEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.SCANNING_LOGSEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.BARCODE_RULESEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.BARCODE_RULE_ITEMSEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.INSPECTION_PROCESSESEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.ModelsEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.MATERIAL_DOCUMENTSEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.INSPECTION_STATIONSEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.OPERATION_LOGSEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.WORK_ORDER_PROCEDURESEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.ROLE_MEMBERSEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.INSPECTION_OPTIONSEntity))]
+    public partial class BaseEntity : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="REPLACING_LOGSEntity", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class REPLACING_LOGSEntity : BIVN_PACKING.PVSService.BaseEntity {
+        
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NEW_BARCODEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OLD_BARCODEField;
+        
+        private System.DateTime UPDATE_TIMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UPDATER_NAMEField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string NEW_BARCODE {
+            get {
+                return this.NEW_BARCODEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NEW_BARCODEField, value) != true)) {
+                    this.NEW_BARCODEField = value;
+                    this.RaisePropertyChanged("NEW_BARCODE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string OLD_BARCODE {
+            get {
+                return this.OLD_BARCODEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OLD_BARCODEField, value) != true)) {
+                    this.OLD_BARCODEField = value;
+                    this.RaisePropertyChanged("OLD_BARCODE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.DateTime UPDATE_TIME {
+            get {
+                return this.UPDATE_TIMEField;
+            }
+            set {
+                if ((this.UPDATE_TIMEField.Equals(value) != true)) {
+                    this.UPDATE_TIMEField = value;
+                    this.RaisePropertyChanged("UPDATE_TIME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string UPDATER_NAME {
+            get {
+                return this.UPDATER_NAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UPDATER_NAMEField, value) != true)) {
+                    this.UPDATER_NAMEField = value;
+                    this.RaisePropertyChanged("UPDATER_NAME");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="STEEL_MESH_STATUSEntity", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class STEEL_MESH_STATUSEntity : BIVN_PACKING.PVSService.BaseEntity {
+        
+        private System.Guid IDField;
+        
+        private int CHECK_STATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MATERIAL_ORDER_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MESH_NOField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PART_IDField;
+        
+        private int MAX_USE_COUNTField;
+        
+        private System.Nullable<System.DateTime> INPUT_TIMEField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public int CHECK_STATE {
+            get {
+                return this.CHECK_STATEField;
+            }
+            set {
+                if ((this.CHECK_STATEField.Equals(value) != true)) {
+                    this.CHECK_STATEField = value;
+                    this.RaisePropertyChanged("CHECK_STATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string MATERIAL_ORDER_ID {
+            get {
+                return this.MATERIAL_ORDER_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MATERIAL_ORDER_IDField, value) != true)) {
+                    this.MATERIAL_ORDER_IDField = value;
+                    this.RaisePropertyChanged("MATERIAL_ORDER_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string MESH_NO {
+            get {
+                return this.MESH_NOField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MESH_NOField, value) != true)) {
+                    this.MESH_NOField = value;
+                    this.RaisePropertyChanged("MESH_NO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string PART_ID {
+            get {
+                return this.PART_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PART_IDField, value) != true)) {
+                    this.PART_IDField = value;
+                    this.RaisePropertyChanged("PART_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public int MAX_USE_COUNT {
+            get {
+                return this.MAX_USE_COUNTField;
+            }
+            set {
+                if ((this.MAX_USE_COUNTField.Equals(value) != true)) {
+                    this.MAX_USE_COUNTField = value;
+                    this.RaisePropertyChanged("MAX_USE_COUNT");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.Nullable<System.DateTime> INPUT_TIME {
+            get {
+                return this.INPUT_TIMEField;
+            }
+            set {
+                if ((this.INPUT_TIMEField.Equals(value) != true)) {
+                    this.INPUT_TIMEField = value;
+                    this.RaisePropertyChanged("INPUT_TIME");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="NichiconEntity", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
     public partial class NichiconEntity : BIVN_PACKING.PVSService.BaseEntity {
@@ -174,59 +427,6 @@ namespace BIVN_PACKING.PVSService {
                     this.OperatorNameField = value;
                     this.RaisePropertyChanged("OperatorName");
                 }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseEntity", Namespace="http://tempuri.org/")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.MuratasEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.MasterEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.Base_Soft_InfoEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.Base_ModelsEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.WORK_ORDERSEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.KyoMacEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.KYOCERAEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.USERSEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.BOARD_BIND_STATUSEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.WORK_ORDER_ITEMSEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.SCANNING_LOGSEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.BARCODE_RULESEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.BARCODE_RULE_ITEMSEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.INSPECTION_PROCESSESEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.MATERIAL_ORDERSEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.MATERIAL_ORDER_ITEMSEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.ModelsEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.MATERIAL_DOCUMENTSEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.INSPECTION_STATIONSEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.OPERATION_LOGSEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.WORK_ORDER_PROCEDURESEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.MACHINESEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.ROLE_MEMBERSEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(BIVN_PACKING.PVSService.NichiconEntity))]
-    public partial class BaseEntity : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -858,6 +1058,10 @@ namespace BIVN_PACKING.PVSService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DesField;
         
+        private bool Check_FirstField;
+        
+        private bool Is_WipField;
+        
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
         public string Product_Id {
             get {
@@ -958,6 +1162,32 @@ namespace BIVN_PACKING.PVSService {
                 if ((object.ReferenceEquals(this.DesField, value) != true)) {
                     this.DesField = value;
                     this.RaisePropertyChanged("Des");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public bool Check_First {
+            get {
+                return this.Check_FirstField;
+            }
+            set {
+                if ((this.Check_FirstField.Equals(value) != true)) {
+                    this.Check_FirstField = value;
+                    this.RaisePropertyChanged("Check_First");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public bool Is_Wip {
+            get {
+                return this.Is_WipField;
+            }
+            set {
+                if ((this.Is_WipField.Equals(value) != true)) {
+                    this.Is_WipField = value;
+                    this.RaisePropertyChanged("Is_Wip");
                 }
             }
         }
@@ -3711,917 +3941,6 @@ namespace BIVN_PACKING.PVSService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MATERIAL_ORDERSEntity", Namespace="http://tempuri.org/")]
-    [System.SerializableAttribute()]
-    public partial class MATERIAL_ORDERSEntity : BIVN_PACKING.PVSService.BaseEntity {
-        
-        private int BOARD_COUNTField;
-        
-        private bool CHECK_REQField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string COMPONENT_IDField;
-        
-        private System.DateTime CREATE_TIMEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CREATOR_IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CREATOR_NAMEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CUSTOMER_IDField;
-        
-        private System.DateTime FINISH_TIMEField;
-        
-        private double FINISHED_QUANTITYField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IDField;
-        
-        private bool IS_EXCLUSIVEField;
-        
-        private bool IS_FINISHEDField;
-        
-        private bool IS_READYField;
-        
-        private bool IS_STARTEDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LINE_IDField;
-        
-        private System.DateTime LOADING_END_TIMEField;
-        
-        private System.DateTime LOADING_START_TIMEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LOT_NOField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MACHINE_DOCUMENT_IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MODIFIER_IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MODIFIER_NAMEField;
-        
-        private System.DateTime MODIFY_TIMEField;
-        
-        private System.DateTime PLAN_LOADING_TIMEField;
-        
-        private System.DateTime PLAN_PREPARING_TIMEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PLANTField;
-        
-        private System.DateTime PREPARING_END_TIMEField;
-        
-        private System.DateTime PREPARING_START_TIMEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PROCEDURE_IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PRODUCT_IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PRODUCTION_ORDER_IDField;
-        
-        private double QUANTITYField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string REMARKSField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SIDEField;
-        
-        private System.DateTime START_TIMEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string VERSIONField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int BOARD_COUNT {
-            get {
-                return this.BOARD_COUNTField;
-            }
-            set {
-                if ((this.BOARD_COUNTField.Equals(value) != true)) {
-                    this.BOARD_COUNTField = value;
-                    this.RaisePropertyChanged("BOARD_COUNT");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public bool CHECK_REQ {
-            get {
-                return this.CHECK_REQField;
-            }
-            set {
-                if ((this.CHECK_REQField.Equals(value) != true)) {
-                    this.CHECK_REQField = value;
-                    this.RaisePropertyChanged("CHECK_REQ");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string COMPONENT_ID {
-            get {
-                return this.COMPONENT_IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.COMPONENT_IDField, value) != true)) {
-                    this.COMPONENT_IDField = value;
-                    this.RaisePropertyChanged("COMPONENT_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime CREATE_TIME {
-            get {
-                return this.CREATE_TIMEField;
-            }
-            set {
-                if ((this.CREATE_TIMEField.Equals(value) != true)) {
-                    this.CREATE_TIMEField = value;
-                    this.RaisePropertyChanged("CREATE_TIME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string CREATOR_ID {
-            get {
-                return this.CREATOR_IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATOR_IDField, value) != true)) {
-                    this.CREATOR_IDField = value;
-                    this.RaisePropertyChanged("CREATOR_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string CREATOR_NAME {
-            get {
-                return this.CREATOR_NAMEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CREATOR_NAMEField, value) != true)) {
-                    this.CREATOR_NAMEField = value;
-                    this.RaisePropertyChanged("CREATOR_NAME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string CUSTOMER_ID {
-            get {
-                return this.CUSTOMER_IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CUSTOMER_IDField, value) != true)) {
-                    this.CUSTOMER_IDField = value;
-                    this.RaisePropertyChanged("CUSTOMER_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime FINISH_TIME {
-            get {
-                return this.FINISH_TIMEField;
-            }
-            set {
-                if ((this.FINISH_TIMEField.Equals(value) != true)) {
-                    this.FINISH_TIMEField = value;
-                    this.RaisePropertyChanged("FINISH_TIME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public double FINISHED_QUANTITY {
-            get {
-                return this.FINISHED_QUANTITYField;
-            }
-            set {
-                if ((this.FINISHED_QUANTITYField.Equals(value) != true)) {
-                    this.FINISHED_QUANTITYField = value;
-                    this.RaisePropertyChanged("FINISHED_QUANTITY");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
-        public string ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IDField, value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public bool IS_EXCLUSIVE {
-            get {
-                return this.IS_EXCLUSIVEField;
-            }
-            set {
-                if ((this.IS_EXCLUSIVEField.Equals(value) != true)) {
-                    this.IS_EXCLUSIVEField = value;
-                    this.RaisePropertyChanged("IS_EXCLUSIVE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public bool IS_FINISHED {
-            get {
-                return this.IS_FINISHEDField;
-            }
-            set {
-                if ((this.IS_FINISHEDField.Equals(value) != true)) {
-                    this.IS_FINISHEDField = value;
-                    this.RaisePropertyChanged("IS_FINISHED");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
-        public bool IS_READY {
-            get {
-                return this.IS_READYField;
-            }
-            set {
-                if ((this.IS_READYField.Equals(value) != true)) {
-                    this.IS_READYField = value;
-                    this.RaisePropertyChanged("IS_READY");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
-        public bool IS_STARTED {
-            get {
-                return this.IS_STARTEDField;
-            }
-            set {
-                if ((this.IS_STARTEDField.Equals(value) != true)) {
-                    this.IS_STARTEDField = value;
-                    this.RaisePropertyChanged("IS_STARTED");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
-        public string LINE_ID {
-            get {
-                return this.LINE_IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LINE_IDField, value) != true)) {
-                    this.LINE_IDField = value;
-                    this.RaisePropertyChanged("LINE_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
-        public System.DateTime LOADING_END_TIME {
-            get {
-                return this.LOADING_END_TIMEField;
-            }
-            set {
-                if ((this.LOADING_END_TIMEField.Equals(value) != true)) {
-                    this.LOADING_END_TIMEField = value;
-                    this.RaisePropertyChanged("LOADING_END_TIME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
-        public System.DateTime LOADING_START_TIME {
-            get {
-                return this.LOADING_START_TIMEField;
-            }
-            set {
-                if ((this.LOADING_START_TIMEField.Equals(value) != true)) {
-                    this.LOADING_START_TIMEField = value;
-                    this.RaisePropertyChanged("LOADING_START_TIME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
-        public string LOT_NO {
-            get {
-                return this.LOT_NOField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LOT_NOField, value) != true)) {
-                    this.LOT_NOField = value;
-                    this.RaisePropertyChanged("LOT_NO");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
-        public string MACHINE_DOCUMENT_ID {
-            get {
-                return this.MACHINE_DOCUMENT_IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MACHINE_DOCUMENT_IDField, value) != true)) {
-                    this.MACHINE_DOCUMENT_IDField = value;
-                    this.RaisePropertyChanged("MACHINE_DOCUMENT_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=19)]
-        public string MODIFIER_ID {
-            get {
-                return this.MODIFIER_IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MODIFIER_IDField, value) != true)) {
-                    this.MODIFIER_IDField = value;
-                    this.RaisePropertyChanged("MODIFIER_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=20)]
-        public string MODIFIER_NAME {
-            get {
-                return this.MODIFIER_NAMEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MODIFIER_NAMEField, value) != true)) {
-                    this.MODIFIER_NAMEField = value;
-                    this.RaisePropertyChanged("MODIFIER_NAME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=21)]
-        public System.DateTime MODIFY_TIME {
-            get {
-                return this.MODIFY_TIMEField;
-            }
-            set {
-                if ((this.MODIFY_TIMEField.Equals(value) != true)) {
-                    this.MODIFY_TIMEField = value;
-                    this.RaisePropertyChanged("MODIFY_TIME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=22)]
-        public System.DateTime PLAN_LOADING_TIME {
-            get {
-                return this.PLAN_LOADING_TIMEField;
-            }
-            set {
-                if ((this.PLAN_LOADING_TIMEField.Equals(value) != true)) {
-                    this.PLAN_LOADING_TIMEField = value;
-                    this.RaisePropertyChanged("PLAN_LOADING_TIME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=23)]
-        public System.DateTime PLAN_PREPARING_TIME {
-            get {
-                return this.PLAN_PREPARING_TIMEField;
-            }
-            set {
-                if ((this.PLAN_PREPARING_TIMEField.Equals(value) != true)) {
-                    this.PLAN_PREPARING_TIMEField = value;
-                    this.RaisePropertyChanged("PLAN_PREPARING_TIME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=24)]
-        public string PLANT {
-            get {
-                return this.PLANTField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PLANTField, value) != true)) {
-                    this.PLANTField = value;
-                    this.RaisePropertyChanged("PLANT");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=25)]
-        public System.DateTime PREPARING_END_TIME {
-            get {
-                return this.PREPARING_END_TIMEField;
-            }
-            set {
-                if ((this.PREPARING_END_TIMEField.Equals(value) != true)) {
-                    this.PREPARING_END_TIMEField = value;
-                    this.RaisePropertyChanged("PREPARING_END_TIME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=26)]
-        public System.DateTime PREPARING_START_TIME {
-            get {
-                return this.PREPARING_START_TIMEField;
-            }
-            set {
-                if ((this.PREPARING_START_TIMEField.Equals(value) != true)) {
-                    this.PREPARING_START_TIMEField = value;
-                    this.RaisePropertyChanged("PREPARING_START_TIME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=27)]
-        public string PROCEDURE_ID {
-            get {
-                return this.PROCEDURE_IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PROCEDURE_IDField, value) != true)) {
-                    this.PROCEDURE_IDField = value;
-                    this.RaisePropertyChanged("PROCEDURE_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=28)]
-        public string PRODUCT_ID {
-            get {
-                return this.PRODUCT_IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PRODUCT_IDField, value) != true)) {
-                    this.PRODUCT_IDField = value;
-                    this.RaisePropertyChanged("PRODUCT_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=29)]
-        public string PRODUCTION_ORDER_ID {
-            get {
-                return this.PRODUCTION_ORDER_IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PRODUCTION_ORDER_IDField, value) != true)) {
-                    this.PRODUCTION_ORDER_IDField = value;
-                    this.RaisePropertyChanged("PRODUCTION_ORDER_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=30)]
-        public double QUANTITY {
-            get {
-                return this.QUANTITYField;
-            }
-            set {
-                if ((this.QUANTITYField.Equals(value) != true)) {
-                    this.QUANTITYField = value;
-                    this.RaisePropertyChanged("QUANTITY");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=31)]
-        public string REMARKS {
-            get {
-                return this.REMARKSField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.REMARKSField, value) != true)) {
-                    this.REMARKSField = value;
-                    this.RaisePropertyChanged("REMARKS");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=32)]
-        public string SIDE {
-            get {
-                return this.SIDEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SIDEField, value) != true)) {
-                    this.SIDEField = value;
-                    this.RaisePropertyChanged("SIDE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=33)]
-        public System.DateTime START_TIME {
-            get {
-                return this.START_TIMEField;
-            }
-            set {
-                if ((this.START_TIMEField.Equals(value) != true)) {
-                    this.START_TIMEField = value;
-                    this.RaisePropertyChanged("START_TIME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=34)]
-        public string VERSION {
-            get {
-                return this.VERSIONField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.VERSIONField, value) != true)) {
-                    this.VERSIONField = value;
-                    this.RaisePropertyChanged("VERSION");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MATERIAL_ORDER_ITEMSEntity", Namespace="http://tempuri.org/")]
-    [System.SerializableAttribute()]
-    public partial class MATERIAL_ORDER_ITEMSEntity : BIVN_PACKING.PVSService.BaseEntity {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ALTER_PART_IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string COMPONENT_IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FEEDER_IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FEEDER_SPECField;
-        
-        private bool IS_LOADEDField;
-        
-        private bool IS_PRECHECKEDField;
-        
-        private bool IS_PREPAREDField;
-        
-        private bool IS_PREPARED_ONLINEField;
-        
-        private bool IS_VERIFIEDField;
-        
-        private bool IS_VERIFIED_ONLINEField;
-        
-        private System.DateTime LAST_LOAD_TIMEField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MACHINE_IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MACHINE_SETTING_NAMEField;
-        
-        private int MACHINE_SLOTField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MATERIAL_ORDER_IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PART_IDField;
-        
-        private System.DateTime PLAN_LOAD_TIMEField;
-        
-        private double QUANTITYField;
-        
-        private double REQUIRED_QUANTITYField;
-        
-        private int SUB_UNIT_QUANTITYField;
-        
-        private int UNIT_QUANTITYField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UPN_IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string VPN_IDField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string ALTER_PART_ID {
-            get {
-                return this.ALTER_PART_IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ALTER_PART_IDField, value) != true)) {
-                    this.ALTER_PART_IDField = value;
-                    this.RaisePropertyChanged("ALTER_PART_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string COMPONENT_ID {
-            get {
-                return this.COMPONENT_IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.COMPONENT_IDField, value) != true)) {
-                    this.COMPONENT_IDField = value;
-                    this.RaisePropertyChanged("COMPONENT_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string FEEDER_ID {
-            get {
-                return this.FEEDER_IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FEEDER_IDField, value) != true)) {
-                    this.FEEDER_IDField = value;
-                    this.RaisePropertyChanged("FEEDER_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string FEEDER_SPEC {
-            get {
-                return this.FEEDER_SPECField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FEEDER_SPECField, value) != true)) {
-                    this.FEEDER_SPECField = value;
-                    this.RaisePropertyChanged("FEEDER_SPEC");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public bool IS_LOADED {
-            get {
-                return this.IS_LOADEDField;
-            }
-            set {
-                if ((this.IS_LOADEDField.Equals(value) != true)) {
-                    this.IS_LOADEDField = value;
-                    this.RaisePropertyChanged("IS_LOADED");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public bool IS_PRECHECKED {
-            get {
-                return this.IS_PRECHECKEDField;
-            }
-            set {
-                if ((this.IS_PRECHECKEDField.Equals(value) != true)) {
-                    this.IS_PRECHECKEDField = value;
-                    this.RaisePropertyChanged("IS_PRECHECKED");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public bool IS_PREPARED {
-            get {
-                return this.IS_PREPAREDField;
-            }
-            set {
-                if ((this.IS_PREPAREDField.Equals(value) != true)) {
-                    this.IS_PREPAREDField = value;
-                    this.RaisePropertyChanged("IS_PREPARED");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public bool IS_PREPARED_ONLINE {
-            get {
-                return this.IS_PREPARED_ONLINEField;
-            }
-            set {
-                if ((this.IS_PREPARED_ONLINEField.Equals(value) != true)) {
-                    this.IS_PREPARED_ONLINEField = value;
-                    this.RaisePropertyChanged("IS_PREPARED_ONLINE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public bool IS_VERIFIED {
-            get {
-                return this.IS_VERIFIEDField;
-            }
-            set {
-                if ((this.IS_VERIFIEDField.Equals(value) != true)) {
-                    this.IS_VERIFIEDField = value;
-                    this.RaisePropertyChanged("IS_VERIFIED");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public bool IS_VERIFIED_ONLINE {
-            get {
-                return this.IS_VERIFIED_ONLINEField;
-            }
-            set {
-                if ((this.IS_VERIFIED_ONLINEField.Equals(value) != true)) {
-                    this.IS_VERIFIED_ONLINEField = value;
-                    this.RaisePropertyChanged("IS_VERIFIED_ONLINE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime LAST_LOAD_TIME {
-            get {
-                return this.LAST_LOAD_TIMEField;
-            }
-            set {
-                if ((this.LAST_LOAD_TIMEField.Equals(value) != true)) {
-                    this.LAST_LOAD_TIMEField = value;
-                    this.RaisePropertyChanged("LAST_LOAD_TIME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string MACHINE_ID {
-            get {
-                return this.MACHINE_IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MACHINE_IDField, value) != true)) {
-                    this.MACHINE_IDField = value;
-                    this.RaisePropertyChanged("MACHINE_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string MACHINE_SETTING_NAME {
-            get {
-                return this.MACHINE_SETTING_NAMEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MACHINE_SETTING_NAMEField, value) != true)) {
-                    this.MACHINE_SETTING_NAMEField = value;
-                    this.RaisePropertyChanged("MACHINE_SETTING_NAME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int MACHINE_SLOT {
-            get {
-                return this.MACHINE_SLOTField;
-            }
-            set {
-                if ((this.MACHINE_SLOTField.Equals(value) != true)) {
-                    this.MACHINE_SLOTField = value;
-                    this.RaisePropertyChanged("MACHINE_SLOT");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string MATERIAL_ORDER_ID {
-            get {
-                return this.MATERIAL_ORDER_IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MATERIAL_ORDER_IDField, value) != true)) {
-                    this.MATERIAL_ORDER_IDField = value;
-                    this.RaisePropertyChanged("MATERIAL_ORDER_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string PART_ID {
-            get {
-                return this.PART_IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PART_IDField, value) != true)) {
-                    this.PART_IDField = value;
-                    this.RaisePropertyChanged("PART_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime PLAN_LOAD_TIME {
-            get {
-                return this.PLAN_LOAD_TIMEField;
-            }
-            set {
-                if ((this.PLAN_LOAD_TIMEField.Equals(value) != true)) {
-                    this.PLAN_LOAD_TIMEField = value;
-                    this.RaisePropertyChanged("PLAN_LOAD_TIME");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public double QUANTITY {
-            get {
-                return this.QUANTITYField;
-            }
-            set {
-                if ((this.QUANTITYField.Equals(value) != true)) {
-                    this.QUANTITYField = value;
-                    this.RaisePropertyChanged("QUANTITY");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public double REQUIRED_QUANTITY {
-            get {
-                return this.REQUIRED_QUANTITYField;
-            }
-            set {
-                if ((this.REQUIRED_QUANTITYField.Equals(value) != true)) {
-                    this.REQUIRED_QUANTITYField = value;
-                    this.RaisePropertyChanged("REQUIRED_QUANTITY");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int SUB_UNIT_QUANTITY {
-            get {
-                return this.SUB_UNIT_QUANTITYField;
-            }
-            set {
-                if ((this.SUB_UNIT_QUANTITYField.Equals(value) != true)) {
-                    this.SUB_UNIT_QUANTITYField = value;
-                    this.RaisePropertyChanged("SUB_UNIT_QUANTITY");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int UNIT_QUANTITY {
-            get {
-                return this.UNIT_QUANTITYField;
-            }
-            set {
-                if ((this.UNIT_QUANTITYField.Equals(value) != true)) {
-                    this.UNIT_QUANTITYField = value;
-                    this.RaisePropertyChanged("UNIT_QUANTITY");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string UPN_ID {
-            get {
-                return this.UPN_IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UPN_IDField, value) != true)) {
-                    this.UPN_IDField = value;
-                    this.RaisePropertyChanged("UPN_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string VPN_ID {
-            get {
-                return this.VPN_IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.VPN_IDField, value) != true)) {
-                    this.VPN_IDField = value;
-                    this.RaisePropertyChanged("VPN_ID");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ModelsEntity", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
     public partial class ModelsEntity : BIVN_PACKING.PVSService.BaseEntity {
@@ -6100,92 +5419,6 @@ namespace BIVN_PACKING.PVSService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MACHINESEntity", Namespace="http://tempuri.org/")]
-    [System.SerializableAttribute()]
-    public partial class MACHINESEntity : BIVN_PACKING.PVSService.BaseEntity {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DESCRIPTIONField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IDField;
-        
-        private bool IS_STARTEDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LINE_IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SETTING_NAMEField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string DESCRIPTION {
-            get {
-                return this.DESCRIPTIONField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DESCRIPTIONField, value) != true)) {
-                    this.DESCRIPTIONField = value;
-                    this.RaisePropertyChanged("DESCRIPTION");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IDField, value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public bool IS_STARTED {
-            get {
-                return this.IS_STARTEDField;
-            }
-            set {
-                if ((this.IS_STARTEDField.Equals(value) != true)) {
-                    this.IS_STARTEDField = value;
-                    this.RaisePropertyChanged("IS_STARTED");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string LINE_ID {
-            get {
-                return this.LINE_IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LINE_IDField, value) != true)) {
-                    this.LINE_IDField = value;
-                    this.RaisePropertyChanged("LINE_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string SETTING_NAME {
-            get {
-                return this.SETTING_NAMEField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SETTING_NAMEField, value) != true)) {
-                    this.SETTING_NAMEField = value;
-                    this.RaisePropertyChanged("SETTING_NAME");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ROLE_MEMBERSEntity", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
     public partial class ROLE_MEMBERSEntity : BIVN_PACKING.PVSService.BaseEntity {
@@ -6218,6 +5451,76 @@ namespace BIVN_PACKING.PVSService {
                 if ((object.ReferenceEquals(this.ROLE_IDField, value) != true)) {
                     this.ROLE_IDField = value;
                     this.RaisePropertyChanged("ROLE_ID");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="INSPECTION_OPTIONSEntity", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class INSPECTION_OPTIONSEntity : BIVN_PACKING.PVSService.BaseEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HOST_NAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LINE_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string STATION_NOField;
+        
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string HOST_NAME {
+            get {
+                return this.HOST_NAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HOST_NAMEField, value) != true)) {
+                    this.HOST_NAMEField = value;
+                    this.RaisePropertyChanged("HOST_NAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string LINE_ID {
+            get {
+                return this.LINE_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LINE_IDField, value) != true)) {
+                    this.LINE_IDField = value;
+                    this.RaisePropertyChanged("LINE_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string STATION_NO {
+            get {
+                return this.STATION_NOField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.STATION_NOField, value) != true)) {
+                    this.STATION_NOField = value;
+                    this.RaisePropertyChanged("STATION_NO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
                 }
             }
         }
@@ -6263,6 +5566,48 @@ namespace BIVN_PACKING.PVSService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PVSService.PVSWebServiceSoap")]
     public interface PVSWebServiceSoap {
         
+        // CODEGEN: Generating message contract since element name hostName from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetStationByHostName", ReplyAction="*")]
+        BIVN_PACKING.PVSService.GetStationByHostNameResponse GetStationByHostName(BIVN_PACKING.PVSService.GetStationByHostNameRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetStationByHostName", ReplyAction="*")]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetStationByHostNameResponse> GetStationByHostNameAsync(BIVN_PACKING.PVSService.GetStationByHostNameRequest request);
+        
+        // CODEGEN: Generating message contract since element name id from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetStationByID", ReplyAction="*")]
+        BIVN_PACKING.PVSService.GetStationByIDResponse GetStationByID(BIVN_PACKING.PVSService.GetStationByIDRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetStationByID", ReplyAction="*")]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetStationByIDResponse> GetStationByIDAsync(BIVN_PACKING.PVSService.GetStationByIDRequest request);
+        
+        // CODEGEN: Generating message contract since element name boardNo from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CheckRepair", ReplyAction="*")]
+        BIVN_PACKING.PVSService.CheckRepairResponse CheckRepair(BIVN_PACKING.PVSService.CheckRepairRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CheckRepair", ReplyAction="*")]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.CheckRepairResponse> CheckRepairAsync(BIVN_PACKING.PVSService.CheckRepairRequest request);
+        
+        // CODEGEN: Generating message contract since element name orderID from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetTotal", ReplyAction="*")]
+        BIVN_PACKING.PVSService.GetTotalResponse GetTotal(BIVN_PACKING.PVSService.GetTotalRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetTotal", ReplyAction="*")]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetTotalResponse> GetTotalAsync(BIVN_PACKING.PVSService.GetTotalRequest request);
+        
+        // CODEGEN: Generating message contract since element name oldBarcode from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetReplacingLog", ReplyAction="*")]
+        BIVN_PACKING.PVSService.GetReplacingLogResponse GetReplacingLog(BIVN_PACKING.PVSService.GetReplacingLogRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetReplacingLog", ReplyAction="*")]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetReplacingLogResponse> GetReplacingLogAsync(BIVN_PACKING.PVSService.GetReplacingLogRequest request);
+        
+        // CODEGEN: Generating message contract since element name materialOrderId from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetSteelMesh", ReplyAction="*")]
+        BIVN_PACKING.PVSService.GetSteelMeshResponse GetSteelMesh(BIVN_PACKING.PVSService.GetSteelMeshRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetSteelMesh", ReplyAction="*")]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetSteelMeshResponse> GetSteelMeshAsync(BIVN_PACKING.PVSService.GetSteelMeshRequest request);
+        
         // CODEGEN: Generating message contract since element name boardNo from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/NichiconBarcodeExist", ReplyAction="*")]
         BIVN_PACKING.PVSService.NichiconBarcodeExistResponse NichiconBarcodeExist(BIVN_PACKING.PVSService.NichiconBarcodeExistRequest request);
@@ -6304,6 +5649,13 @@ namespace BIVN_PACKING.PVSService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MurataGetPackByBoardNo", ReplyAction="*")]
         System.Threading.Tasks.Task<BIVN_PACKING.PVSService.MurataGetPackByBoardNoResponse> MurataGetPackByBoardNoAsync(BIVN_PACKING.PVSService.MurataGetPackByBoardNoRequest request);
+        
+        // CODEGEN: Generating message contract since element name boardNo from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MurataRemove", ReplyAction="*")]
+        BIVN_PACKING.PVSService.MurataRemoveResponse MurataRemove(BIVN_PACKING.PVSService.MurataRemoveRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MurataRemove", ReplyAction="*")]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.MurataRemoveResponse> MurataRemoveAsync(BIVN_PACKING.PVSService.MurataRemoveRequest request);
         
         // CODEGEN: Generating message contract since element name modelCus from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MurataModelCusExist", ReplyAction="*")]
@@ -6542,6 +5894,20 @@ namespace BIVN_PACKING.PVSService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetBarodeRuleItemsByRuleNo", ReplyAction="*")]
         System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetBarodeRuleItemsByRuleNoResponse> GetBarodeRuleItemsByRuleNoAsync(BIVN_PACKING.PVSService.GetBarodeRuleItemsByRuleNoRequest request);
         
+        // CODEGEN: Generating message contract since element name id from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetBarcodeRuleItemsById", ReplyAction="*")]
+        BIVN_PACKING.PVSService.GetBarcodeRuleItemsByIdResponse GetBarcodeRuleItemsById(BIVN_PACKING.PVSService.GetBarcodeRuleItemsByIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetBarcodeRuleItemsById", ReplyAction="*")]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetBarcodeRuleItemsByIdResponse> GetBarcodeRuleItemsByIdAsync(BIVN_PACKING.PVSService.GetBarcodeRuleItemsByIdRequest request);
+        
+        // CODEGEN: Generating message contract since element name orderId from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetRuleNo", ReplyAction="*")]
+        BIVN_PACKING.PVSService.GetRuleNoResponse GetRuleNo(BIVN_PACKING.PVSService.GetRuleNoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetRuleNo", ReplyAction="*")]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetRuleNoResponse> GetRuleNoAsync(BIVN_PACKING.PVSService.GetRuleNoRequest request);
+        
         // CODEGEN: Generating message contract since element name ruleNo from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetBarodeRuleItemsByRuleNoJson", ReplyAction="*")]
         BIVN_PACKING.PVSService.GetBarodeRuleItemsByRuleNoJsonResponse GetBarodeRuleItemsByRuleNoJson(BIVN_PACKING.PVSService.GetBarodeRuleItemsByRuleNoJsonRequest request);
@@ -6584,61 +5950,12 @@ namespace BIVN_PACKING.PVSService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetEntityINSPECTION_PROCESSES", ReplyAction="*")]
         System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetEntityINSPECTION_PROCESSESResponse> GetEntityINSPECTION_PROCESSESAsync(BIVN_PACKING.PVSService.GetEntityINSPECTION_PROCESSESRequest request);
         
-        // CODEGEN: Generating message contract since element name lineID from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetLineStartByLineId", ReplyAction="*")]
-        BIVN_PACKING.PVSService.GetLineStartByLineIdResponse GetLineStartByLineId(BIVN_PACKING.PVSService.GetLineStartByLineIdRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetLineStartByLineId", ReplyAction="*")]
-        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetLineStartByLineIdResponse> GetLineStartByLineIdAsync(BIVN_PACKING.PVSService.GetLineStartByLineIdRequest request);
-        
-        // CODEGEN: Generating message contract since element name MaterialAllLinesStartedResult from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MaterialAllLinesStarted", ReplyAction="*")]
-        BIVN_PACKING.PVSService.MaterialAllLinesStartedResponse MaterialAllLinesStarted(BIVN_PACKING.PVSService.MaterialAllLinesStartedRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MaterialAllLinesStarted", ReplyAction="*")]
-        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.MaterialAllLinesStartedResponse> MaterialAllLinesStartedAsync(BIVN_PACKING.PVSService.MaterialAllLinesStartedRequest request);
-        
-        // CODEGEN: Generating message contract since element name GetMaterialWithParamResult from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetMaterialWithParam", ReplyAction="*")]
-        BIVN_PACKING.PVSService.GetMaterialWithParamResponse GetMaterialWithParam(BIVN_PACKING.PVSService.GetMaterialWithParamRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetMaterialWithParam", ReplyAction="*")]
-        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetMaterialWithParamResponse> GetMaterialWithParamAsync(BIVN_PACKING.PVSService.GetMaterialWithParamRequest request);
-        
-        // CODEGEN: Generating message contract since element name lineID from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetLineStartByLineIdJson", ReplyAction="*")]
-        BIVN_PACKING.PVSService.GetLineStartByLineIdJsonResponse GetLineStartByLineIdJson(BIVN_PACKING.PVSService.GetLineStartByLineIdJsonRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetLineStartByLineIdJson", ReplyAction="*")]
-        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetLineStartByLineIdJsonResponse> GetLineStartByLineIdJsonAsync(BIVN_PACKING.PVSService.GetLineStartByLineIdJsonRequest request);
-        
-        // CODEGEN: Generating message contract since element name id from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListOrderItemsById", ReplyAction="*")]
-        BIVN_PACKING.PVSService.GetListOrderItemsByIdResponse GetListOrderItemsById(BIVN_PACKING.PVSService.GetListOrderItemsByIdRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListOrderItemsById", ReplyAction="*")]
-        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetListOrderItemsByIdResponse> GetListOrderItemsByIdAsync(BIVN_PACKING.PVSService.GetListOrderItemsByIdRequest request);
-        
-        // CODEGEN: Generating message contract since element name id from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetMaterialById", ReplyAction="*")]
-        BIVN_PACKING.PVSService.GetMaterialByIdResponse GetMaterialById(BIVN_PACKING.PVSService.GetMaterialByIdRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetMaterialById", ReplyAction="*")]
-        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetMaterialByIdResponse> GetMaterialByIdAsync(BIVN_PACKING.PVSService.GetMaterialByIdRequest request);
-        
         // CODEGEN: Generating message contract since element name product from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetRuleByProduct", ReplyAction="*")]
         BIVN_PACKING.PVSService.GetRuleByProductResponse GetRuleByProduct(BIVN_PACKING.PVSService.GetRuleByProductRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetRuleByProduct", ReplyAction="*")]
         System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetRuleByProductResponse> GetRuleByProductAsync(BIVN_PACKING.PVSService.GetRuleByProductRequest request);
-        
-        // CODEGEN: Generating message contract since element name id from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListOrderItemsByIdJson", ReplyAction="*")]
-        BIVN_PACKING.PVSService.GetListOrderItemsByIdJsonResponse GetListOrderItemsByIdJson(BIVN_PACKING.PVSService.GetListOrderItemsByIdJsonRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListOrderItemsByIdJson", ReplyAction="*")]
-        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetListOrderItemsByIdJsonResponse> GetListOrderItemsByIdJsonAsync(BIVN_PACKING.PVSService.GetListOrderItemsByIdJsonRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Analyst", ReplyAction="*")]
         void Analyst(System.DateTime dateTime);
@@ -6688,13 +6005,6 @@ namespace BIVN_PACKING.PVSService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetStationNoLike", ReplyAction="*")]
         System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetStationNoLikeResponse> GetStationNoLikeAsync(BIVN_PACKING.PVSService.GetStationNoLikeRequest request);
         
-        // CODEGEN: Generating message contract since element name lineID from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MaterialGetOperationLogs", ReplyAction="*")]
-        BIVN_PACKING.PVSService.MaterialGetOperationLogsResponse MaterialGetOperationLogs(BIVN_PACKING.PVSService.MaterialGetOperationLogsRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MaterialGetOperationLogs", ReplyAction="*")]
-        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.MaterialGetOperationLogsResponse> MaterialGetOperationLogsAsync(BIVN_PACKING.PVSService.MaterialGetOperationLogsRequest request);
-        
         // CODEGEN: Generating message contract since element name materialOrderID from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetOperationLogs", ReplyAction="*")]
         BIVN_PACKING.PVSService.GetOperationLogsResponse GetOperationLogs(BIVN_PACKING.PVSService.GetOperationLogsRequest request);
@@ -6709,12 +6019,12 @@ namespace BIVN_PACKING.PVSService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetWorkOrderProcedure", ReplyAction="*")]
         System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetWorkOrderProcedureResponse> GetWorkOrderProcedureAsync(BIVN_PACKING.PVSService.GetWorkOrderProcedureRequest request);
         
-        // CODEGEN: Generating message contract since element name MaterialLinesResult from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MaterialLines", ReplyAction="*")]
-        BIVN_PACKING.PVSService.MaterialLinesResponse MaterialLines(BIVN_PACKING.PVSService.MaterialLinesRequest request);
+        // CODEGEN: Generating message contract since element name orderId from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetWorkOrderProcedureByOrderId", ReplyAction="*")]
+        BIVN_PACKING.PVSService.GetWorkOrderProcedureByOrderIdResponse GetWorkOrderProcedureByOrderId(BIVN_PACKING.PVSService.GetWorkOrderProcedureByOrderIdRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MaterialLines", ReplyAction="*")]
-        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.MaterialLinesResponse> MaterialLinesAsync(BIVN_PACKING.PVSService.MaterialLinesRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetWorkOrderProcedureByOrderId", ReplyAction="*")]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetWorkOrderProcedureByOrderIdResponse> GetWorkOrderProcedureByOrderIdAsync(BIVN_PACKING.PVSService.GetWorkOrderProcedureByOrderIdRequest request);
         
         // CODEGEN: Generating message contract since element name memberID from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetRoleMember", ReplyAction="*")]
@@ -6722,6 +6032,418 @@ namespace BIVN_PACKING.PVSService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetRoleMember", ReplyAction="*")]
         System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetRoleMemberResponse> GetRoleMemberAsync(BIVN_PACKING.PVSService.GetRoleMemberRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetStationByHostNameRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetStationByHostName", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.GetStationByHostNameRequestBody Body;
+        
+        public GetStationByHostNameRequest() {
+        }
+        
+        public GetStationByHostNameRequest(BIVN_PACKING.PVSService.GetStationByHostNameRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetStationByHostNameRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string hostName;
+        
+        public GetStationByHostNameRequestBody() {
+        }
+        
+        public GetStationByHostNameRequestBody(string hostName) {
+            this.hostName = hostName;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetStationByHostNameResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetStationByHostNameResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.GetStationByHostNameResponseBody Body;
+        
+        public GetStationByHostNameResponse() {
+        }
+        
+        public GetStationByHostNameResponse(BIVN_PACKING.PVSService.GetStationByHostNameResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetStationByHostNameResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BIVN_PACKING.PVSService.INSPECTION_OPTIONSEntity GetStationByHostNameResult;
+        
+        public GetStationByHostNameResponseBody() {
+        }
+        
+        public GetStationByHostNameResponseBody(BIVN_PACKING.PVSService.INSPECTION_OPTIONSEntity GetStationByHostNameResult) {
+            this.GetStationByHostNameResult = GetStationByHostNameResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetStationByIDRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetStationByID", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.GetStationByIDRequestBody Body;
+        
+        public GetStationByIDRequest() {
+        }
+        
+        public GetStationByIDRequest(BIVN_PACKING.PVSService.GetStationByIDRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetStationByIDRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string id;
+        
+        public GetStationByIDRequestBody() {
+        }
+        
+        public GetStationByIDRequestBody(string id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetStationByIDResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetStationByIDResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.GetStationByIDResponseBody Body;
+        
+        public GetStationByIDResponse() {
+        }
+        
+        public GetStationByIDResponse(BIVN_PACKING.PVSService.GetStationByIDResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetStationByIDResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BIVN_PACKING.PVSService.INSPECTION_OPTIONSEntity GetStationByIDResult;
+        
+        public GetStationByIDResponseBody() {
+        }
+        
+        public GetStationByIDResponseBody(BIVN_PACKING.PVSService.INSPECTION_OPTIONSEntity GetStationByIDResult) {
+            this.GetStationByIDResult = GetStationByIDResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CheckRepairRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CheckRepair", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.CheckRepairRequestBody Body;
+        
+        public CheckRepairRequest() {
+        }
+        
+        public CheckRepairRequest(BIVN_PACKING.PVSService.CheckRepairRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class CheckRepairRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string boardNo;
+        
+        public CheckRepairRequestBody() {
+        }
+        
+        public CheckRepairRequestBody(string boardNo) {
+            this.boardNo = boardNo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CheckRepairResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CheckRepairResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.CheckRepairResponseBody Body;
+        
+        public CheckRepairResponse() {
+        }
+        
+        public CheckRepairResponse(BIVN_PACKING.PVSService.CheckRepairResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class CheckRepairResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool CheckRepairResult;
+        
+        public CheckRepairResponseBody() {
+        }
+        
+        public CheckRepairResponseBody(bool CheckRepairResult) {
+            this.CheckRepairResult = CheckRepairResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetTotalRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetTotal", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.GetTotalRequestBody Body;
+        
+        public GetTotalRequest() {
+        }
+        
+        public GetTotalRequest(BIVN_PACKING.PVSService.GetTotalRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetTotalRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string orderID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int procedureIndex;
+        
+        public GetTotalRequestBody() {
+        }
+        
+        public GetTotalRequestBody(string orderID, int procedureIndex) {
+            this.orderID = orderID;
+            this.procedureIndex = procedureIndex;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetTotalResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetTotalResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.GetTotalResponseBody Body;
+        
+        public GetTotalResponse() {
+        }
+        
+        public GetTotalResponse(BIVN_PACKING.PVSService.GetTotalResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetTotalResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int GetTotalResult;
+        
+        public GetTotalResponseBody() {
+        }
+        
+        public GetTotalResponseBody(int GetTotalResult) {
+            this.GetTotalResult = GetTotalResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetReplacingLogRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReplacingLog", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.GetReplacingLogRequestBody Body;
+        
+        public GetReplacingLogRequest() {
+        }
+        
+        public GetReplacingLogRequest(BIVN_PACKING.PVSService.GetReplacingLogRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetReplacingLogRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string oldBarcode;
+        
+        public GetReplacingLogRequestBody() {
+        }
+        
+        public GetReplacingLogRequestBody(string oldBarcode) {
+            this.oldBarcode = oldBarcode;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetReplacingLogResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReplacingLogResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.GetReplacingLogResponseBody Body;
+        
+        public GetReplacingLogResponse() {
+        }
+        
+        public GetReplacingLogResponse(BIVN_PACKING.PVSService.GetReplacingLogResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetReplacingLogResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BIVN_PACKING.PVSService.REPLACING_LOGSEntity GetReplacingLogResult;
+        
+        public GetReplacingLogResponseBody() {
+        }
+        
+        public GetReplacingLogResponseBody(BIVN_PACKING.PVSService.REPLACING_LOGSEntity GetReplacingLogResult) {
+            this.GetReplacingLogResult = GetReplacingLogResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetSteelMeshRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetSteelMesh", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.GetSteelMeshRequestBody Body;
+        
+        public GetSteelMeshRequest() {
+        }
+        
+        public GetSteelMeshRequest(BIVN_PACKING.PVSService.GetSteelMeshRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetSteelMeshRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string materialOrderId;
+        
+        public GetSteelMeshRequestBody() {
+        }
+        
+        public GetSteelMeshRequestBody(string materialOrderId) {
+            this.materialOrderId = materialOrderId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetSteelMeshResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetSteelMeshResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.GetSteelMeshResponseBody Body;
+        
+        public GetSteelMeshResponse() {
+        }
+        
+        public GetSteelMeshResponse(BIVN_PACKING.PVSService.GetSteelMeshResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetSteelMeshResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BIVN_PACKING.PVSService.STEEL_MESH_STATUSEntity GetSteelMeshResult;
+        
+        public GetSteelMeshResponseBody() {
+        }
+        
+        public GetSteelMeshResponseBody(BIVN_PACKING.PVSService.STEEL_MESH_STATUSEntity GetSteelMeshResult) {
+            this.GetSteelMeshResult = GetSteelMeshResult;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7115,6 +6837,67 @@ namespace BIVN_PACKING.PVSService {
         
         public MurataGetPackByBoardNoResponseBody(BIVN_PACKING.PVSService.MuratasEntity MurataGetPackByBoardNoResult) {
             this.MurataGetPackByBoardNoResult = MurataGetPackByBoardNoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class MurataRemoveRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="MurataRemove", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.MurataRemoveRequestBody Body;
+        
+        public MurataRemoveRequest() {
+        }
+        
+        public MurataRemoveRequest(BIVN_PACKING.PVSService.MurataRemoveRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class MurataRemoveRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string boardNo;
+        
+        public MurataRemoveRequestBody() {
+        }
+        
+        public MurataRemoveRequestBody(string boardNo) {
+            this.boardNo = boardNo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class MurataRemoveResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="MurataRemoveResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.MurataRemoveResponseBody Body;
+        
+        public MurataRemoveResponse() {
+        }
+        
+        public MurataRemoveResponse(BIVN_PACKING.PVSService.MurataRemoveResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class MurataRemoveResponseBody {
+        
+        public MurataRemoveResponseBody() {
         }
     }
     
@@ -9375,6 +9158,146 @@ namespace BIVN_PACKING.PVSService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetBarcodeRuleItemsByIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetBarcodeRuleItemsById", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.GetBarcodeRuleItemsByIdRequestBody Body;
+        
+        public GetBarcodeRuleItemsByIdRequest() {
+        }
+        
+        public GetBarcodeRuleItemsByIdRequest(BIVN_PACKING.PVSService.GetBarcodeRuleItemsByIdRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetBarcodeRuleItemsByIdRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string id;
+        
+        public GetBarcodeRuleItemsByIdRequestBody() {
+        }
+        
+        public GetBarcodeRuleItemsByIdRequestBody(string id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetBarcodeRuleItemsByIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetBarcodeRuleItemsByIdResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.GetBarcodeRuleItemsByIdResponseBody Body;
+        
+        public GetBarcodeRuleItemsByIdResponse() {
+        }
+        
+        public GetBarcodeRuleItemsByIdResponse(BIVN_PACKING.PVSService.GetBarcodeRuleItemsByIdResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetBarcodeRuleItemsByIdResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BIVN_PACKING.PVSService.BARCODE_RULE_ITEMSEntity GetBarcodeRuleItemsByIdResult;
+        
+        public GetBarcodeRuleItemsByIdResponseBody() {
+        }
+        
+        public GetBarcodeRuleItemsByIdResponseBody(BIVN_PACKING.PVSService.BARCODE_RULE_ITEMSEntity GetBarcodeRuleItemsByIdResult) {
+            this.GetBarcodeRuleItemsByIdResult = GetBarcodeRuleItemsByIdResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetRuleNoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetRuleNo", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.GetRuleNoRequestBody Body;
+        
+        public GetRuleNoRequest() {
+        }
+        
+        public GetRuleNoRequest(BIVN_PACKING.PVSService.GetRuleNoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetRuleNoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string orderId;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string stationNo;
+        
+        public GetRuleNoRequestBody() {
+        }
+        
+        public GetRuleNoRequestBody(string orderId, string stationNo) {
+            this.orderId = orderId;
+            this.stationNo = stationNo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetRuleNoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetRuleNoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.GetRuleNoResponseBody Body;
+        
+        public GetRuleNoResponse() {
+        }
+        
+        public GetRuleNoResponse(BIVN_PACKING.PVSService.GetRuleNoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetRuleNoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetRuleNoResult;
+        
+        public GetRuleNoResponseBody() {
+        }
+        
+        public GetRuleNoResponseBody(string GetRuleNoResult) {
+            this.GetRuleNoResult = GetRuleNoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetBarodeRuleItemsByRuleNoJsonRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetBarodeRuleItemsByRuleNoJson", Namespace="http://tempuri.org/", Order=0)]
@@ -9783,415 +9706,6 @@ namespace BIVN_PACKING.PVSService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetLineStartByLineIdRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLineStartByLineId", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.PVSService.GetLineStartByLineIdRequestBody Body;
-        
-        public GetLineStartByLineIdRequest() {
-        }
-        
-        public GetLineStartByLineIdRequest(BIVN_PACKING.PVSService.GetLineStartByLineIdRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetLineStartByLineIdRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string lineID;
-        
-        public GetLineStartByLineIdRequestBody() {
-        }
-        
-        public GetLineStartByLineIdRequestBody(string lineID) {
-            this.lineID = lineID;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetLineStartByLineIdResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLineStartByLineIdResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.PVSService.GetLineStartByLineIdResponseBody Body;
-        
-        public GetLineStartByLineIdResponse() {
-        }
-        
-        public GetLineStartByLineIdResponse(BIVN_PACKING.PVSService.GetLineStartByLineIdResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetLineStartByLineIdResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public BIVN_PACKING.PVSService.MATERIAL_ORDERSEntity GetLineStartByLineIdResult;
-        
-        public GetLineStartByLineIdResponseBody() {
-        }
-        
-        public GetLineStartByLineIdResponseBody(BIVN_PACKING.PVSService.MATERIAL_ORDERSEntity GetLineStartByLineIdResult) {
-            this.GetLineStartByLineIdResult = GetLineStartByLineIdResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class MaterialAllLinesStartedRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="MaterialAllLinesStarted", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.PVSService.MaterialAllLinesStartedRequestBody Body;
-        
-        public MaterialAllLinesStartedRequest() {
-        }
-        
-        public MaterialAllLinesStartedRequest(BIVN_PACKING.PVSService.MaterialAllLinesStartedRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class MaterialAllLinesStartedRequestBody {
-        
-        public MaterialAllLinesStartedRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class MaterialAllLinesStartedResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="MaterialAllLinesStartedResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.PVSService.MaterialAllLinesStartedResponseBody Body;
-        
-        public MaterialAllLinesStartedResponse() {
-        }
-        
-        public MaterialAllLinesStartedResponse(BIVN_PACKING.PVSService.MaterialAllLinesStartedResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class MaterialAllLinesStartedResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public BIVN_PACKING.PVSService.MATERIAL_ORDERSEntity[] MaterialAllLinesStartedResult;
-        
-        public MaterialAllLinesStartedResponseBody() {
-        }
-        
-        public MaterialAllLinesStartedResponseBody(BIVN_PACKING.PVSService.MATERIAL_ORDERSEntity[] MaterialAllLinesStartedResult) {
-            this.MaterialAllLinesStartedResult = MaterialAllLinesStartedResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetMaterialWithParamRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetMaterialWithParam", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.PVSService.GetMaterialWithParamRequestBody Body;
-        
-        public GetMaterialWithParamRequest() {
-        }
-        
-        public GetMaterialWithParamRequest(BIVN_PACKING.PVSService.GetMaterialWithParamRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetMaterialWithParamRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public System.Nullable<bool> isFinish;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public System.Nullable<bool> isStart;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public System.Nullable<bool> isReady;
-        
-        public GetMaterialWithParamRequestBody() {
-        }
-        
-        public GetMaterialWithParamRequestBody(System.Nullable<bool> isFinish, System.Nullable<bool> isStart, System.Nullable<bool> isReady) {
-            this.isFinish = isFinish;
-            this.isStart = isStart;
-            this.isReady = isReady;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetMaterialWithParamResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetMaterialWithParamResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.PVSService.GetMaterialWithParamResponseBody Body;
-        
-        public GetMaterialWithParamResponse() {
-        }
-        
-        public GetMaterialWithParamResponse(BIVN_PACKING.PVSService.GetMaterialWithParamResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetMaterialWithParamResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public BIVN_PACKING.PVSService.MATERIAL_ORDERSEntity[] GetMaterialWithParamResult;
-        
-        public GetMaterialWithParamResponseBody() {
-        }
-        
-        public GetMaterialWithParamResponseBody(BIVN_PACKING.PVSService.MATERIAL_ORDERSEntity[] GetMaterialWithParamResult) {
-            this.GetMaterialWithParamResult = GetMaterialWithParamResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetLineStartByLineIdJsonRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLineStartByLineIdJson", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.PVSService.GetLineStartByLineIdJsonRequestBody Body;
-        
-        public GetLineStartByLineIdJsonRequest() {
-        }
-        
-        public GetLineStartByLineIdJsonRequest(BIVN_PACKING.PVSService.GetLineStartByLineIdJsonRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetLineStartByLineIdJsonRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string lineID;
-        
-        public GetLineStartByLineIdJsonRequestBody() {
-        }
-        
-        public GetLineStartByLineIdJsonRequestBody(string lineID) {
-            this.lineID = lineID;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetLineStartByLineIdJsonResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLineStartByLineIdJsonResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.PVSService.GetLineStartByLineIdJsonResponseBody Body;
-        
-        public GetLineStartByLineIdJsonResponse() {
-        }
-        
-        public GetLineStartByLineIdJsonResponse(BIVN_PACKING.PVSService.GetLineStartByLineIdJsonResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetLineStartByLineIdJsonResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string GetLineStartByLineIdJsonResult;
-        
-        public GetLineStartByLineIdJsonResponseBody() {
-        }
-        
-        public GetLineStartByLineIdJsonResponseBody(string GetLineStartByLineIdJsonResult) {
-            this.GetLineStartByLineIdJsonResult = GetLineStartByLineIdJsonResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetListOrderItemsByIdRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetListOrderItemsById", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.PVSService.GetListOrderItemsByIdRequestBody Body;
-        
-        public GetListOrderItemsByIdRequest() {
-        }
-        
-        public GetListOrderItemsByIdRequest(BIVN_PACKING.PVSService.GetListOrderItemsByIdRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetListOrderItemsByIdRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string id;
-        
-        public GetListOrderItemsByIdRequestBody() {
-        }
-        
-        public GetListOrderItemsByIdRequestBody(string id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetListOrderItemsByIdResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetListOrderItemsByIdResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.PVSService.GetListOrderItemsByIdResponseBody Body;
-        
-        public GetListOrderItemsByIdResponse() {
-        }
-        
-        public GetListOrderItemsByIdResponse(BIVN_PACKING.PVSService.GetListOrderItemsByIdResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetListOrderItemsByIdResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public BIVN_PACKING.PVSService.MATERIAL_ORDER_ITEMSEntity[] GetListOrderItemsByIdResult;
-        
-        public GetListOrderItemsByIdResponseBody() {
-        }
-        
-        public GetListOrderItemsByIdResponseBody(BIVN_PACKING.PVSService.MATERIAL_ORDER_ITEMSEntity[] GetListOrderItemsByIdResult) {
-            this.GetListOrderItemsByIdResult = GetListOrderItemsByIdResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetMaterialByIdRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetMaterialById", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.PVSService.GetMaterialByIdRequestBody Body;
-        
-        public GetMaterialByIdRequest() {
-        }
-        
-        public GetMaterialByIdRequest(BIVN_PACKING.PVSService.GetMaterialByIdRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetMaterialByIdRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string id;
-        
-        public GetMaterialByIdRequestBody() {
-        }
-        
-        public GetMaterialByIdRequestBody(string id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetMaterialByIdResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetMaterialByIdResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.PVSService.GetMaterialByIdResponseBody Body;
-        
-        public GetMaterialByIdResponse() {
-        }
-        
-        public GetMaterialByIdResponse(BIVN_PACKING.PVSService.GetMaterialByIdResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetMaterialByIdResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public BIVN_PACKING.PVSService.MATERIAL_ORDERSEntity GetMaterialByIdResult;
-        
-        public GetMaterialByIdResponseBody() {
-        }
-        
-        public GetMaterialByIdResponseBody(BIVN_PACKING.PVSService.MATERIAL_ORDERSEntity GetMaterialByIdResult) {
-            this.GetMaterialByIdResult = GetMaterialByIdResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetRuleByProductRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetRuleByProduct", Namespace="http://tempuri.org/", Order=0)]
@@ -10253,74 +9767,6 @@ namespace BIVN_PACKING.PVSService {
         
         public GetRuleByProductResponseBody(BIVN_PACKING.PVSService.BARCODE_RULESEntity GetRuleByProductResult) {
             this.GetRuleByProductResult = GetRuleByProductResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetListOrderItemsByIdJsonRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetListOrderItemsByIdJson", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.PVSService.GetListOrderItemsByIdJsonRequestBody Body;
-        
-        public GetListOrderItemsByIdJsonRequest() {
-        }
-        
-        public GetListOrderItemsByIdJsonRequest(BIVN_PACKING.PVSService.GetListOrderItemsByIdJsonRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetListOrderItemsByIdJsonRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string id;
-        
-        public GetListOrderItemsByIdJsonRequestBody() {
-        }
-        
-        public GetListOrderItemsByIdJsonRequestBody(string id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetListOrderItemsByIdJsonResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetListOrderItemsByIdJsonResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.PVSService.GetListOrderItemsByIdJsonResponseBody Body;
-        
-        public GetListOrderItemsByIdJsonResponse() {
-        }
-        
-        public GetListOrderItemsByIdJsonResponse(BIVN_PACKING.PVSService.GetListOrderItemsByIdJsonResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetListOrderItemsByIdJsonResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string GetListOrderItemsByIdJsonResult;
-        
-        public GetListOrderItemsByIdJsonResponseBody() {
-        }
-        
-        public GetListOrderItemsByIdJsonResponseBody(string GetListOrderItemsByIdJsonResult) {
-            this.GetListOrderItemsByIdJsonResult = GetListOrderItemsByIdJsonResult;
         }
     }
     
@@ -10737,82 +10183,6 @@ namespace BIVN_PACKING.PVSService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class MaterialGetOperationLogsRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="MaterialGetOperationLogs", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.PVSService.MaterialGetOperationLogsRequestBody Body;
-        
-        public MaterialGetOperationLogsRequest() {
-        }
-        
-        public MaterialGetOperationLogsRequest(BIVN_PACKING.PVSService.MaterialGetOperationLogsRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class MaterialGetOperationLogsRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string lineID;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string materialOrderID;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string task;
-        
-        public MaterialGetOperationLogsRequestBody() {
-        }
-        
-        public MaterialGetOperationLogsRequestBody(string lineID, string materialOrderID, string task) {
-            this.lineID = lineID;
-            this.materialOrderID = materialOrderID;
-            this.task = task;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class MaterialGetOperationLogsResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="MaterialGetOperationLogsResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.PVSService.MaterialGetOperationLogsResponseBody Body;
-        
-        public MaterialGetOperationLogsResponse() {
-        }
-        
-        public MaterialGetOperationLogsResponse(BIVN_PACKING.PVSService.MaterialGetOperationLogsResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class MaterialGetOperationLogsResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public BIVN_PACKING.PVSService.OPERATION_LOGSEntity[] MaterialGetOperationLogsResult;
-        
-        public MaterialGetOperationLogsResponseBody() {
-        }
-        
-        public MaterialGetOperationLogsResponseBody(BIVN_PACKING.PVSService.OPERATION_LOGSEntity[] MaterialGetOperationLogsResult) {
-            this.MaterialGetOperationLogsResult = MaterialGetOperationLogsResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetOperationLogsRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetOperationLogs", Namespace="http://tempuri.org/", Order=0)]
@@ -10969,42 +10339,15 @@ namespace BIVN_PACKING.PVSService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class MaterialLinesRequest {
+    public partial class GetWorkOrderProcedureByOrderIdRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="MaterialLines", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.PVSService.MaterialLinesRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetWorkOrderProcedureByOrderId", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.GetWorkOrderProcedureByOrderIdRequestBody Body;
         
-        public MaterialLinesRequest() {
+        public GetWorkOrderProcedureByOrderIdRequest() {
         }
         
-        public MaterialLinesRequest(BIVN_PACKING.PVSService.MaterialLinesRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class MaterialLinesRequestBody {
-        
-        public MaterialLinesRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class MaterialLinesResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="MaterialLinesResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BIVN_PACKING.PVSService.MaterialLinesResponseBody Body;
-        
-        public MaterialLinesResponse() {
-        }
-        
-        public MaterialLinesResponse(BIVN_PACKING.PVSService.MaterialLinesResponseBody Body) {
+        public GetWorkOrderProcedureByOrderIdRequest(BIVN_PACKING.PVSService.GetWorkOrderProcedureByOrderIdRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -11013,16 +10356,50 @@ namespace BIVN_PACKING.PVSService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class MaterialLinesResponseBody {
+    public partial class GetWorkOrderProcedureByOrderIdRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public BIVN_PACKING.PVSService.MACHINESEntity[] MaterialLinesResult;
+        public string orderId;
         
-        public MaterialLinesResponseBody() {
+        public GetWorkOrderProcedureByOrderIdRequestBody() {
         }
         
-        public MaterialLinesResponseBody(BIVN_PACKING.PVSService.MACHINESEntity[] MaterialLinesResult) {
-            this.MaterialLinesResult = MaterialLinesResult;
+        public GetWorkOrderProcedureByOrderIdRequestBody(string orderId) {
+            this.orderId = orderId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetWorkOrderProcedureByOrderIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetWorkOrderProcedureByOrderIdResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BIVN_PACKING.PVSService.GetWorkOrderProcedureByOrderIdResponseBody Body;
+        
+        public GetWorkOrderProcedureByOrderIdResponse() {
+        }
+        
+        public GetWorkOrderProcedureByOrderIdResponse(BIVN_PACKING.PVSService.GetWorkOrderProcedureByOrderIdResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetWorkOrderProcedureByOrderIdResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BIVN_PACKING.PVSService.WORK_ORDER_PROCEDURESEntity[] GetWorkOrderProcedureByOrderIdResult;
+        
+        public GetWorkOrderProcedureByOrderIdResponseBody() {
+        }
+        
+        public GetWorkOrderProcedureByOrderIdResponseBody(BIVN_PACKING.PVSService.WORK_ORDER_PROCEDURESEntity[] GetWorkOrderProcedureByOrderIdResult) {
+            this.GetWorkOrderProcedureByOrderIdResult = GetWorkOrderProcedureByOrderIdResult;
         }
     }
     
@@ -11119,6 +10496,158 @@ namespace BIVN_PACKING.PVSService {
         
         public PVSWebServiceSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BIVN_PACKING.PVSService.GetStationByHostNameResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.GetStationByHostName(BIVN_PACKING.PVSService.GetStationByHostNameRequest request) {
+            return base.Channel.GetStationByHostName(request);
+        }
+        
+        public BIVN_PACKING.PVSService.INSPECTION_OPTIONSEntity GetStationByHostName(string hostName) {
+            BIVN_PACKING.PVSService.GetStationByHostNameRequest inValue = new BIVN_PACKING.PVSService.GetStationByHostNameRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.GetStationByHostNameRequestBody();
+            inValue.Body.hostName = hostName;
+            BIVN_PACKING.PVSService.GetStationByHostNameResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetStationByHostName(inValue);
+            return retVal.Body.GetStationByHostNameResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetStationByHostNameResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.GetStationByHostNameAsync(BIVN_PACKING.PVSService.GetStationByHostNameRequest request) {
+            return base.Channel.GetStationByHostNameAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetStationByHostNameResponse> GetStationByHostNameAsync(string hostName) {
+            BIVN_PACKING.PVSService.GetStationByHostNameRequest inValue = new BIVN_PACKING.PVSService.GetStationByHostNameRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.GetStationByHostNameRequestBody();
+            inValue.Body.hostName = hostName;
+            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetStationByHostNameAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BIVN_PACKING.PVSService.GetStationByIDResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.GetStationByID(BIVN_PACKING.PVSService.GetStationByIDRequest request) {
+            return base.Channel.GetStationByID(request);
+        }
+        
+        public BIVN_PACKING.PVSService.INSPECTION_OPTIONSEntity GetStationByID(string id) {
+            BIVN_PACKING.PVSService.GetStationByIDRequest inValue = new BIVN_PACKING.PVSService.GetStationByIDRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.GetStationByIDRequestBody();
+            inValue.Body.id = id;
+            BIVN_PACKING.PVSService.GetStationByIDResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetStationByID(inValue);
+            return retVal.Body.GetStationByIDResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetStationByIDResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.GetStationByIDAsync(BIVN_PACKING.PVSService.GetStationByIDRequest request) {
+            return base.Channel.GetStationByIDAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetStationByIDResponse> GetStationByIDAsync(string id) {
+            BIVN_PACKING.PVSService.GetStationByIDRequest inValue = new BIVN_PACKING.PVSService.GetStationByIDRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.GetStationByIDRequestBody();
+            inValue.Body.id = id;
+            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetStationByIDAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BIVN_PACKING.PVSService.CheckRepairResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.CheckRepair(BIVN_PACKING.PVSService.CheckRepairRequest request) {
+            return base.Channel.CheckRepair(request);
+        }
+        
+        public bool CheckRepair(string boardNo) {
+            BIVN_PACKING.PVSService.CheckRepairRequest inValue = new BIVN_PACKING.PVSService.CheckRepairRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.CheckRepairRequestBody();
+            inValue.Body.boardNo = boardNo;
+            BIVN_PACKING.PVSService.CheckRepairResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).CheckRepair(inValue);
+            return retVal.Body.CheckRepairResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.CheckRepairResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.CheckRepairAsync(BIVN_PACKING.PVSService.CheckRepairRequest request) {
+            return base.Channel.CheckRepairAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.CheckRepairResponse> CheckRepairAsync(string boardNo) {
+            BIVN_PACKING.PVSService.CheckRepairRequest inValue = new BIVN_PACKING.PVSService.CheckRepairRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.CheckRepairRequestBody();
+            inValue.Body.boardNo = boardNo;
+            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).CheckRepairAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BIVN_PACKING.PVSService.GetTotalResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.GetTotal(BIVN_PACKING.PVSService.GetTotalRequest request) {
+            return base.Channel.GetTotal(request);
+        }
+        
+        public int GetTotal(string orderID, int procedureIndex) {
+            BIVN_PACKING.PVSService.GetTotalRequest inValue = new BIVN_PACKING.PVSService.GetTotalRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.GetTotalRequestBody();
+            inValue.Body.orderID = orderID;
+            inValue.Body.procedureIndex = procedureIndex;
+            BIVN_PACKING.PVSService.GetTotalResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetTotal(inValue);
+            return retVal.Body.GetTotalResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetTotalResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.GetTotalAsync(BIVN_PACKING.PVSService.GetTotalRequest request) {
+            return base.Channel.GetTotalAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetTotalResponse> GetTotalAsync(string orderID, int procedureIndex) {
+            BIVN_PACKING.PVSService.GetTotalRequest inValue = new BIVN_PACKING.PVSService.GetTotalRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.GetTotalRequestBody();
+            inValue.Body.orderID = orderID;
+            inValue.Body.procedureIndex = procedureIndex;
+            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetTotalAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BIVN_PACKING.PVSService.GetReplacingLogResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.GetReplacingLog(BIVN_PACKING.PVSService.GetReplacingLogRequest request) {
+            return base.Channel.GetReplacingLog(request);
+        }
+        
+        public BIVN_PACKING.PVSService.REPLACING_LOGSEntity GetReplacingLog(string oldBarcode) {
+            BIVN_PACKING.PVSService.GetReplacingLogRequest inValue = new BIVN_PACKING.PVSService.GetReplacingLogRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.GetReplacingLogRequestBody();
+            inValue.Body.oldBarcode = oldBarcode;
+            BIVN_PACKING.PVSService.GetReplacingLogResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetReplacingLog(inValue);
+            return retVal.Body.GetReplacingLogResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetReplacingLogResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.GetReplacingLogAsync(BIVN_PACKING.PVSService.GetReplacingLogRequest request) {
+            return base.Channel.GetReplacingLogAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetReplacingLogResponse> GetReplacingLogAsync(string oldBarcode) {
+            BIVN_PACKING.PVSService.GetReplacingLogRequest inValue = new BIVN_PACKING.PVSService.GetReplacingLogRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.GetReplacingLogRequestBody();
+            inValue.Body.oldBarcode = oldBarcode;
+            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetReplacingLogAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BIVN_PACKING.PVSService.GetSteelMeshResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.GetSteelMesh(BIVN_PACKING.PVSService.GetSteelMeshRequest request) {
+            return base.Channel.GetSteelMesh(request);
+        }
+        
+        public BIVN_PACKING.PVSService.STEEL_MESH_STATUSEntity GetSteelMesh(string materialOrderId) {
+            BIVN_PACKING.PVSService.GetSteelMeshRequest inValue = new BIVN_PACKING.PVSService.GetSteelMeshRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.GetSteelMeshRequestBody();
+            inValue.Body.materialOrderId = materialOrderId;
+            BIVN_PACKING.PVSService.GetSteelMeshResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetSteelMesh(inValue);
+            return retVal.Body.GetSteelMeshResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetSteelMeshResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.GetSteelMeshAsync(BIVN_PACKING.PVSService.GetSteelMeshRequest request) {
+            return base.Channel.GetSteelMeshAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetSteelMeshResponse> GetSteelMeshAsync(string materialOrderId) {
+            BIVN_PACKING.PVSService.GetSteelMeshRequest inValue = new BIVN_PACKING.PVSService.GetSteelMeshRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.GetSteelMeshRequestBody();
+            inValue.Body.materialOrderId = materialOrderId;
+            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetSteelMeshAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -11267,6 +10796,30 @@ namespace BIVN_PACKING.PVSService {
             inValue.Body = new BIVN_PACKING.PVSService.MurataGetPackByBoardNoRequestBody();
             inValue.Body.boardNo = boardNo;
             return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).MurataGetPackByBoardNoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BIVN_PACKING.PVSService.MurataRemoveResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.MurataRemove(BIVN_PACKING.PVSService.MurataRemoveRequest request) {
+            return base.Channel.MurataRemove(request);
+        }
+        
+        public void MurataRemove(string boardNo) {
+            BIVN_PACKING.PVSService.MurataRemoveRequest inValue = new BIVN_PACKING.PVSService.MurataRemoveRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.MurataRemoveRequestBody();
+            inValue.Body.boardNo = boardNo;
+            BIVN_PACKING.PVSService.MurataRemoveResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).MurataRemove(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.MurataRemoveResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.MurataRemoveAsync(BIVN_PACKING.PVSService.MurataRemoveRequest request) {
+            return base.Channel.MurataRemoveAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.MurataRemoveResponse> MurataRemoveAsync(string boardNo) {
+            BIVN_PACKING.PVSService.MurataRemoveRequest inValue = new BIVN_PACKING.PVSService.MurataRemoveRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.MurataRemoveRequestBody();
+            inValue.Body.boardNo = boardNo;
+            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).MurataRemoveAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -12120,6 +11673,58 @@ namespace BIVN_PACKING.PVSService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BIVN_PACKING.PVSService.GetBarcodeRuleItemsByIdResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.GetBarcodeRuleItemsById(BIVN_PACKING.PVSService.GetBarcodeRuleItemsByIdRequest request) {
+            return base.Channel.GetBarcodeRuleItemsById(request);
+        }
+        
+        public BIVN_PACKING.PVSService.BARCODE_RULE_ITEMSEntity GetBarcodeRuleItemsById(string id) {
+            BIVN_PACKING.PVSService.GetBarcodeRuleItemsByIdRequest inValue = new BIVN_PACKING.PVSService.GetBarcodeRuleItemsByIdRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.GetBarcodeRuleItemsByIdRequestBody();
+            inValue.Body.id = id;
+            BIVN_PACKING.PVSService.GetBarcodeRuleItemsByIdResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetBarcodeRuleItemsById(inValue);
+            return retVal.Body.GetBarcodeRuleItemsByIdResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetBarcodeRuleItemsByIdResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.GetBarcodeRuleItemsByIdAsync(BIVN_PACKING.PVSService.GetBarcodeRuleItemsByIdRequest request) {
+            return base.Channel.GetBarcodeRuleItemsByIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetBarcodeRuleItemsByIdResponse> GetBarcodeRuleItemsByIdAsync(string id) {
+            BIVN_PACKING.PVSService.GetBarcodeRuleItemsByIdRequest inValue = new BIVN_PACKING.PVSService.GetBarcodeRuleItemsByIdRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.GetBarcodeRuleItemsByIdRequestBody();
+            inValue.Body.id = id;
+            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetBarcodeRuleItemsByIdAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BIVN_PACKING.PVSService.GetRuleNoResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.GetRuleNo(BIVN_PACKING.PVSService.GetRuleNoRequest request) {
+            return base.Channel.GetRuleNo(request);
+        }
+        
+        public string GetRuleNo(string orderId, string stationNo) {
+            BIVN_PACKING.PVSService.GetRuleNoRequest inValue = new BIVN_PACKING.PVSService.GetRuleNoRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.GetRuleNoRequestBody();
+            inValue.Body.orderId = orderId;
+            inValue.Body.stationNo = stationNo;
+            BIVN_PACKING.PVSService.GetRuleNoResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetRuleNo(inValue);
+            return retVal.Body.GetRuleNoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetRuleNoResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.GetRuleNoAsync(BIVN_PACKING.PVSService.GetRuleNoRequest request) {
+            return base.Channel.GetRuleNoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetRuleNoResponse> GetRuleNoAsync(string orderId, string stationNo) {
+            BIVN_PACKING.PVSService.GetRuleNoRequest inValue = new BIVN_PACKING.PVSService.GetRuleNoRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.GetRuleNoRequestBody();
+            inValue.Body.orderId = orderId;
+            inValue.Body.stationNo = stationNo;
+            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetRuleNoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         BIVN_PACKING.PVSService.GetBarodeRuleItemsByRuleNoJsonResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.GetBarodeRuleItemsByRuleNoJson(BIVN_PACKING.PVSService.GetBarodeRuleItemsByRuleNoJsonRequest request) {
             return base.Channel.GetBarodeRuleItemsByRuleNoJson(request);
         }
@@ -12270,158 +11875,6 @@ namespace BIVN_PACKING.PVSService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BIVN_PACKING.PVSService.GetLineStartByLineIdResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.GetLineStartByLineId(BIVN_PACKING.PVSService.GetLineStartByLineIdRequest request) {
-            return base.Channel.GetLineStartByLineId(request);
-        }
-        
-        public BIVN_PACKING.PVSService.MATERIAL_ORDERSEntity GetLineStartByLineId(string lineID) {
-            BIVN_PACKING.PVSService.GetLineStartByLineIdRequest inValue = new BIVN_PACKING.PVSService.GetLineStartByLineIdRequest();
-            inValue.Body = new BIVN_PACKING.PVSService.GetLineStartByLineIdRequestBody();
-            inValue.Body.lineID = lineID;
-            BIVN_PACKING.PVSService.GetLineStartByLineIdResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetLineStartByLineId(inValue);
-            return retVal.Body.GetLineStartByLineIdResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetLineStartByLineIdResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.GetLineStartByLineIdAsync(BIVN_PACKING.PVSService.GetLineStartByLineIdRequest request) {
-            return base.Channel.GetLineStartByLineIdAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetLineStartByLineIdResponse> GetLineStartByLineIdAsync(string lineID) {
-            BIVN_PACKING.PVSService.GetLineStartByLineIdRequest inValue = new BIVN_PACKING.PVSService.GetLineStartByLineIdRequest();
-            inValue.Body = new BIVN_PACKING.PVSService.GetLineStartByLineIdRequestBody();
-            inValue.Body.lineID = lineID;
-            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetLineStartByLineIdAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BIVN_PACKING.PVSService.MaterialAllLinesStartedResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.MaterialAllLinesStarted(BIVN_PACKING.PVSService.MaterialAllLinesStartedRequest request) {
-            return base.Channel.MaterialAllLinesStarted(request);
-        }
-        
-        public BIVN_PACKING.PVSService.MATERIAL_ORDERSEntity[] MaterialAllLinesStarted() {
-            BIVN_PACKING.PVSService.MaterialAllLinesStartedRequest inValue = new BIVN_PACKING.PVSService.MaterialAllLinesStartedRequest();
-            inValue.Body = new BIVN_PACKING.PVSService.MaterialAllLinesStartedRequestBody();
-            BIVN_PACKING.PVSService.MaterialAllLinesStartedResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).MaterialAllLinesStarted(inValue);
-            return retVal.Body.MaterialAllLinesStartedResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.MaterialAllLinesStartedResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.MaterialAllLinesStartedAsync(BIVN_PACKING.PVSService.MaterialAllLinesStartedRequest request) {
-            return base.Channel.MaterialAllLinesStartedAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.MaterialAllLinesStartedResponse> MaterialAllLinesStartedAsync() {
-            BIVN_PACKING.PVSService.MaterialAllLinesStartedRequest inValue = new BIVN_PACKING.PVSService.MaterialAllLinesStartedRequest();
-            inValue.Body = new BIVN_PACKING.PVSService.MaterialAllLinesStartedRequestBody();
-            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).MaterialAllLinesStartedAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BIVN_PACKING.PVSService.GetMaterialWithParamResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.GetMaterialWithParam(BIVN_PACKING.PVSService.GetMaterialWithParamRequest request) {
-            return base.Channel.GetMaterialWithParam(request);
-        }
-        
-        public BIVN_PACKING.PVSService.MATERIAL_ORDERSEntity[] GetMaterialWithParam(System.Nullable<bool> isFinish, System.Nullable<bool> isStart, System.Nullable<bool> isReady) {
-            BIVN_PACKING.PVSService.GetMaterialWithParamRequest inValue = new BIVN_PACKING.PVSService.GetMaterialWithParamRequest();
-            inValue.Body = new BIVN_PACKING.PVSService.GetMaterialWithParamRequestBody();
-            inValue.Body.isFinish = isFinish;
-            inValue.Body.isStart = isStart;
-            inValue.Body.isReady = isReady;
-            BIVN_PACKING.PVSService.GetMaterialWithParamResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetMaterialWithParam(inValue);
-            return retVal.Body.GetMaterialWithParamResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetMaterialWithParamResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.GetMaterialWithParamAsync(BIVN_PACKING.PVSService.GetMaterialWithParamRequest request) {
-            return base.Channel.GetMaterialWithParamAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetMaterialWithParamResponse> GetMaterialWithParamAsync(System.Nullable<bool> isFinish, System.Nullable<bool> isStart, System.Nullable<bool> isReady) {
-            BIVN_PACKING.PVSService.GetMaterialWithParamRequest inValue = new BIVN_PACKING.PVSService.GetMaterialWithParamRequest();
-            inValue.Body = new BIVN_PACKING.PVSService.GetMaterialWithParamRequestBody();
-            inValue.Body.isFinish = isFinish;
-            inValue.Body.isStart = isStart;
-            inValue.Body.isReady = isReady;
-            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetMaterialWithParamAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BIVN_PACKING.PVSService.GetLineStartByLineIdJsonResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.GetLineStartByLineIdJson(BIVN_PACKING.PVSService.GetLineStartByLineIdJsonRequest request) {
-            return base.Channel.GetLineStartByLineIdJson(request);
-        }
-        
-        public string GetLineStartByLineIdJson(string lineID) {
-            BIVN_PACKING.PVSService.GetLineStartByLineIdJsonRequest inValue = new BIVN_PACKING.PVSService.GetLineStartByLineIdJsonRequest();
-            inValue.Body = new BIVN_PACKING.PVSService.GetLineStartByLineIdJsonRequestBody();
-            inValue.Body.lineID = lineID;
-            BIVN_PACKING.PVSService.GetLineStartByLineIdJsonResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetLineStartByLineIdJson(inValue);
-            return retVal.Body.GetLineStartByLineIdJsonResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetLineStartByLineIdJsonResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.GetLineStartByLineIdJsonAsync(BIVN_PACKING.PVSService.GetLineStartByLineIdJsonRequest request) {
-            return base.Channel.GetLineStartByLineIdJsonAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetLineStartByLineIdJsonResponse> GetLineStartByLineIdJsonAsync(string lineID) {
-            BIVN_PACKING.PVSService.GetLineStartByLineIdJsonRequest inValue = new BIVN_PACKING.PVSService.GetLineStartByLineIdJsonRequest();
-            inValue.Body = new BIVN_PACKING.PVSService.GetLineStartByLineIdJsonRequestBody();
-            inValue.Body.lineID = lineID;
-            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetLineStartByLineIdJsonAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BIVN_PACKING.PVSService.GetListOrderItemsByIdResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.GetListOrderItemsById(BIVN_PACKING.PVSService.GetListOrderItemsByIdRequest request) {
-            return base.Channel.GetListOrderItemsById(request);
-        }
-        
-        public BIVN_PACKING.PVSService.MATERIAL_ORDER_ITEMSEntity[] GetListOrderItemsById(string id) {
-            BIVN_PACKING.PVSService.GetListOrderItemsByIdRequest inValue = new BIVN_PACKING.PVSService.GetListOrderItemsByIdRequest();
-            inValue.Body = new BIVN_PACKING.PVSService.GetListOrderItemsByIdRequestBody();
-            inValue.Body.id = id;
-            BIVN_PACKING.PVSService.GetListOrderItemsByIdResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetListOrderItemsById(inValue);
-            return retVal.Body.GetListOrderItemsByIdResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetListOrderItemsByIdResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.GetListOrderItemsByIdAsync(BIVN_PACKING.PVSService.GetListOrderItemsByIdRequest request) {
-            return base.Channel.GetListOrderItemsByIdAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetListOrderItemsByIdResponse> GetListOrderItemsByIdAsync(string id) {
-            BIVN_PACKING.PVSService.GetListOrderItemsByIdRequest inValue = new BIVN_PACKING.PVSService.GetListOrderItemsByIdRequest();
-            inValue.Body = new BIVN_PACKING.PVSService.GetListOrderItemsByIdRequestBody();
-            inValue.Body.id = id;
-            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetListOrderItemsByIdAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BIVN_PACKING.PVSService.GetMaterialByIdResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.GetMaterialById(BIVN_PACKING.PVSService.GetMaterialByIdRequest request) {
-            return base.Channel.GetMaterialById(request);
-        }
-        
-        public BIVN_PACKING.PVSService.MATERIAL_ORDERSEntity GetMaterialById(string id) {
-            BIVN_PACKING.PVSService.GetMaterialByIdRequest inValue = new BIVN_PACKING.PVSService.GetMaterialByIdRequest();
-            inValue.Body = new BIVN_PACKING.PVSService.GetMaterialByIdRequestBody();
-            inValue.Body.id = id;
-            BIVN_PACKING.PVSService.GetMaterialByIdResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetMaterialById(inValue);
-            return retVal.Body.GetMaterialByIdResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetMaterialByIdResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.GetMaterialByIdAsync(BIVN_PACKING.PVSService.GetMaterialByIdRequest request) {
-            return base.Channel.GetMaterialByIdAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetMaterialByIdResponse> GetMaterialByIdAsync(string id) {
-            BIVN_PACKING.PVSService.GetMaterialByIdRequest inValue = new BIVN_PACKING.PVSService.GetMaterialByIdRequest();
-            inValue.Body = new BIVN_PACKING.PVSService.GetMaterialByIdRequestBody();
-            inValue.Body.id = id;
-            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetMaterialByIdAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         BIVN_PACKING.PVSService.GetRuleByProductResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.GetRuleByProduct(BIVN_PACKING.PVSService.GetRuleByProductRequest request) {
             return base.Channel.GetRuleByProduct(request);
         }
@@ -12444,31 +11897,6 @@ namespace BIVN_PACKING.PVSService {
             inValue.Body = new BIVN_PACKING.PVSService.GetRuleByProductRequestBody();
             inValue.Body.product = product;
             return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetRuleByProductAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BIVN_PACKING.PVSService.GetListOrderItemsByIdJsonResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.GetListOrderItemsByIdJson(BIVN_PACKING.PVSService.GetListOrderItemsByIdJsonRequest request) {
-            return base.Channel.GetListOrderItemsByIdJson(request);
-        }
-        
-        public string GetListOrderItemsByIdJson(string id) {
-            BIVN_PACKING.PVSService.GetListOrderItemsByIdJsonRequest inValue = new BIVN_PACKING.PVSService.GetListOrderItemsByIdJsonRequest();
-            inValue.Body = new BIVN_PACKING.PVSService.GetListOrderItemsByIdJsonRequestBody();
-            inValue.Body.id = id;
-            BIVN_PACKING.PVSService.GetListOrderItemsByIdJsonResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetListOrderItemsByIdJson(inValue);
-            return retVal.Body.GetListOrderItemsByIdJsonResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetListOrderItemsByIdJsonResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.GetListOrderItemsByIdJsonAsync(BIVN_PACKING.PVSService.GetListOrderItemsByIdJsonRequest request) {
-            return base.Channel.GetListOrderItemsByIdJsonAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetListOrderItemsByIdJsonResponse> GetListOrderItemsByIdJsonAsync(string id) {
-            BIVN_PACKING.PVSService.GetListOrderItemsByIdJsonRequest inValue = new BIVN_PACKING.PVSService.GetListOrderItemsByIdJsonRequest();
-            inValue.Body = new BIVN_PACKING.PVSService.GetListOrderItemsByIdJsonRequestBody();
-            inValue.Body.id = id;
-            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetListOrderItemsByIdJsonAsync(inValue);
         }
         
         public void Analyst(System.DateTime dateTime) {
@@ -12633,35 +12061,6 @@ namespace BIVN_PACKING.PVSService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BIVN_PACKING.PVSService.MaterialGetOperationLogsResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.MaterialGetOperationLogs(BIVN_PACKING.PVSService.MaterialGetOperationLogsRequest request) {
-            return base.Channel.MaterialGetOperationLogs(request);
-        }
-        
-        public BIVN_PACKING.PVSService.OPERATION_LOGSEntity[] MaterialGetOperationLogs(string lineID, string materialOrderID, string task) {
-            BIVN_PACKING.PVSService.MaterialGetOperationLogsRequest inValue = new BIVN_PACKING.PVSService.MaterialGetOperationLogsRequest();
-            inValue.Body = new BIVN_PACKING.PVSService.MaterialGetOperationLogsRequestBody();
-            inValue.Body.lineID = lineID;
-            inValue.Body.materialOrderID = materialOrderID;
-            inValue.Body.task = task;
-            BIVN_PACKING.PVSService.MaterialGetOperationLogsResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).MaterialGetOperationLogs(inValue);
-            return retVal.Body.MaterialGetOperationLogsResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.MaterialGetOperationLogsResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.MaterialGetOperationLogsAsync(BIVN_PACKING.PVSService.MaterialGetOperationLogsRequest request) {
-            return base.Channel.MaterialGetOperationLogsAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.MaterialGetOperationLogsResponse> MaterialGetOperationLogsAsync(string lineID, string materialOrderID, string task) {
-            BIVN_PACKING.PVSService.MaterialGetOperationLogsRequest inValue = new BIVN_PACKING.PVSService.MaterialGetOperationLogsRequest();
-            inValue.Body = new BIVN_PACKING.PVSService.MaterialGetOperationLogsRequestBody();
-            inValue.Body.lineID = lineID;
-            inValue.Body.materialOrderID = materialOrderID;
-            inValue.Body.task = task;
-            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).MaterialGetOperationLogsAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         BIVN_PACKING.PVSService.GetOperationLogsResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.GetOperationLogs(BIVN_PACKING.PVSService.GetOperationLogsRequest request) {
             return base.Channel.GetOperationLogs(request);
         }
@@ -12722,26 +12121,28 @@ namespace BIVN_PACKING.PVSService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BIVN_PACKING.PVSService.MaterialLinesResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.MaterialLines(BIVN_PACKING.PVSService.MaterialLinesRequest request) {
-            return base.Channel.MaterialLines(request);
+        BIVN_PACKING.PVSService.GetWorkOrderProcedureByOrderIdResponse BIVN_PACKING.PVSService.PVSWebServiceSoap.GetWorkOrderProcedureByOrderId(BIVN_PACKING.PVSService.GetWorkOrderProcedureByOrderIdRequest request) {
+            return base.Channel.GetWorkOrderProcedureByOrderId(request);
         }
         
-        public BIVN_PACKING.PVSService.MACHINESEntity[] MaterialLines() {
-            BIVN_PACKING.PVSService.MaterialLinesRequest inValue = new BIVN_PACKING.PVSService.MaterialLinesRequest();
-            inValue.Body = new BIVN_PACKING.PVSService.MaterialLinesRequestBody();
-            BIVN_PACKING.PVSService.MaterialLinesResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).MaterialLines(inValue);
-            return retVal.Body.MaterialLinesResult;
+        public BIVN_PACKING.PVSService.WORK_ORDER_PROCEDURESEntity[] GetWorkOrderProcedureByOrderId(string orderId) {
+            BIVN_PACKING.PVSService.GetWorkOrderProcedureByOrderIdRequest inValue = new BIVN_PACKING.PVSService.GetWorkOrderProcedureByOrderIdRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.GetWorkOrderProcedureByOrderIdRequestBody();
+            inValue.Body.orderId = orderId;
+            BIVN_PACKING.PVSService.GetWorkOrderProcedureByOrderIdResponse retVal = ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetWorkOrderProcedureByOrderId(inValue);
+            return retVal.Body.GetWorkOrderProcedureByOrderIdResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.MaterialLinesResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.MaterialLinesAsync(BIVN_PACKING.PVSService.MaterialLinesRequest request) {
-            return base.Channel.MaterialLinesAsync(request);
+        System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetWorkOrderProcedureByOrderIdResponse> BIVN_PACKING.PVSService.PVSWebServiceSoap.GetWorkOrderProcedureByOrderIdAsync(BIVN_PACKING.PVSService.GetWorkOrderProcedureByOrderIdRequest request) {
+            return base.Channel.GetWorkOrderProcedureByOrderIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.MaterialLinesResponse> MaterialLinesAsync() {
-            BIVN_PACKING.PVSService.MaterialLinesRequest inValue = new BIVN_PACKING.PVSService.MaterialLinesRequest();
-            inValue.Body = new BIVN_PACKING.PVSService.MaterialLinesRequestBody();
-            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).MaterialLinesAsync(inValue);
+        public System.Threading.Tasks.Task<BIVN_PACKING.PVSService.GetWorkOrderProcedureByOrderIdResponse> GetWorkOrderProcedureByOrderIdAsync(string orderId) {
+            BIVN_PACKING.PVSService.GetWorkOrderProcedureByOrderIdRequest inValue = new BIVN_PACKING.PVSService.GetWorkOrderProcedureByOrderIdRequest();
+            inValue.Body = new BIVN_PACKING.PVSService.GetWorkOrderProcedureByOrderIdRequestBody();
+            inValue.Body.orderId = orderId;
+            return ((BIVN_PACKING.PVSService.PVSWebServiceSoap)(this)).GetWorkOrderProcedureByOrderIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

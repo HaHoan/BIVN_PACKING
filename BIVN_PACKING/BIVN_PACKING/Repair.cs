@@ -17,8 +17,9 @@ namespace BIVN_PACKING
         public int ID { get; set; }
         public string BOXID { get; set; }
         public string SERIAL { get; set; }
-        public Nullable<int> AMOUNT { get; set; }
-        public Nullable<System.DateTime> DATECREATE { get; set; }
+        public int AMOUNT { get; set; }
+        public DateTime DATECREATE { get; set; }
         public string USERNAME { get; set; }
+        public string MODEL { get; set; }
     }
 }

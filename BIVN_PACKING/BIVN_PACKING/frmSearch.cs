@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Objects;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -202,18 +203,18 @@ namespace BIVN_PACKING
                 {
                     if (arg == Constant.FILTER_BY_SERIAL)
                     {
-                        var data = db.Repairs.Where(m => m.SERIAL == txbSearch.Text.Trim() && m.DATECREATE >= dtptimestart.Value.Date && m.DATECREATE <= dtptimeend.Value.Date).ToList();
+                        var data = db.Repairs.Where(m => m.SERIAL == txbSearch.Text.Trim() && EntityFunctions.TruncateTime(m.DATECREATE) >= dtptimestart.Value.Date && EntityFunctions.TruncateTime(m.DATECREATE) <= dtptimeend.Value.Date).ToList();
 
                         e.Result = data;
                     }
                     else if(arg == Constant.FILTER_BY_MODEL)
                     {
-                        var data = db.Repairs.Where(m => m.MODEL == txbSearch.Text.Trim() && m.DATECREATE >= dtptimestart.Value.Date && m.DATECREATE <= dtptimeend.Value.Date).ToList();
+                        var data = db.Repairs.Where(m => m.MODEL == txbSearch.Text.Trim() && EntityFunctions.TruncateTime(m.DATECREATE) >= dtptimestart.Value.Date && EntityFunctions.TruncateTime(m.DATECREATE) <= dtptimeend.Value.Date).ToList();
 
                         e.Result = data;
                     }else if(arg == Constant.FILTER_BY_REPAIRER)
                     {
-                        var data = db.Repairs.Where(m => m.REPAIRER.Contains(txbSearch.Text.Trim()) && m.DATECREATE >= dtptimestart.Value.Date && m.DATECREATE <= dtptimeend.Value.Date).ToList();
+                        var data = db.Repairs.Where(m => m.REPAIRER.Contains(txbSearch.Text.Trim()) && EntityFunctions.TruncateTime(m.DATECREATE) >= dtptimestart.Value.Date && EntityFunctions.TruncateTime(m.DATECREATE) <= dtptimeend.Value.Date).ToList();
 
                         e.Result = data;
                     }

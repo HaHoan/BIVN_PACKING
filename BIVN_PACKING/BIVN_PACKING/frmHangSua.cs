@@ -15,7 +15,7 @@ namespace BIVN_PACKING
     {
         USAPService.USAPWebServiceSoapClient _dbClient = new USAPService.USAPWebServiceSoapClient();
         private USAPService.BCLBFLMEntity _boxInfo = new USAPService.BCLBFLMEntity();
-        private PVSService.BARCODE_RULE_ITEMSEntity _rule = new PVSService.BARCODE_RULE_ITEMSEntity();
+        private PVSService.Base_ModelsEntity _modelInfo = new PVSService.Base_ModelsEntity();
         private BIVNService.BIVNWebServiceSoapClient _bivnService = new BIVNService.BIVNWebServiceSoapClient();
         private PVSService.PVSWebServiceSoapClient _pvs_service = new PVSService.PVSWebServiceSoapClient();
         int _boxQty = 0;
@@ -91,13 +91,7 @@ namespace BIVN_PACKING
                             txtBoxid.Focus();
                             return;
                         }
-                        var rule = _pvs_service.GetBarcodeRuleEntityByRuleNO(_boxInfo.PART_NO);
-                        if(rule != null)
-                        {
-                            _rule = _pvs_service.GetBarcodeRuleItemsById(rule.ID.ToString());
-                        }
-                     
-                        
+                        _modelInfo =  _pvs_service.GetModelInfo(_boxInfo.PART_NO);
                         lblModel.Text = _boxInfo.PART_NO;
                         lblQtyBox.Text = Convert.ToInt32(_boxInfo.OS_QTY).ToString();
                         // lấy số lượng serial đã bắn / box
@@ -115,8 +109,9 @@ namespace BIVN_PACKING
 
                         ShowMessage("PASS", "OK", $"BoxID {boxID} OK.\nInsert Serial!");
                         txtBoxid.Enabled = false;
-                        panelBarcode.Enabled = true;
-                        txtBarcode.Focus();
+                        txbRepairer.Enabled = true;
+                        txbRepairer.Focus();
+
 
                     }
 
@@ -150,13 +145,14 @@ namespace BIVN_PACKING
                     txtBoxid.ResetText();
                     return;
                 }
+                
                 var serial = txtBarcode.Text.Trim();
-                if(_rule != null && _rule.LOCATION is int location && _rule.CONTENT_LENGTH is int content_length)
+                if(_modelInfo != null && _modelInfo.Content != null && _modelInfo.Content_Length is int length)
                 {
                   
-                    if(serial.Substring(location - 1, content_length) != _rule.CONTENT)
+                    if(serial.Substring(0, length) != _modelInfo.Content)
                     {
-                        new Error($"Serial cần bắt đầu bằng {_rule.CONTENT}").ShowDialog();
+                        new Error($"Serial cần bắt đầu bằng {_modelInfo.Content}").ShowDialog();
                         return;
                     }
                  
@@ -172,7 +168,8 @@ namespace BIVN_PACKING
                             SERIAL = txtBarcode.Text.Trim(),
                             USERNAME = Data.UserName,
                             DATECREATE = _pvs_service.GetDateTime(),
-                            MODEL = _boxInfo.PART_NO
+                            MODEL = _boxInfo.PART_NO,
+                            REPAIRER = txbRepairer.Text
                         };
 
                         db.Repairs.Add(prod);
@@ -186,7 +183,9 @@ namespace BIVN_PACKING
                         {
                             ShowMessage("NULL", @"FULL", $"Số lượng bảng mạch trên thùng đã đầy.\nVui lòng bắn BoxID");
                             txtBarcode.ResetText();
+                            txtBarcode.Enabled = false;
                             panelBOXID.Enabled = true;
+                            txbRepairer.ResetText();
                             txtBoxid.Enabled = true;
                             txtBoxid.ResetText();
                             txtBoxid.Focus();
@@ -206,6 +205,34 @@ namespace BIVN_PACKING
 
                 
             }
+        }
+
+      
+        private void txbRepairer_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                txbRepairer.Enabled = false;
+                panelBarcode.Enabled = true;
+                txtBarcode.Focus();
+            }
+           
+        }
+
+        private void llreset_Click(object sender, EventArgs e)
+        {
+            txtBoxid.Enabled = true;
+            txtBoxid.ResetText();
+            txtBoxid.Focus();
+            txtBarcode.ResetText();
+            
+            lblQtyBox.Text = "0";
+            lblQtyBoxActual.Text = "0";
+            txbRepairer.ResetText();
+            txbRepairer.Enabled = false;
+            dgrvListSerialInBox.DataSource = null;
+            dgrvListSerialInBox.Refresh();
+            panelBarcode.Enabled = false;
         }
     }
 }

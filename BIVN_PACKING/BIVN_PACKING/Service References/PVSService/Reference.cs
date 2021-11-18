@@ -1047,6 +1047,9 @@ namespace BIVN_PACKING.PVSService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CustomerField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ContentField;
+        
         private System.Nullable<int> Content_IndexField;
         
         private System.Nullable<int> Content_LengthField;
@@ -1101,7 +1104,20 @@ namespace BIVN_PACKING.PVSService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Content {
+            get {
+                return this.ContentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ContentField, value) != true)) {
+                    this.ContentField = value;
+                    this.RaisePropertyChanged("Content");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
         public System.Nullable<int> Content_Index {
             get {
                 return this.Content_IndexField;
@@ -1114,7 +1130,7 @@ namespace BIVN_PACKING.PVSService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
         public System.Nullable<int> Content_Length {
             get {
                 return this.Content_LengthField;
@@ -1127,7 +1143,7 @@ namespace BIVN_PACKING.PVSService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
         public System.Nullable<int> Location {
             get {
                 return this.LocationField;
@@ -1140,7 +1156,7 @@ namespace BIVN_PACKING.PVSService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
         public System.Nullable<bool> Is_Hexa {
             get {
                 return this.Is_HexaField;
@@ -1153,7 +1169,7 @@ namespace BIVN_PACKING.PVSService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
         public string Des {
             get {
                 return this.DesField;
@@ -1166,7 +1182,7 @@ namespace BIVN_PACKING.PVSService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
         public bool Check_First {
             get {
                 return this.Check_FirstField;
@@ -1179,7 +1195,7 @@ namespace BIVN_PACKING.PVSService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
         public bool Is_Wip {
             get {
                 return this.Is_WipField;

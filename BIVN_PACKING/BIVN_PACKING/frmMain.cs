@@ -690,6 +690,7 @@ namespace BIVN_PACKING
                 {
                     ShowMessage("NULL", @"FULL", $"Số lượng bảng mạch trên thùng đã đầy.\nVui lòng bắn BoxID");
                     txtBarcode.ResetText();
+                    panelBarcode.Enabled = false;
                     panelBOXID.Enabled = true;
                     txtBoxid.Enabled = true;
                     txtBoxid.ResetText();

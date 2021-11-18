@@ -412,6 +412,7 @@
               <s:element minOccurs="0" maxOccurs="1" name="Product_Id" type="s:string" />
               <s:element minOccurs="1" maxOccurs="1" name="Pcb" nillable="true" type="s:int" />
               <s:element minOccurs="0" maxOccurs="1" name="Customer" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:string" />
               <s:element minOccurs="1" maxOccurs="1" name="Content_Index" nillable="true" type="s:int" />
               <s:element minOccurs="1" maxOccurs="1" name="Content_Length" nillable="true" type="s:int" />
               <s:element minOccurs="1" maxOccurs="1" name="Location" nillable="true" type="s:int" />

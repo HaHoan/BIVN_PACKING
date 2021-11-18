@@ -50,6 +50,8 @@
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.USER_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblModel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txbRepairer = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.panelBOXID.SuspendLayout();
             this.panelBarcode.SuspendLayout();
@@ -147,6 +149,7 @@
             this.llreset.Name = "llreset";
             this.llreset.Size = new System.Drawing.Size(22, 19);
             this.llreset.TabIndex = 63;
+            this.llreset.Click += new System.EventHandler(this.llreset_Click);
             // 
             // label5
             // 
@@ -174,7 +177,7 @@
             this.panelBarcode.Controls.Add(this.labba);
             this.panelBarcode.Controls.Add(this.txtBarcode);
             this.panelBarcode.Enabled = false;
-            this.panelBarcode.Location = new System.Drawing.Point(14, 139);
+            this.panelBarcode.Location = new System.Drawing.Point(14, 177);
             this.panelBarcode.Name = "panelBarcode";
             this.panelBarcode.Size = new System.Drawing.Size(326, 31);
             this.panelBarcode.TabIndex = 79;
@@ -275,11 +278,31 @@
             this.lblModel.Size = new System.Drawing.Size(0, 16);
             this.lblModel.TabIndex = 81;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 142);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.TabIndex = 82;
+            this.label1.Text = "Tên người sửa";
+            // 
+            // txbRepairer
+            // 
+            this.txbRepairer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbRepairer.Location = new System.Drawing.Point(105, 139);
+            this.txbRepairer.Name = "txbRepairer";
+            this.txbRepairer.Size = new System.Drawing.Size(207, 26);
+            this.txbRepairer.TabIndex = 83;
+            this.txbRepairer.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txbRepairer_PreviewKeyDown);
+            // 
             // frmHangSua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(695, 472);
+            this.Controls.Add(this.txbRepairer);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblModel);
             this.Controls.Add(this.dgrvListSerialInBox);
             this.Controls.Add(this.panelBarcode);
@@ -324,5 +347,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn USER_NAME;
         private System.Windows.Forms.Label lblModel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txbRepairer;
     }
 }

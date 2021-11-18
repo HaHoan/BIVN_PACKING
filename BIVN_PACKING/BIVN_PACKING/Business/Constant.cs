@@ -18,5 +18,6 @@ namespace BIVN_PACKING.Business
         public static string AUTOIT_X64_FILE = "AutoItX3_x64.dll";
         public static string FILTER_BY_MODEL = "FILTER_BY_MODEL";
         public static string FILTER_BY_SERIAL = "FILTER_BY_SERIAL";
+        public static string FILTER_BY_REPAIRER = "FILTER_BY_REPAIRER";
     }
 }

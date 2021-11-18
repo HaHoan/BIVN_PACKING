@@ -39,6 +39,7 @@
           <Property Name="DATECREATE" Type="datetime" />
           <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
           <Property Name="MODEL" Type="nvarchar" MaxLength="128" />
+          <Property Name="REPAIRER" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -130,6 +131,7 @@
           <Property Name="DATECREATE" Type="DateTime" Precision="3" />
           <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MODEL" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="REPAIRER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -186,6 +188,7 @@
           <EntitySetMapping Name="Repairs">
             <EntityTypeMapping TypeName="BIVNModel1.Repair">
               <MappingFragment StoreEntitySet="Repair">
+                <ScalarProperty Name="REPAIRER" ColumnName="REPAIRER" />
                 <ScalarProperty Name="MODEL" ColumnName="MODEL" />
                 <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
                 <ScalarProperty Name="DATECREATE" ColumnName="DATECREATE" />

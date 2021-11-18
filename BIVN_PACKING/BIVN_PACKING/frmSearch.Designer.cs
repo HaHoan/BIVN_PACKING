@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSearch));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbHangSua = new System.Windows.Forms.CheckBox();
             this.txbSearch = new System.Windows.Forms.TextBox();
             this.cbbOption = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.LinkLabel();
@@ -46,7 +47,6 @@
             this.dataGridView1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bgwSearch = new System.ComponentModel.BackgroundWorker();
             this.lblexport = new System.Windows.Forms.LinkLabel();
-            this.cbHangSua = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +67,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Information";
             // 
+            // cbHangSua
+            // 
+            this.cbHangSua.AutoSize = true;
+            this.cbHangSua.Location = new System.Drawing.Point(491, 25);
+            this.cbHangSua.Name = "cbHangSua";
+            this.cbHangSua.Size = new System.Drawing.Size(72, 17);
+            this.cbHangSua.TabIndex = 79;
+            this.cbHangSua.Text = "Hàng sửa";
+            this.cbHangSua.UseVisualStyleBackColor = true;
+            // 
             // txbSearch
             // 
             this.txbSearch.Location = new System.Drawing.Point(160, 23);
@@ -80,7 +90,8 @@
             this.cbbOption.FormattingEnabled = true;
             this.cbbOption.Items.AddRange(new object[] {
             "MODEL",
-            "SERIAL"});
+            "SERIAL",
+            "NGƯỜI SỬA"});
             this.cbbOption.Location = new System.Drawing.Point(32, 23);
             this.cbbOption.Name = "cbbOption";
             this.cbbOption.Size = new System.Drawing.Size(121, 21);
@@ -223,16 +234,6 @@
             this.lblexport.Size = new System.Drawing.Size(43, 33);
             this.lblexport.TabIndex = 64;
             this.lblexport.Click += new System.EventHandler(this.lblexport_Click);
-            // 
-            // cbHangSua
-            // 
-            this.cbHangSua.AutoSize = true;
-            this.cbHangSua.Location = new System.Drawing.Point(491, 25);
-            this.cbHangSua.Name = "cbHangSua";
-            this.cbHangSua.Size = new System.Drawing.Size(72, 17);
-            this.cbHangSua.TabIndex = 79;
-            this.cbHangSua.Text = "Hàng sửa";
-            this.cbHangSua.UseVisualStyleBackColor = true;
             // 
             // frmSearch
             // 

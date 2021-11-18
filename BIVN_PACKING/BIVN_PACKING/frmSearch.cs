@@ -211,6 +211,11 @@ namespace BIVN_PACKING
                         var data = db.Repairs.Where(m => m.MODEL == txbSearch.Text.Trim() && m.DATECREATE >= dtptimestart.Value.Date && m.DATECREATE <= dtptimeend.Value.Date).ToList();
 
                         e.Result = data;
+                    }else if(arg == Constant.FILTER_BY_REPAIRER)
+                    {
+                        var data = db.Repairs.Where(m => m.REPAIRER.Contains(txbSearch.Text.Trim()) && m.DATECREATE >= dtptimestart.Value.Date && m.DATECREATE <= dtptimeend.Value.Date).ToList();
+
+                        e.Result = data;
                     }
                 }
             }
@@ -254,6 +259,9 @@ namespace BIVN_PACKING
             else if (cbbOption.SelectedIndex == 0)
             {
                 filterOption = Constant.FILTER_BY_MODEL;
+            }else if(cbbOption.SelectedIndex == 2)
+            {
+                filterOption = Constant.FILTER_BY_REPAIRER;
             }
             this.ActiveControl = txbSearch;
         }

@@ -157,11 +157,19 @@ namespace BIVN_PACKING
                     }
                  
                 }
+                
                 try
                 {
                     using (var db = new BIVNEntities())
                     {
-                        var prod = new Repair()
+                        var prod = db.Repairs.Where(m => m.SERIAL == txtBarcode.Text.Trim()).FirstOrDefault();
+                        if(prod != null)
+                        {
+                            ShowMessage("FAIL", @"FAIL", $"Bản mạch " + txtBarcode.Text.Trim() + " đã bắn rồi!");
+                            txtBarcode.ResetText();
+                            return;
+                        }
+                        prod = new Repair()
                         {
                             BOXID = txtBoxid.Text.Trim(),
                             AMOUNT = Convert.ToInt32(_boxInfo.OS_QTY),

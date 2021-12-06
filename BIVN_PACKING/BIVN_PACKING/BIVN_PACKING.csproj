@@ -15,7 +15,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>\\vn-file\Share\18 IT\U23702%28quyetpv%29\PROGRAM\2.BIVN\Paking\</PublishUrl>
+    <PublishUrl>\\172.28.10.12\Share\18 IT\U23702%28quyetpv%29\PROGRAM\2.BIVN\Paking\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -25,14 +25,14 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>\\172.28.10.12\Share\18 IT\U23702%28quyetpv%29\PROGRAM\2.BIVN\Paking\</InstallUrl>
     <UpdateUrl>\\172.28.10.12\Share\18 IT\U23702%28quyetpv%29\PROGRAM\2.BIVN\Paking\</UpdateUrl>
     <ProductName>BIVN Packing</ProductName>
     <PublisherName>quyetpv%40umcvn.com</PublisherName>
     <SuiteName>UMCVN</SuiteName>
     <MinimumRequiredVersion>1.0.0.15</MinimumRequiredVersion>
-    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>78</ApplicationRevision>
+    <ApplicationRevision>81</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -64,7 +64,7 @@
     <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>FD60EF0C3F6D8C06823A83D211A87CC525C3CAFA</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>0AD9707248B5D08F39AD7DEDF718131D9157C3F1</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>

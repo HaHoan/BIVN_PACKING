@@ -29,7 +29,7 @@ namespace BIVN_PACKING
             var listModels = pvsWebService.GetModelInfos("CS000").Reverse();
             foreach (var model in listModels)
             {
-                dt.Rows.Add(new object[] { model.Product_Id, model.Content_Length, model.Is_Hexa == true ? "YES" : "NO" });
+                dt.Rows.Add(new object[] { model.Product_Id, model.Content_Length,model.Content, model.Is_Hexa == true ? "YES" : "NO" });
             }
             dgrvModel.Refresh();
 
@@ -41,7 +41,7 @@ namespace BIVN_PACKING
             
             foreach (var model in listModels)
             {
-                dt.Rows.Add(new object[] { model.Product_Id, model.Content_Length, model.Is_Hexa == true ? "YES" : "NO"  });
+                dt.Rows.Add(new object[] { model.Product_Id, model.Content_Length,model.Content, model.Is_Hexa == true ? "YES" : "NO"  });
             }
             dgrvModel.Refresh();
 
@@ -59,6 +59,7 @@ namespace BIVN_PACKING
             }
             dt.Columns.Add("MODEL", typeof(string));
             dt.Columns.Add("Số kí tự đầu", typeof(string));
+            dt.Columns.Add("Kí tự đầu", typeof(string));
             dt.Columns.Add("Is Hexa", typeof(string));
             dgrvModel.DefaultCellStyle.BackColor = Color.DarkGreen;
             dgrvModel.DefaultCellStyle.ForeColor = Color.White;
@@ -67,7 +68,7 @@ namespace BIVN_PACKING
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var frmEditModel = new frmEditModel("", "","YES");
+            var frmEditModel = new frmEditModel("", "","","YES");
             frmEditModel.updateAfterClose = new Action(() =>
             {
                 GetModelEmpty();
@@ -86,8 +87,9 @@ namespace BIVN_PACKING
             {
                 var model = dgrvModel.Rows[currentRowSelected].Cells[0].Value.ToString();
                 var contentLength = dgrvModel.Rows[currentRowSelected].Cells[1].Value.ToString();
-                var isHexa = dgrvModel.Rows[currentRowSelected].Cells[2].Value.ToString();
-                var frmEditModel = new frmEditModel(model, contentLength,isHexa);
+                var modelChar = dgrvModel.Rows[currentRowSelected].Cells[2].Value.ToString();
+                var isHexa = dgrvModel.Rows[currentRowSelected].Cells[3].Value.ToString();
+                var frmEditModel = new frmEditModel(model, contentLength,modelChar,isHexa);
                 frmEditModel.updateAfterClose = new Action(() =>
                 {
                     GetModelEmpty();

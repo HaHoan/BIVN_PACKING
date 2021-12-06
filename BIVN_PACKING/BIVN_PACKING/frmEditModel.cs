@@ -17,7 +17,7 @@ namespace BIVN_PACKING
         private string model;
         private string isHexa;
         public Action updateAfterClose;
-        public frmEditModel(string model, string contentLength, string isHexa)
+        public frmEditModel(string model, string contentLength,string modelChar, string isHexa)
         {
             InitializeComponent();
             this.model = model;
@@ -27,6 +27,7 @@ namespace BIVN_PACKING
             txbModel.Enabled = string.IsNullOrEmpty(this.model) ? true : false;
             txbModel.Text = model;
             txbContentLength.Text = contentLength;
+            txbModelChar.Text = modelChar;
             if (txbModel.Enabled)
             {
                 txbModel.Focus();
@@ -48,7 +49,7 @@ namespace BIVN_PACKING
                 entity.Is_Hexa = cbHexa.Checked;
                 entity.Product_Id = txbModel.Text.Trim();
                 entity.Content_Length = int.Parse(txbContentLength.Text.Trim());
-
+                entity.Content = txbModelChar.Text.Trim();
                 if (!string.IsNullOrEmpty(model))
                 {
                     pvsWebService.SaveModelInfo(entity, entity.Product_Id);

@@ -34,6 +34,8 @@
             this.txbModel = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbHexa = new System.Windows.Forms.CheckBox();
+            this.txbModelChar = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSaveChanged
@@ -43,7 +45,7 @@
             this.btnSaveChanged.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveChanged.ForeColor = System.Drawing.Color.White;
             this.btnSaveChanged.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveChanged.Location = new System.Drawing.Point(94, 151);
+            this.btnSaveChanged.Location = new System.Drawing.Point(94, 178);
             this.btnSaveChanged.Name = "btnSaveChanged";
             this.btnSaveChanged.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.btnSaveChanged.Size = new System.Drawing.Size(102, 30);
@@ -89,18 +91,36 @@
             // cbHexa
             // 
             this.cbHexa.AutoSize = true;
-            this.cbHexa.Location = new System.Drawing.Point(94, 118);
+            this.cbHexa.Location = new System.Drawing.Point(94, 150);
             this.cbHexa.Name = "cbHexa";
             this.cbHexa.Size = new System.Drawing.Size(62, 17);
             this.cbHexa.TabIndex = 57;
             this.cbHexa.Text = "Is Hexa";
             this.cbHexa.UseVisualStyleBackColor = true;
             // 
+            // txbModelChar
+            // 
+            this.txbModelChar.Location = new System.Drawing.Point(97, 112);
+            this.txbModelChar.Name = "txbModelChar";
+            this.txbModelChar.Size = new System.Drawing.Size(189, 20);
+            this.txbModelChar.TabIndex = 59;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 114);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 58;
+            this.label3.Text = "Kí tự đầu";
+            // 
             // frmEditModel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(303, 203);
+            this.ClientSize = new System.Drawing.Size(303, 281);
+            this.Controls.Add(this.txbModelChar);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.cbHexa);
             this.Controls.Add(this.btnSaveChanged);
             this.Controls.Add(this.txbContentLength);
@@ -123,5 +143,7 @@
         private System.Windows.Forms.TextBox txbModel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox cbHexa;
+        private System.Windows.Forms.TextBox txbModelChar;
+        private System.Windows.Forms.Label label3;
     }
 }

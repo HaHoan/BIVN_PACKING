@@ -17,6 +17,9 @@ namespace BIVN_PACKING
     public partial class frmSearch : Form
     {
         BIVNService.BIVNWebServiceSoapClient _bivnService = new BIVNService.BIVNWebServiceSoapClient();
+        USAPService.USAPWebServiceSoapClient _dbClient = new USAPService.USAPWebServiceSoapClient();
+        private PVSService.PVSWebServiceSoapClient _pvs_service = new PVSService.PVSWebServiceSoapClient();
+        private USAPService.BCLBFLMEntity _boxInfo = new USAPService.BCLBFLMEntity();
         User Data = new User();
         string result = "";
 
@@ -25,7 +28,21 @@ namespace BIVN_PACKING
             DataLogin();
             InitializeComponent();
             cbbOption.SelectedIndex = 0;
-
+            //updateModel();
+        }
+        private void updateModel()
+        {
+            using(var db = new BIVNEntities())
+            {
+                var list = db.Repairs.Where(m => string.IsNullOrEmpty(m.MODEL)).ToList();
+                foreach(var re in list)
+                {
+                    var box = _dbClient.GetByBcNo(re.BOXID);
+                    re.MODEL = box.PART_NO;
+                    db.SaveChanges();
+                }
+            }
+         
         }
         private void ShowMessage(string key, string str_status, string str_message)
         {

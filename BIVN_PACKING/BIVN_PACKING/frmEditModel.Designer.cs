@@ -100,6 +100,7 @@
             // 
             // txbModelChar
             // 
+            this.txbModelChar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txbModelChar.Location = new System.Drawing.Point(97, 112);
             this.txbModelChar.Name = "txbModelChar";
             this.txbModelChar.Size = new System.Drawing.Size(189, 20);

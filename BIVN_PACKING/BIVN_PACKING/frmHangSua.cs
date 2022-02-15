@@ -92,7 +92,6 @@ namespace BIVN_PACKING
                             return;
                         }
                         _modelInfo =  _pvs_service.GetModelInfo(_boxInfo.PART_NO);
-                        _modelInfo.Content = _modelInfo.Content.ToUpper();
                         lblModel.Text = _boxInfo.PART_NO;
                         lblQtyBox.Text = Convert.ToInt32(_boxInfo.OS_QTY).ToString();
                         // lấy số lượng serial đã bắn / box
@@ -152,7 +151,7 @@ namespace BIVN_PACKING
                 if(_modelInfo != null && _modelInfo.Content != null && _modelInfo.Content_Length is int length)
                 {
                   
-                    if(serial.Substring(0, length) != _modelInfo.Content.ToUpper())
+                    if(serial.Substring(0, length).ToUpper() != _modelInfo.Content.ToUpper())
                     {
                         new Error($"Serial cần bắt đầu bằng {_modelInfo.Content}").ShowDialog();
                         return;

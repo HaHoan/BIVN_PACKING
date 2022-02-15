@@ -37,7 +37,7 @@ namespace BIVN_PACKING
         private void GetModelByProductId(string productId)
         {
             dt.Clear();
-            var listModels = pvsWebService.GetModelInfos("CS000").Where(m => m.Product_Id == productId.ToUpper() || m.Product_Id == productId.ToLower()).Reverse();
+            var listModels = pvsWebService.GetModelInfos("").Where(m => m.Product_Id == productId.ToUpper() || m.Product_Id == productId.ToLower()).Reverse();
             
             foreach (var model in listModels)
             {

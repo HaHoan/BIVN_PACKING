@@ -74,7 +74,9 @@ namespace BIVN_PACKING
             string wo = lblWoNo.Text.Trim();
 
             var modelInfo = _pvs_service.GetModelInfo(this.Model);
-            
+          
+
+
             if (modelInfo != null)
             {
                 if (modelInfo.Content_Length is int contentLength)

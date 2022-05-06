@@ -56,7 +56,7 @@ namespace BIVN_PACKING
             bgrwSoftInfo.RunWorkerAsync();
             FileShare.Connect(FileShare.PATH, new System.Net.NetworkCredential(FileShare.USER, FileShare.PASSWORD));
             this.dgrvListSerialInBox.AutoGenerateColumns = false;
-
+           
             
         }
        
@@ -678,7 +678,7 @@ namespace BIVN_PACKING
                     ShowMessage("FAIL", @"FAIL", $"Error: {ex.Message}");
                     return;
                 }
-                ControlClick();
+                Utils.CreateFileLog(prod.MODEL, prod.SERIAL, "P", "", DateTime.Now);
 
                 _listSerialInBox.Add(prod);
                 ListAllSerialInBox();
@@ -686,6 +686,7 @@ namespace BIVN_PACKING
                 _woQtyActual++;
                 lblQtyBoxActual.Text = _boxQty.ToString();
                 lblQtyWoActual.Text = _woQtyActual.ToString();
+                
                 if (_boxQty == Convert.ToInt32(_boxInfo.OS_QTY))
                 {
                     ShowMessage("NULL", @"FULL", $"Số lượng bảng mạch trên thùng đã đầy.\nVui lòng bắn BoxID");

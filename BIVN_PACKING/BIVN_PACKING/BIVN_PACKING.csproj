@@ -32,7 +32,7 @@
     <SuiteName>UMCVN</SuiteName>
     <MinimumRequiredVersion>1.0.0.15</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>84</ApplicationRevision>
+    <ApplicationRevision>85</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -64,7 +64,7 @@
     <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>0AD9707248B5D08F39AD7DEDF718131D9157C3F1</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>0ED5B71130EFB05817485A71ECBEF5307740B21E</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>
@@ -213,6 +213,7 @@
     <Compile Include="Business\Security.cs" />
     <Compile Include="Business\User.cs" />
     <Compile Include="Business\UserClaas.cs" />
+    <Compile Include="Business\Utils.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="Error.cs">
       <SubType>Form</SubType>

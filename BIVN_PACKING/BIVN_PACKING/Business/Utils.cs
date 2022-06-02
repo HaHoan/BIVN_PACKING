@@ -13,7 +13,7 @@ namespace BIVN_PACKING.Business
         {
             string dateTime = dateCheck.ToString("yyMMddHHmmss");
             string fileName = $"{dateTime}_{model}_{productId}.txt";
-            string folderRoot = @"C:\LOGPROCESS\backup\" + DateTime.Now.Date.ToString("yyyyMMdd") + @"\";
+            string folderRoot = @"C:\LOGPROCESS\backup\";
 
             bool exists = Directory.Exists(folderRoot);
             if (!exists)
